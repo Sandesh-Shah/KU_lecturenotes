@@ -1,0 +1,293 @@
+\documentclass[math101_lecturenotes_ku.tex]{subfiles}
+
+\setcounter{chapter}{7}
+\begin{document}
+
+\chapter{Vector Spaces and Linear Transformation}
+\section{Span of Vectors}
+The collection of all linear combinations of vectors in the given set is called the span of that set of vectors. If the set is $S$, its span is denoted by Span$(S)$.
+
+\begin{definition}[Linear Combination of vectors]
+A linear combination of the vectors \\ $\vec{u_1}, \vec{u_2}, ... , \vec{u_m}$
+  is a sum of the vectors multiplied by scalars, such as $${\alpha}_1\vec{u_1} + \alpha_2\vec{u_2}+...+\alpha_n\vec{u_m}= \sum_{j=1}^m \alpha_j \vec{u_j}$$
+\end{definition}
+
+\begin{remark}
+    The span of the vectors $\{\hat{i}, \hat{j}\}$ is the set $\{x\hat{i}+y\hat{j}\; : \;\; x,y \in \mathbb{R}\}$ which is $\mathbb{R}^2$. So, the geometry of the span of two vectors is a plane and the span of a single vector is line which will be discussed in the next section
+\end{remark}
+
+\section{Vector Equations}
+In the low-dimensional spaces $\mathbb R$, ${\mathbb R}^2$, and ${\mathbb R}^3$, we can visualize many of the objects that we shall want to study in the higher-dimensional spaces ${\mathbb R}^n$.
+
+\subsection{Line Passing Through Origin}
+We need two points to determine a line in ${\mathbb R}^2$. Since the line passes through origin, $\Vec{0}$ is a point on the line. Let another point on the line be $\Vec{v}$. Then the other points on the line are simply the scalar multiples of $\Vec{v}$. Thus, the line through origin is the set $\mathcal{L}=\{c\vec{v}:c \in {\mathbb R}\}$. The set obviously contain $\vec{0}$ and $\vec{v}$, which are the values when $c=0$, and $c=1$ respectively.
+
+\subsection{General Lines}
+Let $\vec{u}$ and $\vec{v}$ be the position vectors of two distinct points on a line in ${\mathbb R}^2$. Then $\vec{u}-\vec{v}$ is a vector parallel to the line whose initial point is the vector $\vec{v}$. So, any point on the line is the vector $t(\vec{u}-\vec{v})$ for some $t \in \mathbb R$. And by the triangle law of vector addition, the position vector of that point on the line is $\vec{u} + t(\vec{v}-\vec{v})$. Thus, the general equation of line in ${\mathbb R}^2$ is the set
+\begin{equation}
+\label{line}
+    \mathcal{L}=\{\vec{v}\; + \;t(\vec{u}-\vec{v})\;: \;\;\; t \in {\mathbb R}\}
+\end{equation}
+This suggest the line is a \textbf{translation} of a line through origin, it the translation by the vector $\vec{v}$; as the above equation can be rewritten as $\mathcal{L}= \vec{v} + \;\; \{t(\vec{u}-\vec{v}):t \in {\mathbb R}\}$.\\
+The Equation-\ref{line} can also be rewritten as:
+\begin{equation*}
+    \mathcal{L}=\{t \vec{u} \; + \; (1-t)\vec{v} \; : \;\;\;t  \in {\mathbb R}\}
+\end{equation*}
+These equations of lines are called the \textbf{vector equation of line}. Also, if $\vec{x}$ is any point on a line then we can describe the line as
+\begin{equation}
+    \label{paraline}
+    \vec{x}=\vec{w} \; + \; t \vec{z} \;: \;\;\; t  \in {\mathbb R}
+\end{equation}
+This equation is called \textbf{parametric equation} of line. Now if $\vec{w}$ and $\vec{z}$ are the vectors of ${\mathbb R}^n$, then the Equation-\ref{paraline} represents a line in ${\mathbb R}^n$. This is the beauty of the vector equation.
+
+\begin{theorem}
+    Let $\mathcal{L}_1$ and $\mathcal{L}_2$ be two lines in ${\mathbb R}^n$ described as
+    $$\mathcal{L}_1 = \{\vec{u}+t\vec{v}: \; t \in \mathbb{R}\}, \hspace{7mm} \mathcal{L}_2 = \{\vec{w}+s\vec{z}: \; s \in \mathbb{R}\} $$
+    \begin{enumerate}
+        \item These lines are same if and only if $\vec{u} \vec{w}$ and $\vec{v}$ are parallel to $\vec{z}$.
+        \item These lines are parallel if and only if $\vec{v}$ is parallel to $\vec{z}$.
+    \end{enumerate}
+\end{theorem}
+ \textbf{Questions:}
+\begin{enumerate}
+    \item Is the vector $\vec{w}= (-1,3,7)$ a linear combination of the vectors $\vec{u}=(4,2,7)$ and $\vec{v}=(3,1,4)$ ? In other words, is $\vec{w}$ spanned by the vectors $\vec{u}$ and $\vec{v}$?
+
+    \item  The expression $(12,28)+t(9,21)$ describes a line in ${\mathbb R}^2$ when $t$ runs over all of ${\mathbb R}$. Does this line passes through origin?
+
+    \item Do these two lines in ${\mathbb R}^3$ intersect: $(3,2,-5)+t(1,-3,2)$ and $(2,-23,5)+t(2,1,1)$.
+
+    \item Show that these two lines, described parametrically in $\mathbb{R}^3$, are parallel and distinct: $(3,2,-5)+t(1,-3,2)$ and $(-1,-8,2) +s(-4,12,-8)$.
+    \end{enumerate}
+
+
+\subsection{Planes}
+Planes are described as span of two vectors non-linear vectors. So, the equation of a plane in $\mathbb{R}^3$ passing through the origin can be described parametrically as $\mathcal{P}=\{s\vec{u}+t\vec{v}\; :\; s,t \in \mathbb{R}\}$ where, $\vec{u}$ and $\vec{v}$ are fixed vectors in $\mathbb{R}^3$, neither is a multiple of other. So, a plane in general is $$\mathcal{P}=\{\vec{w}\; + \;s\vec{u} \; + \; t\vec{v}\; :\;\;\; s,t \in \mathbb{R}\}$$.
+
+\begin{example}
+    Find a parametric form for the plane whose generic point $x$ satisfies the equation $7x_1-11x_2+13x_3 = 5$. \\[1mm]
+    \textbf{Solution:}\\[1mm]
+    The equation $7x_1-11x_2+13x_3 = 5$ can be considered as a system of equations as follows:
+    \begin{align*}
+        7x_1-11x_2+13x_3 =& 5 \\
+        0x_1+0x_2+0x_3 =& 0 \\
+        0x_1+0x_2+0x_3 =& 0
+    \end{align*}
+    So the augumented matrix is
+    $$ \left[ \begin{matrix}
+    7 & -11 & 13 \\
+    0 & 0 & 0 \\
+    0 & 0 & 0
+\end{matrix} \;\; \vline \;\;
+\begin{matrix}
+    5\\ 0\\ 0
+\end{matrix} \right] \hspace{2mm} \thicksim \hspace{4mm} \left[ \begin{matrix}
+    1 & -11/7 & 13/7 \\
+    0 & 0 & 0 \\
+    0 & 0 & 0
+\end{matrix} \;\; \vline \;\;
+\begin{matrix}
+    5/7\\ 0\\ 0
+\end{matrix} \right]$$
+The general solution of this system of equations is $$ \begin{bmatrix}
+    x_1 \\ x_2 \\ x_3
+\end{bmatrix} = \hspace{10mm}\begin{bmatrix}
+    5/7 \\ 0 \\0
+\end{bmatrix} + x_2 \begin{bmatrix}
+    11/7\\ 1 \\ 0
+\end{bmatrix} + x_3 \begin{bmatrix}
+    -13/7 \\0 \\1
+\end{bmatrix}$$
+Replacing $x_2, x_3$ by $s,t$ we get the required parametric equation.
+\end{example}
+
+\section{Linear Dependence and Independence}
+Consider a finite \textit{indexed} set of vectors $\{u_1,u_2,...,u_m\}$ in a vector space.
+\begin{itemize}
+    \item We say that the indexed set is \textbf{linearly dependent} if there exist scalars $c_i$ such that $\displaystyle \sum_{i=1}^m c_iu_i = 0$, \;\;\; $\displaystyle \sum_{i=1}^m |c_i| > 0$.
+
+    \item If the indexed set is not linearly dependent, we can say that it is linearly \textbf{independent}. The expression implies that at least one $c_i$ is nonzero.
+\end{itemize}
+There is a difference between an index set and a set. The set $\{\vec{i}, \vec{i}\}$ is linearly independent because it consist of only one vector $\vec{i}$. but the index set  $\{\vec{i}, \vec{i}\}$ is linearly dependent because this set consists of two vectors both of which are same.
+
+\subsection{Exercise}
+\begin{enumerate}
+    \item Is the indexed set of rows in the matrix linearly dependent? $\begin{bmatrix}
+    2 & 5 & 7 \\
+    4 & 1 & -5 \\
+    2  & 5 & 7
+\end{bmatrix}$
+
+    \item Determine whether this set of vectors is linearly dependent: $$(3,2,7), \hspace{5mm} (4,1,-3) \hspace{5mm} (6,-1,-23)$$
+\end{enumerate}
+
+\section{Column Space and Null Space of a Matrix}
+
+    \begin{itemize}
+        \item  The \textbf{column space} of a matrix $A$ is the span of the set of columns in $A$. This is denoted by Col($A$).
+
+        \item The \textbf{null space} of a matrix $A$ is the space $\{x\; : \;\; Ax=0\}$. It is denoted by Null($A$). Null space of a matrix $A$ is also called the \textit{kernal} of $A$ which is denoted by Ker($A$).
+    \end{itemize}
+\noindent
+Let $R$ be the reduced row echelon matrix of the matrix $A$. Let the columns of $A$ whose corresponding columns in $R$ have pivots be $c_1, c_2,...,c_n$. Then Col($A$)=Span$\{c_1, c_2,...,c_n\}$. That is Col($A$) is given by the span of the columns from $A$ that have pivot positions.
+
+\section{Basis, Dimension and Rank}
+\subsection{Basis}
+    In a vector space $V$, a linearly independent set of vectors that spans $V$ is called a \textbf{basis} for $V$. In another words, it is the minimum collection of vectors of vectors that generate the given vector space.
+
+    \begin{example}
+      Any set of two linearly independent vector is a basis of \(\mathbb{R}^2\), say \(\mathcal{B} = \{(1,1), (1,3)\}\) is a basis of \(\mathbb{R^2}\). The set $\{\hat{i}, \hat{j}\}$ in $\mathbb{R}^2$, is a basis of \(\mathbb{R}^2\), where \(\hat{i}=(1,0)\) and \(\hat{j}=(0,1)\). As this set is linearly independent and any vector $\vec{x} \in \mathbb{R}^2$ can be expressed as a linear combination of the vectors $\hat{i}$ and $\hat{j}$. This basis of \(\mathbb{R}^2\) is called the \textbf{standard basis} of \(\mathbb{R}^2\). Similarly the standard basis of \(\mathbb{R}^3\) is \(\{\hat{i}, \hat{j}, \hat{k}\}\). \\[2mm]
+  \textbf{Question}: What is the standard basis of \(\mathbb{R}^4\)?
+\end{example}
+
+\begin{theorem}
+    If a vector space has a finite basis, then all of its bases have the same number of elements. And this number is called the dimension of the vector space.
+  \end{theorem}
+ For instance, the dimension of a vector space having the number of basis vectors, three, has the dimension 3. So, the dimension of \(\mathbb{R}^{3}\) is 3.
+
+\begin{definition}
+    A vector space is \textbf{finite dimensional} if it has a finite basis; in that event, its \textbf{dimension} is the number of elements in any of its basis. Thus the vector space $\mathbb{R}^n$ is finite dimensional with the dimension $n$.
+\end{definition}
+
+\subsection{Rank}
+\begin{definition}[Rank of a matrix]
+The rank of a matrix is the number of nonzero rows in its reduced row echelon form or row echelon form. We use the notation Rank($A$) for this number. So, the rank of a matrix is equal to the number of its pivots. So, it also defined as the number of pivot positions in the matrix.
+\end{definition}
+\begin{remark}
+  It is not necessary to carry out the reduction to reduced row echelon form to determine the pivot positions in a matrix. Reduction to row echelon form is sufficient for this.
+\end{remark}
+\begin{mdframed}
+\begin{theorem}[Rank Nullity Theorem]
+For any matrix, the number of columns equals the dimension of the column space plus the dimension of the null space. For a $m \times n$ matrix we have, $$ Dim(Col(A))\; + \; Dim(Null(A)) \; = \;\;n. $$
+In other words,
+$$Rank(A) \; +\; Nullity\;\; = \;\;\; n.$$
+\end{theorem}
+\end{mdframed}
+Because the dimension of column space of \(A\) is equivalent to the rank of \(A\), as rank of \(A\) is the number of pivots in the row echelon form of \(A\). And Nullity is the defined as the dimension of null space of \(A\).
+
+\subsection{Exercise}
+\begin{enumerate}
+
+\item Find the rank of the following matrix
+$\displaystyle \begin{bmatrix}
+    1 & 2 & 3 \\
+    6 & 5 &4 \\
+    7 & 8 & 9
+\end{bmatrix}$
+
+\item Find a simple description of the column space of the following matrix $\begin{bmatrix}
+    1 & 3 & 2 & 4 \\
+    1 & 0 & 4 & -2 \\
+    2 & 2 & 1 & 7 \\
+    4 & 5 & 7 & 9
+\end{bmatrix}$
+\end{enumerate}
+
+\section{Some Insights (Extra Material)}
+Let a system of linear equations be represented by a matrix equation \(Ax=b\). Then,
+\begin{enumerate}
+\item the system is \textbf{homogeneous system}, if the right-hand side vector \(b\) is the zero vector. i.e \(Ax=0\). Note that this system is always consistent because this system always has a solution \(x=0\), which is called a trival solution. The question is \textit{When does the system has a non-trival solution (a nonzero solution)?} This answered at the end of this subsection. \\
+  It can latter be shown that whenever a homogeneous system has a non-trivial solution than it is the case of \textbf{infinitely many solutions}. And a homogeneous system of consisting of more variables than the number of equations always has \textit{infinitely many solutions}.
+
+ \item the system is \textbf{non-homogeneous system}, if the right-hand side vector \(b\) is a non-zero vector. i.e \(Ax=b, \;\; b \neq 0\).
+ \end{enumerate}
+
+ \subsection{Interpretation of Existence of a Solution of the system}
+Let \(A= \displaystyle \begin{bmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} &a_{22} &a_{23} \\
+    a_{31} & a_{32} & a_{33}
+  \end{bmatrix}\), \hspace{3mm} \(x= \begin{bmatrix} x_1 \\ x_2 \\x_3 \end{bmatrix}\) and  \hspace{3mm}\(b= \begin{bmatrix} b_1 \\ b_2 \\b_3 \end{bmatrix}\).
+
+  \subsection{Interpretation of Existence of a Solution of the system}
+  The given system \(Ax=b\) is \\[2mm]
+  \begin{equation}
+    \label{col}
+    x_1 \begin{bmatrix} a_{11} \\ a_{21} \\ a_{31} \end{bmatrix} + x_2 \begin{bmatrix} a_{12} \\ a_{22} \\ a_{32} \end{bmatrix} + x_3 \begin{bmatrix} a_{13} \\ a_{23} \\ a_{33} \end{bmatrix} = \begin{bmatrix} b_1 \\ b_2 \\b_3 \end{bmatrix}
+  \end{equation}
+  If the system \(Ax=b\) has a solution then there exists some values of \(x_1, x_2 , x_3\) such that the Equation-\ref{col} is true.
+
+  \begin{enumerate}
+  \item This means the right-hand side vector \(b\) is in the spanned by the columns of \(A\). That means the right hand side vector \(b\) is in the column space of A, i.e \(b \in Col(A)\).
+
+  \item if the vector \(b\) is the zero vector then the solution vector,
+    then \(Ax=b\) has a solution \(x_0 \neq 0\) means the solution vector \(x_0 \in Null(A)\). So, the homogeneous system has more nonzero solution when the nullity of \(A\) greater than 1, that happens when the rank of \(A\) is less than \(n\), for a \(m \times n\) matrix \(A\).
+    \end{enumerate}
+
+
+\section{Linear Transformation}
+The terms \textit{function}, \textit{mapping}, \textit{map}, and \textit{transformation} are synonymous. Great part of the linear algebra is dedicated to the study of linear transformation.
+
+\begin{mdframed}
+    \begin{definition}
+        A mapping $f$ from a vector space $V$ to a vector space $W$ is \textbf{linear} if $$f(a\vec{x}+b\vec{y}) = a f(\vec{x}) + b f(\vec{y)}$$ for all vectors $\vec{x}, \vec{y} \in V$ and for all scalars $a,b$.
+    \end{definition}
+\end{mdframed}
+
+\begin{theorem}
+    Let $A$ be an $m \times n$ matrix. The mapping $x \mapsto Ax$ is linear from $\mathbb{R}^n$ to $\mathbb{R}^m$. And conversely, for a linear map $T: \mathbb{R}^n \to \mathbb{R}^m$ there exists an $m \times n$ matrix $A$ such that $T(\vec{x})=A\vec{x}$ for all $\vec{x} \in \mathbb{R}^n$.
+\end{theorem}
+
+\begin{example}
+    Describe the linear mapping that has the matrix $\begin{bmatrix}
+        0 & -1 \\ 1 & 0
+    \end{bmatrix}$. \\[1mm]
+    Let the given matrix is denoted by $A$. $A$ is a $2 \times 2$ So, the map is from $\mathbb{R}^2 \mapsto \mathbb{R}^2$. Then for every $\vec{x}=(x_1,x_2) \in \mathbb{R}^2$, Now $A\vec{x}= (-x_2,x_1)$ which is a \textbf{rotation} transformation that rotates every vector through the angle $90^0$ counterclockwise.
+\end{example}
+
+\subsection{Exercise}
+\begin{enumerate}
+
+    \item Is the  map $f: \mathbb{R}^3 \to \mathbb{R}^3$ defined by $f(x_1,x_2,x_3)=(x_1+2(x_2+7),3x_1-x_2+x_3,5x_1-x_3)$ a linear map? Explain.
+
+    \item Describe the transformation of the following matrices geometrically:
+    $$\begin{bmatrix}
+        1 & 0\\
+        0 & -1
+    \end{bmatrix}, \hspace{5mm} \begin{bmatrix}
+        0 & 1 \\
+        1 & 0
+    \end{bmatrix}, \hspace{5mm} \begin{bmatrix}
+        2 & 0 \\
+        0 & 2
+    \end{bmatrix}, \hspace{5mm} \begin{bmatrix}
+        1 & 0 \\
+        0 & 0
+    \end{bmatrix}, \hspace{5mm} \begin{bmatrix}
+        1 & 0 \\
+        1 & 1
+    \end{bmatrix}$$
+
+    \item Is there a linear transformation that maps $(1,0)$ to $(5,3,4)$ and maps $(3,0)$ to $(1,3,2)$?
+
+    \item Determine whether there is a linear map $T$ such that \\
+    $\displaystyle T(1,3,2)=(5,2,2), \;\;\; T(2,-1,3)=(11,-6,3). \;\;\; T(4,-9,5)=(23,-22,6)$ ?
+  \end{enumerate}
+
+  \section{Vector Subspace}
+  \begin{itemize}
+  \item A \textbf{vector space} is a set of vectors. So a vector space is equipped with two operations, which are operation of \textit{vector addition} and operation of \textit{scalar multiplication}. The examples of vector spaces are the space \(\mathbb{R}^2\) and \(\mathbb{R}^3\) with the usual operations of vector addition and scalar multiplication.
+
+
+\item A nonempty subset \(W\) in a vector space \(V\) is a \textbf{vector subspace} if \(W\) is also a vector space under the same operations of vector addition and scalar multiplications of \(V\). In another words \(W\) is \textit{closed} under the operations of vector addition and scalar multiplication.
+\end{itemize}
+\begin{example}[Vector Subspace]
+  \begin{enumerate}
+  \item Let \(A\) be an \(m \times n\) matrix. Then, the \textbf{null space} and the \textbf{column space} of \(A\) are vector subspaces of \(\mathbb{R}^n\).
+
+  \item The \textbf{eigen space} of \(A\) which we will study in chapter-9 is a vector subspace of \(\mathbb{R}^n\).
+
+  \item The \textbf{plane} \(\{(1,0,1) + s(5,0,0) + t (0,2,0)\}\) is a subspace of \(\mathbb{R}^3\).
+
+  \item The \textbf{line} \(\{(1,0,1) + s(5,0,0)\) is a subspace of \(\mathbb{R}^3\).
+
+        \item The \textbf{plane} \(\{(1,0) + s(5,0)\}\) is a subspace of \(\mathbb{R}^2\).
+  \end{enumerate}
+
+\end{example}
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

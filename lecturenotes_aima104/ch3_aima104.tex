@@ -1,0 +1,172 @@
+\documentclass[aima104_lecturenotes_ku.tex]{subfiles}
+
+\setcounter{chapter}{2}
+\begin{document}
+\chapter{Eigenvectors, Eigenvalues and Diagonalization}
+\section{Introduction}
+Let $A$ be any square matrix, real or complex. A number $\lambda$ is an \textbf{eigenvalue} of $A$ if the equation $$Ax\; = \; \lambda\,x$$
+is true for some nonzero vector $x$. The vector $x$ is and \textbf{eigenvector} associated with the eigenvalue $\lambda$. Both the eigenvalue and the eigenvector may be complex.
+
+\begin{theorem}
+  A scalar $\lambda$ is an eigenvalue of a matrix $A$ if and only if $Det(A-\lambda I)=0$.
+\end{theorem}
+The equation $Det(A-\lambda I)=0$ is called the \textbf{characteristic equation} of $A$. It is the equation from which we can compute the eigenvalues of $A$. The function \\ $p: p(\lambda) = Det(A-\lambda I)$ is the \textbf{characteristic polynomial} of $A$.
+
+\subsection{Eigenspace}
+For an eigenvalue $\lambda$ of a matrix $A$, the set $\{x\; : \; Ax=\lambda x\}$ forms a vector space. This forms a vector space because the vector \(x\) is a nonzero vector for it be an eigenvector. If \(x\) is a nonzero solution of \(Ax=\lambda x \implies (A-\lambda I)x=0\), which is a homogeneous system, then this homogeneous system has infinitely many solution. And this vector space is called  eigenspace.
+
+\subsection{Exercise}
+\begin{enumerate}
+\item What are the characteristic equation and the eigenvalues of the following matrices? For each eigenvalue, find an eigenvector.
+  \begin{multicols}{3}
+    a. $\begin{bmatrix}
+      2 & 4 & 6 \\
+      0 & -3 & 5 \\
+      0 & 0 & 1
+    \end{bmatrix}$
+
+    \columnbreak
+
+    b. $\begin{bmatrix}
+      4 & 1 & 1 \\
+      2 & 4 & 1 \\
+      0 & 1 & 4
+    \end{bmatrix}$
+    \columnbreak
+
+    c. $\begin{bmatrix}
+      2 & -i & 0 \\
+      i & 2 & 0 \\
+      0 & 0 & 3
+    \end{bmatrix}$
+  \end{multicols}
+
+\item Let $A= \begin{bmatrix}
+  0 & 1 \\
+  -1 & 0
+\end{bmatrix}$. Find the eigenvalue-eigenvector pairs. Explore the geometric effect of letting $\displaystyle x^{(k)}=Ax^{(k-1)}$ and $k=0,1,2,...$.
+\end{enumerate}
+
+\section{Diagonalization}
+\begin{mdframed}
+  A square matrix A is said to be diagonalizable if, there exists an invertible matrix $P$ and a diagonal matrix $D$, such that $$A = PDP^{-1}.$$ If $A = PDP^{-1}$ then $A$ is said to be similar to $D$.
+\end{mdframed}
+
+\subsection{Similarity}
+If $A$ an $B$ are $n \times n$ matrices, then $A$ \textbf{similar to} $B$ if there is an invertible matrix $P$ such that $$A = PBP^{-1}$$ or equivalently $B=P^{-1}AP$. Writing $Q=P^{-1}$, we can say that $B$ is similar to $A$, and we simply say $A$ and $B$ are similar.
+\begin{theorem}
+  If $n \times n$ matrices $A$ and $B$ are similar, then they have the same characteristic polynomial and hence the same eigenvalues (with the same multiplicities).
+\end{theorem}
+\begin{proof}
+ \hspace{1cm} Given, $B=P^{-1}AP$ we have, $(B-\lambda I) = P^{-1}AP - \lambda P^{-1}P = P^{-1}(A- \lambda I) P$. Then
+    \begin{align*}
+      det(B-\lambda I) &= \det[P^{-1}(A- \lambda I) P] \\
+                       &= \det(P^{-1}).\, \det(A- \lambda I).\, \det(P) \\
+                       &= \det(P^{-1}).\, \det(P). \, \det(A- \lambda I) \\
+                       &= \det(A- \lambda I)
+    \end{align*}
+  As, $\det(P^{-1}).\, \det(P) = \det(P^{-1}.P)=det(I) = 1$. Hence $A$ and $B$ has same characteristic polynomial. And the proof follows.
+\end{proof}
+\subsection{The Diagonalization Theorems}
+Suppose $A$ is $n \times n$ matrix with $n$ different eigenvalues: $\lambda_1, \lambda_2, ..., \lambda_n$ so that the set of $n$ corresponding eigenvectors $v_1, v_2, ..., v_n$ are linearly independent. Now, $Av_1=\lambda _n v_1, Av_2=\lambda _2 v_2, ...., Av_n = \lambda _n v_n$. Let $P$ be the matrix whose columns are the eigenvectors, i.e $P = [v_1, \; v_2, \; ... \; v_n] $. Then
+\begin{equation}
+  \label{eq:1}
+AP = [\lambda _1 v_1, \; \lambda_2 v_2, \; ... \; \lambda_n v_n] =
+ [v_1, \; v_2, \; , ..., \; v_n] \begin{bmatrix}
+  \lambda_1 & 0 & ... & 0 \\
+  0 & \lambda_2 & ... & 0 \\
+  ... \\
+  0 & 0 & ... & \lambda_1 \\
+\end{bmatrix} = PD
+\end{equation}
+where $ D = \begin{bmatrix}
+  \lambda_1 & 0 & ... & 0 \\
+  0 & \lambda_2 & ... & 0 \\
+  ... \\
+  0 & 0 & ... & \lambda_1 \\
+\end{bmatrix} $, so that $AP = PD$ gives, $A = P^{-1} D P$. This is summarized as the following theorem.
+
+\setcounter{thm}{2}
+\begin{thm}[\textbf{The Diagonalization Theorem}]
+  An $n \times n$ matrix $A$ is diagonalizable if and only if $A$ has $n$ linearly independent eigenvectors. \\
+  In fact, $A = PDP^{-1}$, with $D$ a diagonal matrix, if and only if the columns of $P$ are $n$ linearly independent eigenvectors of $A$. In this case, the diagonal entries of $D$ are eigenvalues of $A$ that correspond, respectively, to the eigenvectors of $P$.
+\end{thm}
+
+\setcounter{theorem}{3}
+\begin{theorem}
+  An $n \times n$ matrix with $n$ distinct eigenvalues is diagonalizable.
+\end{theorem}
+
+\subsection{Exercise}
+\begin{enumerate}
+\item Diagonalize the matrices, if possible:
+\begin{enumerate}[i).]
+  \begin{multicols}{2}
+
+\item
+ $ \begin{bmatrix}
+    3 & -1 \\
+    1 & 5
+ \end{bmatrix}$
+
+ \item $
+   \begin{bmatrix}
+     4 & 2 & 2 \\
+     2 & 4 & 2 \\
+     2 & 2 &4
+   \end{bmatrix}
+   $
+  \columnbreak
+
+  \item
+  $\begin{bmatrix}
+    2 & 3 \\
+    1 & 4
+  \end{bmatrix}$
+
+  \item $
+    \begin{bmatrix}
+      2 & 2 & -1 \\
+      1 & 3 & -1 \\
+      -1 & -2 & 2
+    \end{bmatrix}$
+
+    \end{multicols}
+
+  \end{enumerate}
+
+\item Compute $A^8$, where $A =
+  \begin{bmatrix}
+    4 & -3 \\
+    2 & -1
+  \end{bmatrix}$
+\end{enumerate}
+
+\section{Matrices Whose Eigenvalues are not Distinct}
+If $n\times n$ $A$ has $n$ distinct eigenvalues, with corresponding eigenvectors, then $A$ is automatically diagonalizable. Now, we will look at a case where $A$ has fewer than $n$ distinct eigenvalues, and it is still possible to diagonalize $A$.
+
+\begin{theorem}
+  Let $A$ be an $n \times n$ matrix whose distinct eigenvalues are $\lambda_1, \lambda_2,\, ...\, \lambda_p$.
+  \begin{enumerate}[a. ]
+  \item For $1 \leq k \leq p$, the dimension of the eigenspace for $\lambda_k$ is less than or equal to the multiplicity of the eigenvalue $\lambda_k$.
+  \item The matrix $A$ is diagonalizable if and only if the sum of the dimensions of the distinct eigenspaces equals $n$. And this happens if and only if the dimension of the eigenspace for each $\lambda_k$ equals to the multiplicity of $\lambda_k$.
+   \item If $A$ is diagonalizable and $\mathcal{B}_k$ is a basis for the eigenspace corresponding to $\lambda_k$ for each $k$, then the total collection of vectors in the sets $\mathcal{B}_1, \mathcal{B}_2, ..., \mathcal{B}_p$ forms an eigenvector basis for $\mathbb{R}^n$.
+  \end{enumerate}
+\end{theorem}
+
+\subsection{Exercise}
+Diagonalizable the following matrix, if possible.
+$$A=
+\begin{bmatrix}
+  5 & 0 & 0 & 0 \\
+  0 & 5 & 0 & 0 \\
+  1 & 4 & -3 & 0 \\
+  -1 & -2 & 0 & -3
+\end{bmatrix}
+$$
+\end{document}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:

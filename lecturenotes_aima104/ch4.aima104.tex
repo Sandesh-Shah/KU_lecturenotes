@@ -1,0 +1,28 @@
+\documentclass[aima104_lecturenotes_ku.tex]{subfiles}
+
+\setcounter{chapter}{3}
+\begin{document}
+\chapter{Orthogonality and Least Squares}
+\section{Inner Product}
+Let $u =
+\begin{bmatrix}
+  u_1 \\ u_2 \\ . \\ .\\ .\\ u_n
+\end{bmatrix} $ and $v =
+\begin{bmatrix}
+  v_1 \\ v_2 \\ . \\ .\\ .\\ v_n
+\end{bmatrix} $ be any two vectors in $\mathbb{R}^n$. Then the number $u^T\, v$ is called the \textbf{inner product} of $u$ and $v$. This inner product is also commonly known as \textbf{dot product} and denoted by $\mathbf{u.v}$.
+
+\subsection{Properties of Inner Product}
+\begin{mdframed}
+  \begin{enumerate}
+  \item $u.v = v.u$
+  \item $(u+v).w = u.w + v.w$
+  \item $(\alpha u).v = \alpha (u.v) = u. (cv)$
+  \item $u.u \geq 0$ and $u.u = 0 \Longleftrightarrow u=0$
+  \end{enumerate}
+\end{mdframed}
+
+\subsection{The Length of a Vector}
+The length of a vector $v$ is called the \textbf{norm} of $v$. \\ It is denoted by $\Vert v \Vert$ and defined by $\Vert v \Vert = \sqrt{v_1^2 + v_2^2 + ... + v_n^2} $ so that, $\Vert v \Vert ^2 = v.v$ There are several kinds of norms actually, this particular norm is called \textbf{Euclidean norm}.
+
+\end{document}

@@ -1,0 +1,54 @@
+\documentclass[math101_lecturenotes_ku.tex]{subfiles}
+
+\setcounter{chapter}{8}
+\begin{document}
+
+\chapter{Eigenvalues and Eigenvectors}
+\section{Introduction}
+Let $A$ be any square matrix, real or complex. A number $\lambda$ is an \textbf{eigenvalue} of $A$ if the equation $$Ax\; = \; \lambda\,x$$
+is true for some nonzero vector $x$. The vector $x$ is and \textbf{eigenvector} associated with the eigenvalue $\lambda$. Both the eigenvalue and the eigenvector may be complex.
+
+\begin{theorem}
+    A scalar $\lambda$ is an eigenvalue of a matrix $A$ if and only if $Det(A-\lambda I)=0$.
+\end{theorem}
+The equation $Det(A-\lambda I)=0$ is called the \textbf{characteristic equation} of $A$. It is the equation from which we can compute the eigenvalues of $A$. The function \\ $p: p(\lambda) = Det(A-\lambda I)$ is the \textbf{characteristic polynomial} of $A$.
+
+\subsection{Eigenspace}
+For an eigenvalue $\lambda$ of a matrix $A$, the set $\{x\; : \; Ax=\lambda x\}$ forms a vector space. This forms a vector space because the vector \(x\) is a nonzero vector for it be an eigenvector. If \(x\) is a nonzero solution of \(Ax=\lambda x \implies (A-\lambda I)x=0\), which is a homogeneous system, then this homogeneous system has infinitely many solution. And this vector space is called  eigenspace.
+
+\subsection{Exercise}
+\begin{enumerate}
+    \item What are the characteristic equation and the eigenvalues of the following matrices? For each eigenvalue, find an eigenvector.
+    \begin{multicols}{3}
+     a. $\begin{bmatrix}
+            2 & 4 & 6 \\
+            0 & -3 & 5 \\
+            0 & 0 & 1
+        \end{bmatrix}$
+
+        \columnbreak
+
+       b. $\begin{bmatrix}
+            4 & 1 & 1 \\
+            2 & 4 & 1 \\
+            0 & 1 & 4
+        \end{bmatrix}$
+        \columnbreak
+
+        c. $\begin{bmatrix}
+            2 & -i & 0 \\
+            i & 2 & 0 \\
+            0 & 0 & 3
+        \end{bmatrix}$
+    \end{multicols}
+
+    \item Let $A= \begin{bmatrix}
+        0 & 1 \\
+        -1 & 0
+    \end{bmatrix}$. Find the eigenvalue-eigenvector pairs. Explore the geometric effect of letting $\displaystyle x^{(k)}=Ax^{(k-1)}$ and $k=0,1,2,...$.
+  \end{enumerate}
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

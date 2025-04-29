@@ -1,0 +1,534 @@
+\documentclass[aima104_lecturenotes_ku.tex]{subfiles}
+
+\begin{document}
+\chapter{Vector Space}
+\section{Introduction}
+The branch \textit{linear algebra} is much younger than the branch $calculus$. To give a clear introduction of the course linear algebra, we need to look at it from at least three sides, and consequently we can say that we can approch it from the following three sides.
+\begin{enumerate}
+\item \textbf{Representation System} \\[1mm]
+  Linear Algebra is the algebra for Multivariable Calculus. The vectors and matrices are the building block of linear algebra. And linear algebra consists of the algebra of vectors and matrices, just like ordinary algebra is the algebra of numbers and their variables. Consider a multivariable function $f: \mathbb{R}^2 \mapsto \mathbb{R}^2$ defined by $f(x_1, x_2) = 3x_1 + 2x_2$. The consise representation of the multivariable functions give rise to vectors and matrices as follows: \\
+  Let, $\vec{x} = (x_1,y_1)$ and $\vec{a} = (3,2)$. Then the above function is $f$ is represented as $f(\vec{x})=\vec{a}'.\vec{x}$.
+
+\item \textbf{Study of Linear System} \\[1mm]
+  Linear Algebra has its roots in solving a system of linear equations.
+  Solving a linear system made a great contribution in Matrix theory and Determinant theory. Gauss elimination method and Gauss-Jordan method contributed to matrix theory while Cramers' method contributed to determinant theory.
+
+\item \textbf{Study of Linear Map} \\[1mm]
+  Another approch to study linear algebra is study of linear maps. It can be said that it is from this linear algebra got its name. The linear maps eventually settles down to the maps by matrices, and the dimension of range is the dimension of column space of the matrix in the linear map and so on.
+\end{enumerate}
+
+  \section{Vector Space}
+  We saw the consise representation of multivariable functions leads to representation by vectors and matrices. The set of vectors gives rise to vector spaces. For a single variable calculus we need a \textbf{number-system} like $\mathbb{R}$. For a multivariable calculus we need a system of $n$-tuples, like the system of \textit{order pairs}. This system is developed into a vector space. Just like a number system is need for a single variable calculus, a vector space needed for a mulltivariable calculus for its structures; vector space like $\mathbb{R}^2$. And the algebra need for this calculus is given by the linear algebra.
+  \begin{definition}[\textbf{Vector Space}]
+    A vector space is a non-empty set $V$ of objects, called vectors, over a scalr field $\mathbb{F}$, on which are defined two operations, called \textit{addition} and \textit{multiplication by scalars} subject to the \textbf{ten} axioms listed below. For all $u, v, w \in V$ and for all scalrs $\alpha, beta \in \mathbb{F}$.
+    \begin{multicols}{2}
+      \begin{enumerate}[i)]
+    \item $u+v \in V$
+      \item $u+v = v+u$
+      \item $(u+v)+w = u +(v+w)$
+      \item $0 \in V \; : \; u+0 =0$
+      \item $-u \in V \; : \; u+(-u) = 0$
+
+      \columnbreak
+
+      \item $\alpha u \in V$
+      \item $\alpha (u +v) = \alpha u + \alpha v$
+      \item $(\alpha + \beta) u = \alpha u + \beta u$
+      \item $\alpha (\beta u) = (\alpha \beta) u$
+      \item $1u=u$
+      \end{enumerate}
+      \end{multicols}
+    \end{definition}
+
+  \begin{example}
+    The space $\mathbb{R}^2, \mathbb{R}^3$ are some common examples of vector spaces over $\mathbb{R}$.
+  \end{example}
+  \begin{example}
+ The set of all functions defined on an interval $[a,b]$ in a real line forms a vector space over $\mathbb{R}$.
+  \end{example}
+
+\section{Systems of Linear Equations}
+A completely general system of $m$ linear equations in $n$ unknowns is of the following form:
+\begin{gather*}
+    a_{11}x_1+a_{12}x_2+...+a_{1n}x_n=b_1 \\
+    a_{21}x_1+a_{22}x_2+...+a_{2n}x_n=b_2 \\
+    .\\
+    .\\
+    .\\
+    a_{m1}x_1+a_{m2}x_2+...+a_{mn}x_n=b_m
+\end{gather*}
+The $a_{1j}$ is the coefficient of $x_j$ in the $ith$ equation. The data for this system of equations are all the numbers $a_{ij}$ and $b_i$. Now consider the four matrices. \\[3mm]
+$\displaystyle
+A= \begin{bmatrix}
+    a_{11} & a_{12} & ... & a_{1n}\\
+    a_{21} & a_{22} & ... & a_{2n}\\
+    .\\
+    .\\
+    .\\
+    a_{m1} & a_{m2} & ... & a_{mn}
+\end{bmatrix}$,
+$\displaystyle
+x= \begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    .\\
+    .\\
+    .\\
+    x_n
+\end{bmatrix}$,
+$\displaystyle
+b=\begin{bmatrix}
+    b_1 \\
+    b_2 \\
+    .\\
+    .\\
+    .\\
+    b_n
+\end{bmatrix}$, \hspace{10mm}
+$\displaystyle
+[A|b]= \left[
+    \begin{matrix}
+    a_{11} & a_{12} & ... & a_{1n} \\
+    a_{21} & a_{22} & ... & a_{2n}\\
+    .\\
+    .\\
+    .\\
+    a_{m1} & a_{m2} & ... & a_{mn}
+\end{matrix} \;\;\; \vline \;\;\; \begin{matrix}
+    b_1 \\
+    b_2 \\
+    .\\
+    .\\
+    .\\
+    b_n
+\end{matrix} \right ]
+$ \\[5mm]
+In this context of a system of equations; $A$ is called the coefficient matrix, $x$ is called vector of unknowns, $b$ is called righthandside vector, $[A|b]$ is called the augmented matrix.
+So, the \textbf{\large matrix notation} of the system of linear equations is \textbf{$\displaystyle Ax=b$}. \\
+\textit{Homework: Solve the following using matrix notation}:
+\begin{align*}
+    x_1 - 3x_2 +4x_3 =& -4 \\
+    x_1 + 3x_2+5x_3 =& -2 \\
+     x_1+7x_2+7x_3 =& 6
+\end{align*}
+
+\subsection{Elementary Row operations}
+Basically we have following three elementary row operations.
+
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+        S.N & Operation & Description & Notation  \\
+        \hline
+        1. & replacement & Add a multiple of one row to another. & $r_i \leftarrow r_i+ar_j \;\;\; (i \neq j)$ \\
+        2. & scale & Multiply a row by a nonzero factor. & $r_i \leftarrow cr_i \;\;\;(c\neq 0)$ \\
+        3. & swap & Interchange a pair of rows. & $r_i \leftrightarrow r_j$\\
+        \hline
+    \end{tabular}
+\end{table}
+\vspace{-5mm}
+\section{Echelon Form}
+\subsection{Reduced Row Echelon Form}
+With the help of the elementary row operations, any matrix can be transformed into a standard form called reduced row echelon form.
+\begin{mdframed}[style=myframe]
+        A matrix is in \textbf{reduced row echelon form} if
+        \begin{itemize}
+            \item All zero rows have been moved to the bottom of matrix.
+            \item Each nonzero row has $1$ as its leading nonzero entry, using left-to-right ordering. Each such leading $1$ one is called a \textbf{pivot}.
+            \item In each column containing a pivot, there is no other nonzero elements.
+            \item The pivot in any row is farther to the right than the pivots in rows above.
+        \end{itemize}
+\end{mdframed}
+\begin{enumerate}
+    \item Here are four examples of matrices in reduced row echelon form: \\[2mm]
+$\displaystyle \begin{bmatrix}
+    0 & 1 \\
+    0 & 0
+\end{bmatrix}$, \hspace{8mm}
+$\displaystyle \begin{bmatrix}
+    1 & 0 \\
+    0 & 1
+\end{bmatrix}$, \hspace{10mm}
+$\displaystyle \begin{bmatrix}
+    0 & 1 & 3 & 0 \\
+    0 & 0 & 0 & 1 \\
+     0 & 0 & 0 & 0
+\end{bmatrix}$, \hspace{15mm}
+$\displaystyle \begin{bmatrix}
+    1 & 5 & 0 & -7 & 0 \\
+    0 & 0 & 1 & 3 & 0 \\
+     0 & 0 & 0 & 0 & 1
+\end{bmatrix}$
+
+\item Here are four matrices not in reduced row echelon form. \\[2mm]
+$\displaystyle \begin{bmatrix}
+    0 & 0 \\
+    1 & 0
+\end{bmatrix}$, \hspace{8mm}
+$\displaystyle \begin{bmatrix}
+    0 & 1 \\
+    1 & 0
+\end{bmatrix}$, \hspace{10mm}
+$\displaystyle \begin{bmatrix}
+    0 & 1 & 3 & 2 \\
+    0 & 0 & 0 & 1 \\
+     0 & 0 & 0 & 0
+\end{bmatrix}$, \hspace{15mm}
+$\displaystyle \begin{bmatrix}
+    0 & 1 & 3 & 0 \\
+    0 & 0 & 0 & 4 \\
+     0 & 0 & 0 & 0
+\end{bmatrix}$
+\end{enumerate}
+
+\subsection{Row echelon form}
+\begin{mdframed}[style=myframe]
+        A matrix is in \textbf{row echelon form} if
+        \begin{itemize}
+            \item All zero rows have been moved to the bottom of matrix.
+            \item The leading nonzero element in any row is farther to the right than the pivots in rows above.
+            \item In each column containing a leading nonzero element, the entries below that leading nonzero element are zero.
+        \end{itemize}
+\end{mdframed}
+
+\begin{enumerate}
+    \item Notice the \textbf{staircase pattern} of the pivot positions.
+    \item A row echelon form is obtain with less work than is required for the reduced row echelon form.
+    \item The reduced row echelon form of a matrix is \textit{unique}, whereas a matrix may have many forms of row echelon forms.
+\end{enumerate}
+\begin{definition}
+    A \textbf{pivot position} in a matrix is a location where a leading $1$ (a pivot) appears in the reduced row echelon form of that matrix. In general, we do not know the pivot positions until we have found the reduced row echelon form of the matrix, or any row echelon form.
+\end{definition}
+
+\subsection{Algorithm for the Reduced Row Echelon Form}
+\begin{enumerate}
+    \item Interchange the rows if necessary to place all zero rows on the bottom.
+    \item Identify the leftmost nonzero column. Say it is pivot column $j$. Interchange rows to bring a nonzero element to the top row and $jth$ column, which is the pivot position. Use the row replacement operation to create zeros in all positions in the pivot column below the pivot position.
+
+    \item Repeat Steps 1 and 2 on the remaining submatrix until there are no nonzero rows left. (\textit{We have a row echelon form}.)
+
+    \item Beginning with the rightmost pivot, working upward and to the left, use row replacement operations to create zeros in all positions in the pivot column above the pivot position. Scale the entry in the pivot row to create a leading 1.
+
+    \item Repeat Step 4, ending with the unique reduced row echelon form of the given matrix.
+\end{enumerate}
+
+\subsection{Exercise}
+\begin{enumerate}
+    \item Solve: \hspace{2mm} $3x_1+6x_2+6x_3=21, \hspace{5mm} 2x_1+4x_2+5x_3=16, \hspace{5mm}
+    2x_1+5x_2+4x_3=17$
+
+    \item Find all solutions: \hspace{2mm} $x-y+z=4, \hspace{3mm} 2x+y-3z=5, \hspace{3mm} -y+7x-3z=22$
+
+    \item Find the general solution of the system,
+    $x_1+3x_2+9x_3=6, \hspace{5mm}
+    2x_1+7x_2+3x_3=-5, \hspace{5mm}
+    x_1+4x_2-x_3=-11$
+
+  \item Solve: \hspace{2mm} $x_2+4x_3 = -5, \hspace{5mm} x_1+3x_2+5x_3 = -2, \hspace{5mm} 3x_1 + 7x_2 + 7x_3 = 6$.
+
+  \item Find the value(s) of $h$ such that the augmented matrix is of a consistent system. \\[1mm]
+    $ \begin{bmatrix}
+      1 & h & 4 \\
+      3 & 6 & 8
+    \end{bmatrix} \hspace{10mm}
+    \begin{bmatrix}
+      2 & -3 & h \\
+      -6 & 9 & 5
+    \end{bmatrix}
+    $
+\end{enumerate}
+\subsection{Uniquely and Parametrically represented solutions.}
+In section we discuss how to tell whether a system of linear equations has a unique solution or many solutions which are parametrically represented solutions or has no solution. The case of having no solution is the case of inconsistency of the system, based on its reduced echelon form.
+
+\begin{mdframed}
+\begin{definition}[Rank of a matrix]
+The rank of a matrix is the number of nonzero rows in its reduced row echelon form or row echelon form. We use the notation Rank($A$) for this number. So, the rank of a matrix is equal to the number of its pivots. \\[3mm]
+
+So, it also defined as the number of pivot positions in the matrix.
+\end{definition}
+\end{mdframed}
+
+\begin{remark}
+  It is not necessary to carry out the reduction to reduced row echelon form to determine the pivot positions in a matrix. Reduction to row echelon form is sufficient for this.
+\end{remark}
+
+\begin{remark}
+  This rank of a matrix is also called its \textbf{row rank} or its \textbf{column rank}.
+\end{remark}
+
+Let \(A\) be \(m \times n\) matrix.
+\begin{enumerate}
+  \item The rank of the coefficient matrix \(A\) equal to \(n\) then, it has a unique solution.
+  \item The rank of the coefficient matrix \(A\) equals to the rank of \([A:b]\), but is less than \(n\) then, it has more than one solutions.
+\item The rank of \(A\) is less than the rank of \([A:b]\) then, the system of equation is inconsistent. This is the case where the rank of \(A\) is less than \(n\) but there is a pivot position in the last column of the augmented matrix, \([A:b]\).
+\end{enumerate}
+\textbf{More than one solution:}
+$$ \left[ \begin{matrix}
+    1 & 2 & 3 \\
+    4 & 5 & 6 \\
+    7 & 8 & 9 \\
+    10 & 11 & 12
+\end{matrix} \;\; \vline \;\;
+\begin{matrix}
+    20\\ 47\\ 74\\ 101
+\end{matrix} \right] \thicksim  \left[ \begin{matrix}
+    1 & 0 & -1 \\
+    0 & 1 & 2 \\
+    0 & 0 & 0 \\
+    0 & 0 & 0
+\end{matrix} \;\; \vline \;\;
+\begin{matrix}
+    -2\\ 11\\ 0\\ 0
+\end{matrix} \right]  \;\;\; \Longrightarrow \hspace{4mm}\begin{bmatrix}
+    x_1\\ x_2 \\ x_3
+\end{bmatrix} = \begin{bmatrix}
+    -2\\ 11 \\0
+\end{bmatrix}+ s \begin{bmatrix}
+    1\\ -2 \\1
+  \end{bmatrix}$$ \vspace{3mm}
+  \textbf{Inconsistent System}
+$$ \left[ \begin{matrix}
+    2 & -4  \\
+    4 & -1 \\
+    1 & -1  \\
+\end{matrix} \;\; \vline \;\;
+\begin{matrix}
+    3\\ 2\\ 1
+\end{matrix} \right] \thicksim  \left[ \begin{matrix}
+    1 & 0  \\
+    0 & 1  \\
+    0 & 0
+\end{matrix} \;\; \vline \;\;
+\begin{matrix}
+    0\\ 0\\ -1
+\end{matrix} \right]$$
+
+\subsection{Exercise}
+\begin{enumerate}
+\item Find the rank of coefficient and augmented matrix and check the consistency of the given system of equations:
+  \begin{enumerate}
+  \item[a).]   \( \displaystyle 2x-6y+8z = 2, \hspace{4mm}  -4x+13y+3z = 6, \hspace{4mm} -6x+20y+14z = -2\)
+  \item[b).] \( 2x-2y+4z+6w=8, \hspace{3mm} -4x+5y-2z-7w=-10, \hspace{3mm} 2x+y+22z+21w=10, \hspace{3mm} -3x+5y-4z+11w=10\)
+  \end{enumerate}
+
+
+
+\item Obtain the row rank and parametrically represented solution of the following systems.
+  \begin{enumerate}
+  \item[a).] \(\displaystyle -4x+12y-7z=8, \hspace{15mm} x-3y+2z=-1\)
+   \item[b).] \(\displaystyle 3x_1-x_2+3x_3=5, \hspace{5mm} x_1+2x_2-3x_4=-1, \hspace{5mm} 2x_1+5x_2+4x_3+2x_4 = 10\).
+   \end{enumerate}
+
+ \item Choose $h$ and $k$ such that the system has (a) no solution (b) a unique solution (c) many solutions. \\
+   $ x_1 + hx_2 =2, \;\;\; 4x_1 +8x_2 =k$
+\end{enumerate}
+
+\section{Linear Dependence and Independence}
+\begin{enumerate}
+\item \textbf{Linear Combination of vectors} \\[1mm]
+A linear combination of the vectors \\ $\vec{u_1}, \vec{u_2}, ... , \vec{u_m}$
+is a sum of the vectors multiplied by scalars, such as $${\alpha}_1\vec{u_1} + \alpha_2\vec{u_2}+...+\alpha_n\vec{u_m}= \sum_{j=1}^m \alpha_j \vec{u_j}$$
+
+\item \textbf{Span of Vectors} \\[1mm]
+  The collection of all linear combinations of vectors in the given set is called the span of that set of vectors. If the set is $S$, its span is denoted by Span$(S)$.
+  \begin{remark}
+    The span of the vectors $\{\hat{i}, \hat{j}\}$ is the set $\{x\hat{i}+y\hat{j}\; : \;\; x,y \in \mathbb{R}\}$ which is $\mathbb{R}^2$. So, the geometry of the span of two vectors is a plane and the span of a single vector is line which will be discussed in the next section
+  \end{remark}
+
+
+  \item \textbf{Linear Dependence} \\[1mm]
+Consider a finite \textit{indexed} set of vectors $\{u_1,u_2,...,u_m\}$ in a vector space.
+\begin{itemize}
+    \item We say that the indexed set is \textbf{linearly dependent} if there exist scalars $c_i$ such that $\displaystyle \sum_{i=1}^m c_iu_i = 0$, \;\;\; $\displaystyle \sum_{i=1}^m |c_i| > 0$.
+
+    \item If the indexed set is not linearly dependent, we can say that it is linearly \textbf{independent}. The expression implies that at least one $c_i$ is nonzero.
+\end{itemize}
+There is a difference between an index set and a set. The set $\{\vec{i}, \vec{i}\}$ is linearly independent because it consist of only one vector $\vec{i}$. but the index set  $\{\vec{i}, \vec{i}\}$ is linearly dependent because this set consists of two vectors both of which are same.
+\end{enumerate}
+
+\subsection{Exercise}
+\begin{enumerate}
+\item Determine if $b$ is a linear combination of $a_1$ and $a_2$, and $a_3$. \\
+  $a_1 = \begin{bmatrix}
+    1 \\ -2 \\ 0
+  \end{bmatrix}
+  $, \hspace{10mm} $a_2 = \begin{bmatrix}
+    0 \\ 1 \\ 2
+  \end{bmatrix}
+  $ \hspace{10mm} $ a_3=   \begin{bmatrix}
+    5 \\ -6 \\ 8
+  \end{bmatrix}
+  $, \hspace{10mm} $b =  \begin{bmatrix}
+    2 \\ -1 \\ 6
+  \end{bmatrix}
+  $
+
+\item Is the indexed set of rows in the matrix linearly dependent? $\begin{bmatrix}
+  2 & 5 & 7 \\
+  4 & 1 & -5 \\
+  2  & 5 & 7
+\end{bmatrix}$
+
+\item Determine whether this set of vectors is linearly dependent: $$(3,2,7), \hspace{5mm} (4,1,-3) \hspace{5mm} (6,-1,-23)$$
+\end{enumerate}
+
+\section{Basis and Dimension}
+\subsection{Basis}
+    In a vector space $V$, a linearly independent set of vectors that spans $V$ is called a \textbf{basis} for $V$. In another words, it is the minimum collection of vectors of vectors that generate the given vector space.
+
+    \begin{example}
+      Any set of two linearly independent vector is a basis of \(\mathbb{R}^2\), say \(\mathcal{B} = \{(1,1), (1,3)\}\) is a basis of \(\mathbb{R^2}\). The set $\{\hat{i}, \hat{j}\}$ in $\mathbb{R}^2$, is a basis of \(\mathbb{R}^2\), where \(\hat{i}=(1,0)\) and \(\hat{j}=(0,1)\). As this set is linearly independent and any vector $\vec{x} \in \mathbb{R}^2$ can be expressed as a linear combination of the vectors $\hat{i}$ and $\hat{j}$. This basis of \(\mathbb{R}^2\) is called the \textbf{standard basis} of \(\mathbb{R}^2\). Similarly the standard basis of \(\mathbb{R}^3\) is \(\{\hat{i}, \hat{j}, \hat{k}\}\). \\[2mm]
+  \textbf{Question}: What is the standard basis of \(\mathbb{R}^4\)?
+\end{example}
+
+\begin{theorem}
+    If a vector space has a finite basis, then all of its bases have the same number of elements. And this number is called the dimension of the vector space.
+  \end{theorem}
+ For instance, the dimension of a vector space having the number of basis vectors, three, has the dimension 3. So, the dimension of \(\mathbb{R}^{3}\) is 3.
+
+\begin{definition}
+    A vector space is \textbf{finite dimensional} if it has a finite basis; in that event, its \textbf{dimension} is the number of elements in any of its basis. Thus the vector space $\mathbb{R}^n$ is finite dimensional with the dimension $n$.
+\end{definition}
+
+
+\section{Vector Subspaces}
+A subspace of a vector space $V$ is a subset $H$ of $V$ that is a vector space in itself with the same operations of $V$. Mathematically, a subset $H$ of $V$ is a vector subspace of $V$ if
+\begin{enumerate}
+\item $H$ is closed under vector addtion, i.e for all $u,v \in H, \;\;\;  u + v \in H$.
+
+\item $H$ is colsed under multiplication by scalars, i.e for all $u \in H$ and for each scalar $\alpha$, $\alpha u \in H$.
+\end{enumerate}
+
+\begin{example}
+  If $H = \{0\}$ then $H$ is a subspace of $V$.
+\end{example}
+
+\begin{example}
+  The set $X=\{(x, 0)\, : \, x \in \mathbb{R} \}$ is a vector subspace of $\mathbb{R}^2$.
+\end{example}
+\begin{example}
+  The Column Space, the Null Space are the important vector subspaces that will discussed in the coming sections.
+\end{example}
+
+\subsection{Null Space}
+The \textbf{null space} of a matrix $A$ is the space $\{x\; : \;\; Ax=0\}$. It is denoted by Null($A$). Null space of a matrix $A$ is also called the \textit{kernal} of $A$ which is denoted by Ker($A$). The Null space of a matrix $A$ \textbf{implicit} in nature, meaning there is no obvious relation between Null($A$) and the entries in $A$. So, to produce the explicit description of Null($A$), the equation $Ax=0$ is solved.
+
+\subsection{Column Space and Null Space of a Matrix}
+\begin{enumerate}
+\item The \textbf{column space} of a matrix $A$ is the span of the set of columns in $A$. This is denoted by Col($A$).
+
+\item Let $R$ be the reduced row echelon matrix of the matrix $A$. Let the columns of $A$ whose corresponding columns in $R$ have pivots be $c_1, c_2,...,c_n$. Then Col($A$)=Span$\{c_1, c_2,...,c_n\}$. That is Col($A$) is given by the span of the columns from $A$ that have pivot positions.
+
+\item The Column space of a matrix $A$ is \textbf{explicit} in nature, meaning there is an obvious relation between Col($A$) and the entries in $A$.
+\end{enumerate}
+
+\subsection{Exercise}
+\begin{enumerate}
+\item Find the explicit description of Null($A$), and hence find bases of Null($A$), and Col($A$).
+  \begin{multicols}{2}
+    a). $A=
+    \begin{bmatrix}
+      1 & -2 & 0 & 4 & 0 \\
+      0 & 0 & 1 & -9 & 0 \\
+      0 & 0 & 0 & 0 & 1
+    \end{bmatrix}
+    $
+
+    \columnbreak
+b). $A =
+\begin{bmatrix}
+  1 & 3 & 5 & 0 \\
+  0 & 1 & 4 & -2
+\end{bmatrix}
+$
+\end{multicols}
+
+\item Determine if $u=
+  \begin{bmatrix}
+    5 \\ 3 \\ -2
+  \end{bmatrix}
+  $ belongs to the null space of $A=
+  \begin{bmatrix}
+    1 & -3 & -2 \\
+    -5 & 9 & 1
+  \end{bmatrix}
+  $.
+
+\item Find a simple description of the column space of the following matrix $\begin{bmatrix}
+    1 & 3 & 2 & 4 \\
+    1 & 0 & 4 & -2 \\
+    2 & 2 & 1 & 7 \\
+    4 & 5 & 7 & 9
+\end{bmatrix}$
+
+\end{enumerate}
+\subsection{Rank}
+\begin{definition}[Rank of a matrix]
+The rank of a matrix is the number of pivots in it. We use the notation Rank($A$) for this number. So, it also defined as the number of pivot positions in the matrix.
+\end{definition}
+
+\begin{mdframed}
+\begin{theorem}[Rank Nullity Theorem]
+For any matrix, the number of columns equals the dimension of the column space plus the dimension of the null space. For a $m \times n$ matrix we have, $$ Dim(Col(A))\; + \; Dim(Null(A)) \; = \;\;n. $$
+In other words,
+$$Rank(A) \; +\; Nullity(A)\;\; = \;\;\; n.$$
+\end{theorem}
+\end{mdframed}
+Because the dimension of column space of \(A\) is equivalent to the rank of \(A\), as rank of \(A\) is the number of pivots in the row echelon form of \(A\). And Nullity is the defined as the dimension of null space of \(A\).
+
+\subsection{Exercise}
+\begin{enumerate}
+
+\item Verify Rank NUllity Theorem:
+$\displaystyle \begin{bmatrix}
+    1 & 2 & 3 \\
+    6 & 5 &4 \\
+    7 & 8 & 9
+\end{bmatrix}$
+
+\item If a $3 \times 8$ matrix $A$ has rank $3$, find $ Dim(Col(A)),\;\; Dim(Null(A)), \;\;\; Dim(Row(A))$.
+
+\item Suppose a $4 \times 7$ matrix $A$ has four pivot columns. Is $Col(A) = \mathbb{R}^4$? Is $Nul(A) = \mathbb{R}^3$? Explain your answer.
+
+\end{enumerate}
+
+\section{Some Insights (Extra Material)}
+Let a system of linear equations be represented by a matrix equation \(Ax=b\). Then,
+\begin{enumerate}
+\item the system is \textbf{homogeneous system}, if the right-hand side vector \(b\) is the zero vector. i.e \(Ax=0\). Note that this system is always consistent because this system always has a solution \(x=0\), which is called a trival solution. The question is \textit{When does the system has a non-trival solution (a nonzero solution)?} This answered at the end of this subsection. \\
+  It can latter be shown that whenever a homogeneous system has a non-trivial solution than it is the case of \textbf{infinitely many solutions}. And a homogeneous system of consisting of more variables than the number of equations always has \textit{infinitely many solutions}.
+
+ \item the system is \textbf{non-homogeneous system}, if the right-hand side vector \(b\) is a non-zero vector. i.e \(Ax=b, \;\; b \neq 0\).
+ \end{enumerate}
+
+ \subsection{Interpretation of Existence of a Solution of the system}
+Let \(A= \displaystyle \begin{bmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} &a_{22} &a_{23} \\
+    a_{31} & a_{32} & a_{33}
+  \end{bmatrix}\), \hspace{3mm} \(x= \begin{bmatrix} x_1 \\ x_2 \\x_3 \end{bmatrix}\) and  \hspace{3mm}\(b= \begin{bmatrix} b_1 \\ b_2 \\b_3 \end{bmatrix}\).
+
+  \subsection{Interpretation of Existence of a Solution of the system}
+  The given system \(Ax=b\) is \\[2mm]
+  \begin{equation}
+    \label{col}
+    x_1 \begin{bmatrix} a_{11} \\ a_{21} \\ a_{31} \end{bmatrix} + x_2 \begin{bmatrix} a_{12} \\ a_{22} \\ a_{32} \end{bmatrix} + x_3 \begin{bmatrix} a_{13} \\ a_{23} \\ a_{33} \end{bmatrix} = \begin{bmatrix} b_1 \\ b_2 \\b_3 \end{bmatrix}
+  \end{equation}
+  If the system \(Ax=b\) has a solution then there exists some values of \(x_1, x_2 , x_3\) such that the Equation-\ref{col} is true.
+
+  \begin{enumerate}
+  \item This means the right-hand side vector \(b\) is in the spanned by the columns of \(A\). That means the right hand side vector \(b\) is in the column space of A, i.e \(b \in Col(A)\).
+
+  \item if the vector \(b\) is the zero vector then the solution vector,
+    then \(Ax=b\) has a solution \(x_0 \neq 0\) means the solution vector \(x_0 \in Null(A)\). So, the homogeneous system has more nonzero solution when the nullity of \(A\) greater than 1, that happens when the rank of \(A\) is less than \(n\), for a \(m \times n\) matrix \(A\).
+    \end{enumerate}
+
+    \section{Extra Exercises}
+    pg 64, Qn 11. Find the genera flow pattern of the network.
+\end{document}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:

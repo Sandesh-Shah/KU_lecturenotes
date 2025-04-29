@@ -1,0 +1,113 @@
+\documentclass[aima104_lecturenotes_ku.tex]{subfiles}
+
+\setcounter{chapter}{1}
+\begin{document}
+\chapter{Linear Transformation}
+\section{Introduction}
+The terms \textit{function}, \textit{mapping}, \textit{map}, and \textit{transformation} are synonymous. Great part of the linear algebra is dedicated to the study of linear transformation.
+
+\begin{mdframed}
+    \begin{definition}
+      A mapping $T$ from a vector space $V$ to a vector space $W$ is \textbf{linear} if $$T(\alpha x +\beta y) = \alpha T(x) + \beta T(y)$$ for all vectors $x, y \in V$ and for all scalars $\alpha,\, \beta$. \\[1mm]
+      Equivalently, $T$ \textbf{linear} if,
+      \begin{enumerate}[i)]
+      \item $T(x + y) = T(x) + T(y)$ for all vectors $x, y \in V$, and
+        \item $T(\alpha x) = \alpha T(x)$ for any scalars $\alpha$.
+        \end{enumerate}
+    \end{definition}
+\end{mdframed}
+\begin{example}
+  Show that if $A$ is a $m \times n$ matrix then $T$ defined by $T(x)=Ax$ is a linear transformation from $\mathbb{R} ^n \to \mathbb{R} ^m$.
+\end{example}
+
+\subsection{Exercise}
+\begin{enumerate}
+
+\item Is the  map $f: \mathbb{R}^3 \to \mathbb{R}^3$ defined by $f(x_1,x_2,x_3)=(x_1+(x_2,3x_1-x_2+x_3,5x_1-x_3)$ a linear map? Explain.
+\item Show that shift map is not a linear transformation.
+
+\item Is there a linear transformation that maps $(1,0)$ to $(5,3,4)$ and maps $(3,0)$ to $(1,3,2)$?
+
+\item Show that the transformation $T$ defined by $T(x_1,x_2)=(4x_1 - 2x_2, 3|x_2|)$ is not linear.
+\item $T$ is defined by $T(x)=Ax$, find a vector $x$ whose image under $T$ is $b$, determine whether $x$ is unique.
+  $$ A = \begin{bmatrix}
+    1 & 0 & -2 \\
+    -2 & 1 & 6 \\
+    3 & -2 & 5
+  \end{bmatrix}, \hspace{2cm}
+  b= \begin{bmatrix}
+    -1 \\ 7 \\ -3
+  \end{bmatrix}
+  $$
+
+\item How many rows and columns must a matrix $A$ have in order to define a mapping from $\mathbb{R} ^4$ to $\mathbb{R} ^5$ by the rule $T(x) = Ax$?
+\end{enumerate}
+
+\section{Matrix of a Linear Transformation}
+\begin{theorem}
+  Let $A$ be an $m \times n$ matrix. The mapping $x \mapsto Ax$ is linear from $\mathbb{R}^n$ to $\mathbb{R}^m$.\\
+  Conversely, for a linear map $T: \mathbb{R}^n \to \mathbb{R}^m$ there exists an $m \times n$ matrix $A$ such that $T(\vec{x})=A\vec{x}$ for all $\vec{x} \in \mathbb{R}^n$. In fact, $A$ is the $m \times n$ matrix whose $jth$ column is the vector $T(e_j)$, where $\{e_j\, : \, j=1,2,...,n\}$ is the the basis of the domain $\mathbb{R} ^n$,i.e $A= \left [ T(e_1)\; ... \; T(e_n)\right ]$.
+\end{theorem}
+\begin{example}
+  Describe the linear mapping that has the matrix $\begin{bmatrix}
+    0 & -1 \\ 1 & 0
+  \end{bmatrix}$. \\[1mm]
+  Let the given matrix is denoted by $A$. $A$ is a $2 \times 2$ So, the map is from $\mathbb{R}^2 \mapsto \mathbb{R}^2$. Then for every $\vec{x}=(x_1,x_2) \in \mathbb{R}^2$, Now $A\vec{x}= (-x_2,x_1)$ which is a \textbf{rotation} transformation that rotates every vector through the angle $90^0$ counterclockwise.
+\end{example}
+
+\subsection{Exercise}
+Find the standard matrix of the linear transformation $T$.
+\begin{enumerate}
+\item $T(x_1,x_2) = (2x_2-3x_1, x_1-4x_2, 0, x_2) $
+\item $T:\mathbb{R} ^2 \mapsto \mathbb{R} ^2$ first reflects points through the $x_1$-axis then reflects points through the line $x_2 = x_1$
+\item $T:\mathbb{R} ^2 \mapsto \mathbb{R} ^2$ that rotates each point through an angle $\phi$, with counterclockwise rotation.
+
+\item Describe the transformation of the following matrices geometrically:
+  $$\begin{bmatrix}
+    1 & 0\\
+    0 & -1
+  \end{bmatrix}, \hspace{5mm} \begin{bmatrix}
+    0 & 1 \\
+    1 & 0
+  \end{bmatrix}, \hspace{5mm} \begin{bmatrix}
+    2 & 0 \\
+    0 & 2
+  \end{bmatrix}, \hspace{5mm} \begin{bmatrix}
+    1 & 0 \\
+    0 & 0
+  \end{bmatrix}, \hspace{5mm} \begin{bmatrix}
+    1 & 0 \\
+    1 & 1
+  \end{bmatrix}, \hspace{5mm} \begin{bmatrix}
+    1 & 3 \\
+    0 & 1
+  \end{bmatrix}$$
+\end{enumerate}
+
+\section{Kernel and Image of Linear Transformation}
+Let $T:V \mapsto W$ be a linear transformation.
+\begin{itemize}
+\item \textbf{Kernal}\\[1mm]
+  The kernal of $T$ is the set of all vectors in $V$ that maps to zero vector in $W$. It is denoted by \textit{Ker(T)}. $Ker(T)=\{v \in V\, ; \, T(v)=0\}$.In another words, Kernal is the \textit{Null Space} of $T$.
+\item \textbf{Range} \\[1mm]
+  The range of $T$ is the set of all vectors in $W$ which are the images of the vectors in $V$. It is denoted by $R(t)$. $R(T)=\{w \in W \, : \, w = T(v) \text{for some}  v \in V\}$.
+\end{itemize}
+
+\subsection{Exercise}
+\begin{enumerate}
+\item Show that $Ker(T)$ is a subspace of $V$ and $R(T)$ is a subspace of $W$.
+\item  Given the vector space $V$ of all real-valued functions defined on an interval $[a,b]$ such that their first derivative functios are continous on $[a,b]$. Let $W$ be the vector space of all continuous functions of $[a,b]$. Show that $D: V \mapsto V$ that maps $f \in V$ to $f' \in w$ is a linear transformation and find the kernal of $D$.
+\end{enumerate}
+
+\subsection{Facts:}
+\begin{enumerate}
+\item The linear transformation $T: V \to W$ is one-to-one if, $dim(Ker(T) = 0$, \\
+  i.e $Ker(T) = {0}$.
+
+\item The linear transformation $T: V \to W$ is onto if, $dim(R(T) = dim(W)$.
+
+\end{enumerate}
+
+
+
+\end{document}
