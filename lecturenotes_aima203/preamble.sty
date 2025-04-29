@@ -1,0 +1,82 @@
+\ProvidesPackage{preamble}
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  left=25mm,
+  right=20mm,
+  bottom=15mm,
+  top=21mm
+}
+\linespread{1.2}
+%\usepackage{Archivo}
+%\usepackage[T1]{fontenc}
+%\sffamily
+
+\usepackage{subcaption}
+\usepackage{graphicx, wrapfig, xcolor, multicol, mdframed}
+\mdfdefinestyle{myframe}{%
+    linewidth=1pt,
+    outerlinewidth=2pt,
+    %roundcorner=20pt,
+    innerrightmargin=4pt,
+    innerleftmargin=4pt,
+        leftmargin = 4pt,
+        rightmargin = 4pt
+    %backgroundcolor=gray!50!white}
+        }
+
+
+\usepackage{tikz, pgfplots}
+\usepgflibrary{shadings}
+\usetikzlibrary{positioning, shapes.geometric, fit}
+\pgfplotsset{compat=1.18}
+
+\usepackage{amsmath, amssymb, amsthm, mathtools, amsfonts, titling}
+\usepackage[most]{tcolorbox}
+\graphicspath{{images/}}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+  }
+%---------------------------------------------------------------------------------------------------------
+\usepackage[ Bjornstrup]{fncychap}
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyhead[RO,LE]{\footnotesize AIMA 203}
+\fancyhead[CO,CE]{\footnotesize By Sandesh Thakuri}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[CE,CO]{\thepage}
+
+\setcounter{tocdepth}{1}
+
+%-------------------------------------------------------------------------------------------------------
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+
+\theoremstyle{definition}
+\newtheorem{lemma}{Lemma}
+
+\newtheorem{theorem}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{corollary}{Corollary}[theorem]
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\usepackage{subfiles}
+
+%\newtcbtheorem{theorem}%
+%{Theorem}{}{theorem}
+
+%\newtcbtheorem{definition}%
+%{Definition}{}{definition}

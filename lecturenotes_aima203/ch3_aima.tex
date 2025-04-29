@@ -1,0 +1,238 @@
+\documentclass[aima203_lecturenotes_ku.tex]{subfiles}
+
+\setcounter{chapter}{2}
+\begin{document}
+
+
+\chapter{System of Linear Equations}
+\section{Introduction}
+A completely general system of $m$ linear equations in $n$ unknowns is of the following form:
+\begin{gather*}
+    a_{11}x_1+a_{12}x_2+...+a_{1n}x_n=b_1 \\
+    a_{21}x_1+a_{22}x_2+...+a_{2n}x_n=b_2 \\
+    .\\
+    .\\
+    .\\
+    a_{m1}x_1+a_{m2}x_2+...+a_{mn}x_n=b_m
+\end{gather*}
+The $a_{1j}$ is the coefficient of $x_j$ in the $ith$ equation. The data for this system of equations are all the numbers $a_{ij}$ and $b_i$. Now consider the four matrices. \\[3mm]
+$\displaystyle
+A= \begin{bmatrix}
+    a_{11} & a_{12} & ... & a_{1n}\\
+    a_{21} & a_{22} & ... & a_{2n}\\
+    .\\
+    .\\
+    .\\
+    a_{m1} & a_{m2} & ... & a_{mn}
+\end{bmatrix}$,
+$\displaystyle
+x= \begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    .\\
+    .\\
+    .\\
+    x_n
+\end{bmatrix}$,
+$\displaystyle
+b=\begin{bmatrix}
+    b_1 \\
+    b_2 \\
+    .\\
+    .\\
+    .\\
+    b_n
+\end{bmatrix}$, \hspace{10mm}
+$\displaystyle
+[A|b]= \left[
+    \begin{matrix}
+    a_{11} & a_{12} & ... & a_{1n} \\
+    a_{21} & a_{22} & ... & a_{2n}\\
+    .\\
+    .\\
+    .\\
+    a_{m1} & a_{m2} & ... & a_{mn}
+\end{matrix} \;\;\; \vline \;\;\; \begin{matrix}
+    b_1 \\
+    b_2 \\
+    .\\
+    .\\
+    .\\
+    b_n
+\end{matrix} \right ]
+$ \\[5mm]
+In this context of a system of equations; $A$ is called the coefficient matrix, $x$ is called vector of unknowns, $b$ is called righthandside vector, $[A|b]$ is called the augmented matrix.
+So, the \textbf{\large matrix notation} of the system of linear equations is \textbf{$\displaystyle Ax=b$}.
+
+\section{LU Factorization Method}
+\begin{theorem}
+Let $\displaystyle
+A= \begin{bmatrix}
+    a_{11} & a_{12} & ... & a_{1n}\\
+    a_{21} & a_{22} & ... & a_{2n}\\
+    .\\
+    .\\
+    .\\
+    a_{n1} & a_{n2} & ... & a_{nn}
+\end{bmatrix}$ be a singular matrix. Then if $A$ is a non-singular matrix then $A$ can be factorized as $A = LU$, where
+\begin{itemize}
+\item L is a lower triangular matrix, and
+\item U is an upper triangular matrix
+\end{itemize}
+It is the standard result of linear algebra that such a factorization, when exists, is \textit{unique}.
+\end{theorem}
+\textbf{Procedure for finding L and U} \\[1mm]
+Let $\displaystyle
+A= \begin{bmatrix}
+    a_{11} & a_{12} & a_{13}\\
+    a_{21} & a_{22} & a_{23}\\
+    a_{31} & a_{32} & a_{33}
+\end{bmatrix} = \begin{bmatrix}
+    1 & 0 & 0\\
+    l_{21} & 1 & 0\\
+    l_{31} & l_{32} & 1
+\end{bmatrix} \begin{bmatrix}
+    u_{11} & u_{12} & u_{13}\\
+    0 & u_{22} & u_{23}\\
+    0 & 0 & u_{33}
+\end{bmatrix}$
+Multiplying the matrices on the right side and equating the coefficients, we get
+\begin{gather*}
+  u_{11} = a_{11}, \hspace{10mm} u_{12}=a_{12}, \hspace{10mm} u_{13}=a_{13} \\
+  l_{21}u_{11} = a_{21}, \hspace{7mm} l_{21}u_{22} + u_{22} =a_{22}, \hspace{7mm} l_{21}u_{23} + u_{23}=a_{23} \\
+  l_{31}u_{11} = a_{31}, \hspace{7mm} l_{31}u_{22}+ l_{32}u_{22}=a_{32}, \hspace{7mm} l_{31}u_{23}+ l_{32}u_{33}=a_{33}
+\end{gather*}
+From these equations we obtain
+\begin{equation}
+  \begin{gathered}
+    l_{21} = \frac{a_{21}}{a_{11}},\hspace{10mm} l_{31} = \frac{a_{31}}{a_{11}}, \hspace{1cm}  u_{22} = a_{22} - a_{12}\frac{a_{21}}{a_{11}}, ...
+  \end{gathered}
+\end{equation}
+This procedure is a systematic one. First we determine first row of $U$ and first column of $L$, then we determine second row of $U$ and second column of $L$, and finally third row of $U$.
+
+\subsection{Method}
+Let $Ax=b$ be a system of linear equations. Let $A=LU$ be the $LU$ factorization of $A$. Then we have,
+\begin{equation}
+  \label{lu}
+  Ax=b \implies LUx=B \implies Ly=b
+\end{equation}
+where, $y=Ux$. \\
+Since $L$ is an lower triangular matrix $y$ can be solved conveniently by forward substituion in \ref{lu}. Then $x$ can be solved using backward substituion in $Ux=y$, as $U$ is an upper triangular matrix.
+
+\subsection{Tridiagonal Systems}
+The matrix of the form $$A= \begin{bmatrix}
+    a_{11} & a_{12} & 0 & 0 &... & 0 & 0 & 0 & 0\\
+    a_{21} & a_{22} & a_{23} & 0 &... & 0 &0 &0 & 0\\
+    0 & a_{32} & a_{33} & a_{34} &... & 0 & 0 &0 & 0\\
+    ...\\
+    0 & 0 & 0 & 0 &...& 0 & a_{(n-1)(n-3)} & a_{(n-1)(n-2)} & a_{(n-1)(n-1)} \\
+    0 & 0 & 0 & 0&... & 0 & 0 & a_{n(n-2)} & a_{n(n-1)}
+\end{bmatrix}$$ is called tridiagonal matrix.
+The method of $LU$ factorization can conveniently apllied to the system having a tridiagonal matrix as the coefficient matirx.
+
+\subsection{Exercise}
+Solve the system:
+\begin{enumerate}
+\item $2x-y=0, \;\; -x+2y-z=0, \;\; -y+2z-u=0, \;\; -z+2u=1$.
+\item $3x_1 - x_2 = -1, \;\;\; -x_1+3x_2-x_3 = 7, \;\;\; -x_2+3x_3 =7$
+\end{enumerate}
+\section{Vector and Matrix Norms}
+\textbf{Vector Norm} \\[1mm]
+The distance between a vector and the null vector is a measure of the \textit{length} of the vector. This is called a norm of the vector. Mathematically, a norm of a vector in a vector space $V$ is defined as a function $\displaystyle \Vert .  \Vert : V \mapsto \mathbb{R}$ that satisfies the following conditions:
+\begin{enumerate}
+\item [i)] $\Vert x \Vert \geq 0$
+\item [ii)] $\Vert x \Vert = 0$ if and only if $x=0$.
+\item [iii)] $\alpha \Vert x \Vert = \vert \alpha \vert \Vert x \Vert $ for any real $\alpha$.
+\item [iv)] $\Vert x + y \Vert \leq \Vert x \Vert + \Vert y \Vert$.
+\end{enumerate}
+There are different types of length of a vector. These gives rise to different types of norms. Some useful norms are as follows:
+\begin{enumerate}
+\item $L1$ norm also called \\
+  \textbf{Rectangular norm or Manhattan norm}: $\Vert x \Vert _1 = |x_1| + |x_2| +... |x_n| $.
+\item $L2$ norm also called \textbf{Euclidean norm}: $\Vert x \Vert _2 = \sqrt{|x_1|^2 + |x_2|^2 +... |x_n|^2} $.
+\item $L\infty$ norm also called \\
+  \textbf{Maximum norm or Uniform norm}: $\Vert x \Vert _{\infty} = max\{|x_1| , |x_2| ,..., |x_n|\} $.
+\end{enumerate}
+\noindent
+\textbf{Matrix Norm} \\[1mm]
+Corresponding to the vector norms we have the three matrix norms defned as follows:
+\begin{enumerate}
+\item \textbf{Column Norm}: $\displaystyle \Vert A \Vert _1 = \max_j \sum_i |a_{ij}|$.
+\item \textbf{Euclidean Norm}: $\displaystyle \Vert A \Vert _e = \left [\sum_{i,j} |a_{ij}|^2 \right ] ^{1/2}$.
+\item \textbf{Column Norm}: $\displaystyle \Vert A \Vert _{\infty} = \max_i \sum_j |a_{ij}|$.
+\end{enumerate}
+\subsection{Exercise}
+\begin{enumerate}
+\item Find $L1, \; L2, \; L\infty$ norms of $x=(1,\,-13,\,5,\,3,\,-4$.
+\item Find the Column, the Euclidean and the Row norm of $A =
+  \begin{bmatrix}
+    1 & 2 & 3 \\
+    4 & 5 & 6 \\
+    7 & 8 & 9
+  \end{bmatrix}
+  $
+\end{enumerate}
+
+\section{Ill-conditioned Linear Systems}
+ \begin{enumerate}
+ \item In practical applications, one usually encouners system of equations in which small changes in the coefficients of the system produce large changes in th solution. Such system are said to be \textit{ill-conditioned}.
+
+\item On the other hand, if the corespoinding changes in the solution is also small, then the system is \textit{well-conditioned}.
+\end{enumerate}
+
+\begin{definition}[Conition Number]
+  The quantity $c(A) = \Vert A \Vert \Vert A^{-1} \Vert$, gives the measure of the condition of the matrix A, and is called the condition number. Here $\Vert . \Vert$ is any matrix norm.
+\end{definition}
+Ill-conditioning can usually be expected when $|A|$, in the system $Ax=b$, is small. Let $A=[a_{ij}]$ and $\displaystyle s_i = \left [ a^2_{i1} + a^2_{i2} + ... + a^2_{in} \right ] ^{1/2}$. Let $\displaystyle k = \frac{|A|}{s_1s_2...s_n}$. Then the system whose coefficient matrix is $A$ is ill-conditioned if $k$ is very small compared to unity. Otherwise, it is well-conditioned.
+
+  \subsection{Exercise}
+  \begin{enumerate}
+  \item Show that the matrix $A=   \begin{bmatrix}
+    25  & 24 & 10 \\
+    66 & 78 & 37 \\
+    92 & -73 & -80
+  \end{bmatrix}
+  $ is ill-conditioned.
+  \end{enumerate}
+
+  \subsection{Method for Ill-conditioned Systems}
+  In general, the accuracy of an approximate solution can be improved upon by an iterative procedure.
+
+\section{Iterative Method}
+The general system of linear equations with $n$ unknowns and $n$ linear equations is:
+\begin{gather*}
+    a_{11}x_1+a_{12}x_2+...+a_{1n}x_n=b_1 \\
+    a_{21}x_1+a_{22}x_2+...+a_{2n}x_n=b_2 \\
+    .\\
+    .\\
+    .\\
+    a_{n1}x_1+a_{n2}x_2+...+a_{nn}x_n=b_n
+  \end{gather*}
+  For the iterative this system has to be rearranged as following
+  \begin{align*}
+    x_1 &= \frac{b_1}{a_{11}} - \frac{a_{12}}{a_{11}}x_2-\frac{a_{13}}{a_{11}}x_3-...-\frac{a_{1n}}{a_{11}}x_n \\
+    x_2 &= \frac{b_2}{a_{22}} -\frac{a_{21}}{a_{22}}x_1-\frac{a_{23}}{a_{22}}x_3 ...-\frac{a_{2n}}{a_{22}}x_n \\
+    .\\
+    .\\
+    .\\
+    x_n &= \frac{b_n}{a_{nn}} - \frac{a_{n1}}{a_{nn}}x_1-\frac{a_{n2}}{a_{nn}}x_2-...-\frac{a_{n(n-1)}}{a_{nn}}x_{n-1}
+  \end{align*}
+  We can write this system as $x=Bx+C$. This equation is a iterative in nature as $x$ is a function of $x$-itself.
+  So the iteration formula is
+  \begin{equation}
+    \label{simul}
+    x^{n+1} = Bx^{n} + C
+  \end{equation}
+  \begin{enumerate}
+  \item \textbf{Method of simultaneous displacements} \\[1mm]
+    This method~\ref{simul} is due to \textit{Jacobi} and is called method of simultaneous displacements, because $x_1, ..., x_n$ values are displaced simultaneous in \ref{simul}. It can be shown that a sufficient condition for the convergence of this method is $\Vert B \vert < 1$.
+ \item \textbf{Method of successive displacements} But if the values $x_1,...,x_n$ are displaced sucessively; obtain $x_1$ first from the initialization, then use this value to obtain $x_2$ and so on, then this medthod is called method of successive displacements which is also commonly known as \textit{Gauss-Seidel method}.
+ \end{enumerate}
+
+ \subsection{Exercise}
+ \begin{enumerate}
+ \item $10x-2y-z-u=3, \;\;\; -2x+10y-z-u = 15, \;\;\; -x-y+10z-2u=27, \\ -x-y-2z+10u = 9$
+   \item $2x-y=1, \;\;\; -x+3y-z = 8, \;\;\; -y+2z=-5$
+ \end{enumerate}
+
+\end{document}

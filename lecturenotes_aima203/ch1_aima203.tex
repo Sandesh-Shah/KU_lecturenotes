@@ -1,0 +1,217 @@
+\documentclass[aima203_lecturenotes_ku.tex]{subfiles}
+
+\begin{document}
+\chapter*{Mathematical Preliminaries}
+In this chapter we state, without proof, certain mathematical results which would be useful in the sequel.
+
+
+\begin{theorem}[\textbf{Rolle's Theorem}]
+  If \(f(x)\) is continuous in \([a,b]\), \(f'(x)\) exists in \((a,b)\) and \(f(a)=f(b)=0\), then, there exists at least one number \(c \in (a,b)\) such that \(f'(c)=0\).
+\end{theorem}
+
+\begin{theorem}[\textbf{Intermediate value theorem}]
+  Let \(f(x)\) be continuous in \([a,b]\) and let \(k\) be any number between \(f(a)\) and \(f(b)\). Then there exists a number \(c \in (a,b)\) such that\(f(c)=k\).
+\end{theorem}
+
+\chapter{Errors in Numerical Computing}
+
+\section{Introduction}
+In practical applications, an engineer would finally obtain results in a numerical form. The aim of numerical analysis is to provide efficient methods for obtaining numerical answers to such problems.
+
+\subsection{Approximate Value}
+There are certain numbers whose exact value cannot be written. For the famous number \(\pi\), we can only write value of \(\pi\) to certain degree of accuracy. For example, \(\pi\) is \(3.1416\) or \(3.14159265\). This values of \(\pi\) are called the approximate values of \(\pi\). The exact value of \(\pi\), we cannot write. Another such number is the \textit{Euler's number 'e'}. One scenario is using the value of $\pi$ in calculating the area of circle? \textit{Can you come up with another scenario where approximate value of a number is used instead of its exact value?}
+
+\subsection{Significant Digits} (Significant Figures)
+The digits that are significant (important) in a number expressed as digits, are called significant digits. \\[2mm]
+Rules to identify significant figures in a number:
+\begin{enumerate}
+\item All non-zero digits are significant. The number $21.11$ has four significant digits.
+
+\item Zeros between two significant non-zero digits are significant. The number $20001$ has five significant digits.
+
+\item Zeros to the left of the first non-zero digit (leading zeros) are not significant. The number $0.0085$ has two significant digits.
+
+\item Zeros to the right of the last non-zero digit (trailing zeros) in a number with the decimal point are significant. The number $320.$ has three significant digits.
+
+\item When the decimal point is not written, the trailing zeros are not significant. The number $4500$ may be written as $45 \times 10^2$ has two significant digits. However, the number $4500.0$ has four significant digits.
+
+\item Integers with trailing zeros may be written in scientific notation to specify the significant digits.
+  \begin{table}[h]
+    \centering
+    \begin{tabular}{|c|r|}
+      \hline
+      $7.56 \times 10^4$ & has $3$ significant digits \\[1mm]
+      $7.560 \times 10^4$ & has $4$ significant digits \\[1mm]
+      $7.5600 \times 10^4$ & has $5$ significant digits \\
+      \hline
+    \end{tabular}
+  \end{table}
+\end{enumerate}
+The concept of accuracy and precision are closely related to significant digits.
+\begin{enumerate}
+\item \textbf{Accuracy} \\[1mm]
+  This refers to the number of significant digits in a value. For example, the number $57.396$ is accurate to five significant digits.
+\item \textbf{Precision} \\[1mm]
+  This refers to the number of decimal positions, i.e. the order of magnitude of the last digit in a value. For example, the number $57.396$ has a precision of $0.001$ or $10^{-3}$.
+\end{enumerate}
+
+\subsection{Exercise}
+\begin{enumerate}
+\item Which of the following numbers has the  greatest precision?
+  \begin{multicols}{3}
+    a). $4.3201$
+
+    \columnbreak
+
+    b). $4.32$
+
+    \columnbreak
+    c). $4.320106$
+  \end{multicols}
+
+\item What is the accuracy of the following numbers?
+  \begin{multicols}{6}
+    a). $95.763$
+
+    \columnbreak
+
+    b). $0.008472$
+
+    \columnbreak
+
+    c). 0.0456000
+
+    \columnbreak
+    d). $36$
+
+    \columnbreak
+    e). $3600$
+
+    \columnbreak
+    f). $3600.00$
+  \end{multicols}
+
+\end{enumerate}
+\section{Approximations}
+In numerical computation, we come across numbers which have large number of digits and it will be necessary to bring them to the required number of significant figures. For instance, the finite precision of computer storage, (using fixed number of bits), does not allow us to store the infinite digits of certain fractions like $1/3$. So, the representation of $1/3$ in the computers is going to an approximation.
+\subsection{Rounding off}
+Rounding off is the method of approximation used for the numbers. There are two types of rounding off.
+
+\subsubsection{Chopping}
+A number is written up to its certain digits and remaining digits are simply discarded. For example the number $1/3$ is chopped to $0.3333$.
+
+\subsubsection{Symmetric Rounding}
+A number is adjusted to the nearest representable value. For example $2.678$ is rounded to $2.68$, and $2.674$ rounded to $2.67$.
+Rules for rounding off.
+\begin{enumerate}
+\item To round-off a number to \(n\) significant digits , discard all digits to the right of the \(nth\) digit, and if the first digit of this discared number is,
+
+\item less than half a unit in the \(nth\) place, leave the \(nth\) digit unaltered;
+
+\item greater than half a unit in the \(nth\) place, increase the \(nth\) digit by unity;
+
+\item exactly half a unit in the \(nth\) place, increase the \(nth\) digit by unity if it is odd; otherwise, leave it unchanged.
+\end{enumerate}
+
+\subsection{Truncation}
+While rounding off is the approximation in a number, truncation is the approximation in a mathematical procedure. Especially an infinite mathematical procedure or a complicated mathematical procedure is approximate by a finite mathematical procedure. The function $sinx$ is representation in a computer by its \textit{series}; $ sinx = x-\frac{x^3}{3!} + \frac{x^5}{5!} -\frac{x^7}{7!} + ...$. But due to finite precision of computer, we represent $sin$ function by only the finite terms of its series. Another scenario of truncation error is representing a continuous function in a computer. Digital systems like computer cannot represent a continuous phenomenon like a continuous function, because digital system is a discrete system. While approximating a function with a step-size $h$, the truncation error depends upon the step size. Forward difference approximation of a derivative of function has truncation error of order, $O(h)$.
+
+\section{Error}
+Both the rounding off and truncation causes error as they reduce a given number to an approximate value. Using approximate instead of exact value of number gives rise to the error.
+
+\subsection{Types of Error}
+\subsubsection{Absolute Error}
+The absolute error \(E_A\) is the difference between the exact-value \(X\) and the approximate-value \(X_1\) of a number.
+\begin{equation}
+  \label{eq:1}
+  E_A = X-X_1 = \delta X
+\end{equation}
+
+\subsubsection{Relative Error}
+The relative error \(E_R\) is the ratio of the absolute error to the exact-value.
+\begin{equation}
+  \label{eq:2}
+  E_R = \frac{E_A}{X} = \frac{X-X_1}{X}
+\end{equation}
+
+\subsubsection{Percentage Error}
+The percentage error \(E_P\) is
+\begin{equation}
+  \label{eq:3}
+  E_P = 100(E_R) = \frac{X-X_1}{X} \times 100
+\end{equation}
+The number $2.146879$ is rounded to three significant digits. Find its errors.
+
+\subsection{Absolute errors of Sum, Product and Product}
+Suppose \(a_1\) and \(a_2\) are two approximate values of a number with their absolute errors \(E_A^1\) and \(E_A^2\) respectively.
+
+\subsubsection{Sum}
+If \(E_A\) is the absolute error of \(a_1 + a_2\) then,
+\begin{equation}
+  \label{eq:4}
+  E_A = (a_1 + E_A^1) + (a_2 +E_A^2) -(a_1+a_2) = E_A^1 +E_A^2
+\end{equation}
+
+\subsubsection{Product}
+If \(E_A\) is the absolute error of \(a_1 a_2\) then,
+\begin{equation}
+  \label{eq:5}
+  E_A = (a_1 + E_A^1) (a_2 +E_A^2) -(a_1a_2) = a_1E_A^2 +a_2E_A^1+E_A^1E_A^2 \approx a_1E_A^2 +a_2E_A^1
+\end{equation}
+
+\subsubsection{Quotient}
+If \(E_A\) is the absolute error of \(a_1/ a_2\) then,
+\begin{equation*}
+  E_A = \frac{a_1 + E_A^1}{a_2 +E_A^2} -\frac{a_1}{a_2} = \frac{a_2E_A^1-a_1E_A^2}{a_2(a_2 +E_A^2)} = \frac{a_2E_A^1-a_1E_A^2}{a_2a_2(1 +E_A^2/a_2)} \approx \frac{a_2E_A^1-a_1E_A^2}{(a_2)^2}
+\end{equation*}
+This implies,
+\begin{equation}
+  \label{eq:6}
+  E_A = \frac{a_1}{a_2} \left[ \frac{E_A^1}{a_1} -\frac{E_A^2}{a_2} \right ]
+\end{equation}
+
+\subsection{Operations on numbers of different absolute accuracies}
+While dealing with several numbers of different number of significant digits, the following procedure may be adopted:
+
+\begin{enumerate}
+\item Isolate the number with the greatest absolute error,
+\item Round-off all other numbers retaining in them one digit more than in the isolated number,
+\item Add up, and
+\item Round-off the sum by discarding one digit.
+\end{enumerate}
+
+\subsection{Upper limit of Absolute Error}
+The number \(\Delta X\) such that
+\begin{equation}
+  \label{eq:7}
+  \left | X_1 -X \right | \leq \Delta X .
+\end{equation}
+Then \(\Delta X\) is an upper limit on the magnitude of the absolute error and is said to measure \textit{absolute accuracy}.
+
+\begin{theorem}
+  If the number \(X\) is rounded to \(N\) decimal places, then \(\displaystyle \Delta X = \frac{1}{2} (10^{-N})\).
+\end{theorem}
+\textit{Verify this theorem by taking $1.23x$; x varies from 1 to 9, to two decimal places}.
+
+\subsection{Exercise}
+\begin{enumerate}
+\item Round off the following numbers to two decimal places. \\
+  \(48.21461, \hspace{4mm} 2.3742, \hspace{4mm} 52.275 \)
+
+\item  Round off the following numbers to four significant figures: \\
+  \(38.46235, \hspace{4mm} 0.70029, \hspace{4mm} 0.0022218, \hspace{4mm} 19.235101, \hspace{4mm} 2.36425\)
+
+\item Two numbers \(3.1425\) and \(34.5851\) are rounded to 2 decimal places. Find the error in their sum, product and quotient.
+
+\item Find the absolute error in the sum of the numbers \(105.6, \hspace{4mm} 27.28, \hspace{4mm} 5.63, \hspace{4mm} 0.1467, \)  \hspace{4mm} 0.000523, \hspace{4mm} 208.5, \hspace{4mm} 0.0235, \hspace{4mm} \(0.432, \hspace{4mm} 0.0467\), where each number is correct to the digits given.
+
+\end{enumerate}
+
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

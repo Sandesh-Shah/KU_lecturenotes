@@ -1,0 +1,70 @@
+\documentclass[aima203_lecturenotes_ku.tex]{subfiles}
+
+\setcounter{chapter}{3}
+\begin{document}
+\chapter*{\textit{Chapter 4 Cont..} \hspace{15mm}  Spline Functions}
+\section{Introduction}
+Earlier we discussed the methods of finding an $nth$ order polynomial passing through $(n+1)$ points. In certain cases, it was found that these polynomials give \textbf{erroneous} result. Furthermore, it was found that a low-order polynomial approximation in each sub-interval provides a better approximation to the function than fitting a single high-order polynomial to the entire interval.
+Such piece-wise connecting polynomials are called \textbf{spline functions}. The points at which two connecting splines meet are called knots.\\
+The \textbf{cubic} spline is the most popular in engineering applications. Before starting cubic splines, we discuss linear and quadratic splines since such a discussion will eventually justify the development of cubic splines.
+
+\subsection{Linear Splines}
+Suppose the given data points are $(x_i,y_i), \; i=0,1,\, ..., \, n$ and  $h_i = x_i-x_{i-1} , \; i=1,\, 2, \, ..., \, n$. \\
+Let $s_i(x)$ be a straight line from $x_{i-1}$ to $x_i$. Then, the slope of $s_i(x)$ is \\
+$\displaystyle m_i = \frac{y_i - y_{i-1}}{x_i - x-{i-1}}$ and $s_i(x)= y_i + m_i(x-x_i)$. \\[2mm]
+From the discussion above the $s_i(x)$ are the \textbf{linear splines}.
+
+\subsubsection{Drawback}
+The linear splines derived above are continuous in $[x_0, x_n]$, but their slpes are discontinuous, i.e their first derivatives are discontinuous.
+
+\subsection{Quadratic Splines}
+Let $s_i(x)$ be a quadratic approximation of the data points in the sub-interval $[x_{i-1} -x_i]$ satisfying the following conditions:
+\begin{enumerate}
+\item $s_i(x)$ and $s_i'(x)$ are continuous on $[x_0,x_n]$,
+\item $s_i(x)=y_i, \hspace{1cm} i=0,\, 1,\, 2, \, ..., \, n$
+\item $s_i'(x) = \frac{1}{h_i} [ (x_i -x)m_{i-1} + (x-x_{i-1})m_i$ as $s_i'(x)$ is linear, where $m_i = s_i'(x)$.
+\end{enumerate}
+\textbf{Integrating} $s_i'(x)$ with respect to $x$, we obtain
+\begin{equation}
+  s_i(x) = \frac{1}{h_i} \left [ -\frac{(x_i -x)^2}{2}\, m_{i-1} + \frac{(x-x_{i-1})}{2} \, m_i \right ] + c_i
+\end{equation}
+Putting $x=x_{i-1}$ we get,
+\begin{equation}
+  c_i = y_{i-1} + \frac{h_i}{2}m_{i-1}
+\end{equation}
+Imposing the continuity condition on the spline functions $s_i(x)$ and imposing the natural spline condition $s''_1(x_1)=0$ we obtain the following realtions to calculate $m_i$.
+\begin{equation}
+  m_{i-1} +m_{i} = \frac{2}{h_i}(y_i -y_{i-1}), \hspace{1cm} i = 1,\, 2, \, ..., \, n \hspace{3mm} \text{and} \hspace{3mm} m_0 = m_1
+\end{equation}
+
+\subsubsection{Drawbacks}
+The second derivative of the quadratic splines derived above are discontinuous which is an obvious disadvantages. This drawback is removed in the cubic splines.
+
+\section{Cubic Splines}
+Let $s_i(x)$ be a cubic approximation of the data points in the sub-interval $[x_{i-1} -x_i]$ satisfying the following conditions:
+\begin{enumerate}
+\item $s_i(x)$ is atmost a cubic for $i = 1, \, 2, \, ..., \, n$,
+\item $s_i(x)$, $s_i'(x)$ and $s_i''(x)$ are continuous on $[x_0,x_n]$,
+\item $s_i(x)=y_i, \hspace{1cm} i=0,\, 1,\, 2, \, ..., \, n$
+\item $s_i''(x) = \frac{1}{h_i} [ (x_i -x)M_{i-1} + (x-x_{i-1})M_i$ as $s_i''(x)$ is linear, where $M_i = s_i''(x)$.
+\end{enumerate}
+Imposing all these conditions we get,
+\begin{equation}
+  \label{cubic}
+  \frac{h_i}{6}\, M_{i-1} + \frac{1}{3}(h_i + h_{i+1})\, M_{i} + \frac{h_{i+1}}{6}\, M_{i+1} = \frac{y_{i+1} - y_i}{h_{i+1}} - \frac{y_i - y_{i-1}}{h_i}, \hspace{8mm} (i=1,2,...,n-1)
+\end{equation}
+For subintervals of equal lengths:
+\begin{equation}
+  M_{i-1} + 4 M_i + M_{i+1} = \frac{6}{h^2}\, (y_{i+1} -2y_i + y_{i-1}), \hspace{2cm} (i=1,2,...,n-1)
+\end{equation}
+Imposing natural spline condition $s_i''(x_0) = s_i''(x_n) = 0$ in ~\ref{cubic}, we get,
+\begin{align*}
+  2(h_1+h_2)M_1 + h_2M_2 &= 6 \left[ \frac{y_2 - y_1}{h_2} - \frac{y_1 -y_0}{h_1} - h_1 M_0 \right ]\\[1mm]
+  h_2M_1 + 2(h_2 + h_3)M_2 + h_3M_3 &= 6 \left[ \frac{y_3 - y_2}{h_3} - \frac{y_2 -y_1}{h_2}\right ] \\[1mm]
+  h_3M_2 + 2(h_3 + h_4)M_3 + h_4M_4 &= 6 \left[ \frac{y_4 - y_3}{h_4} - \frac{y_3 -y_2}{h_3}\right ] \\[1mm]
+  ... \\[1mm]
+  h_{n-1}M_{n-2} + 2(h_{n-1} + h_n)M_{n-1} &= 6 \left[ \frac{y_n - y_{n-1}}{h_n} - \frac{y_{n-1} -y_{n-2}}{h_{n-1}}\right ] - h_n M_n
+\end{align*}
+This system is called \textbf{tridiagonal system} and there an efficient and an accurate method for solving it.
+
+\end{document}

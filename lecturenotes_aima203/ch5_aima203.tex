@@ -1,0 +1,97 @@
+\documentclass[aima203_lecturenotes_ku.tex]{subfiles}
+
+\setcounter{chapter}{4}
+\begin{document}
+\chapter{Least Square Problems}
+\section{Introduction}
+Let the set of data points be $(x_i,y_i), \;\;\; i=1, \, 2,\, ..., \, m$, and let the curve given by $y=f(x)$ be fitted to this data. If $e_i$ is the error of the approximation at $x=x_i$ due to this fitting then, $e_i= y_i - f(x_i)$. If we write $\displaystyle S= \sum_{i=1} ^ m e_i^2 =  \sum_{i=1} ^ m \; [y_i - f(x_i)]^2$. Then the method of minimizing this error which is the sum of the square of errors is called the method of least squares.
+
+\subsection{Fitting a Straight Line}
+Let $Y= a_0 + a_1x$ be the straight line to be fitted to the given data by the method of least squares. Then the sum of errors is $\displaystyle S = \sum_{i=1}^m \; [y_i - a_0 - a_1x_i]^2$. $S$ is a function of $a_0$ and $a_1$. To minimize $S$, $\displaystyle \frac{\partial S}{\partial a_0} = 0$ and $\displaystyle \frac{\partial S}{\partial a_1} = 0 $. We have,
+\begin{equation}
+  \label{eq:9}
+  \begin{gathered}
+    \frac{\partial S}{\partial a_0} = -2 \sum_{i=1}^m \; [y_i - a_0 - a_1x_i], \hspace{10mm}
+     \frac{\partial S}{\partial a_1} = -2x_i \sum_{i=1}^m \; [y_i - a_0 - a_1x_i]
+  \end{gathered}
+\end{equation}
+\begin{equation}
+  \label{singlenormal1}
+  \begin{aligned}[b]
+  \frac{\partial S}{\partial a_0} = 0 &\implies -2 \sum_{i=1}^m \; [y_i - a_0 - a_1x_i] = 0 \\[1mm]
+                                      &\implies \sum_{i=1}^m \; y_i = \sum_{i=1}^m \; a_0 + a_1 \sum_{i=1}^m \;x_i \\[1mm]
+                                          &\implies \sum_{i=1}^m \; y_i = a_1 \sum_{i=1}^m \;x_i + ma_0
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+  \label{singlenormal2}
+\begin{aligned}[b]
+  \frac{\partial S}{\partial a_1} = 0 &\implies -2x_i\sum_{i=1}^m \; [y_i - a_0 - a_1x_i] = 0 \\[1mm]
+                                      &\implies \sum_{i=1}^m \; x_iy_i = a_0\sum_{i=1}^m \;x_i + a_1 \sum_{i=1}^m \;x_i^2
+\end{aligned}
+\end{equation}
+The equations ~\ref{singlenormal1} and ~\ref{singlenormal2} are called normal equations which can be solved for $a_0$ and $a_1$. From the equation ~\ref{singlenormal1}, it can be easily shown that the fitted line passes through the \textit{means} of $x_i$ and $y_i$,i.e the line satisfies $\overline{y} = a_0 +a_1 \overline{x}$.
+
+\subsection{Multiple Linear Least Square}
+Let $z= a_0 + a_1x+a_2y$ be a linear equation to be fitted to the given data $(x_1,y_1,z_1), (x_2,y_2,z_2),...,(x_m,y_,z_m)$ by the method of least squares. Then the sum of errors is $\displaystyle S = \sum_{i=1}^m \; [z_i - a_0 - a_1x_i-a_2y_i]^2$. $S$ is a function of $a_0, a_1$ and $a_2$. To minimize $S$:
+\begin{align*}
+  \frac{\partial S}{\partial a_0} = -2 \sum_{i=1}^m \; [y_i - a_0 - a_1x_i-a_2y_i] = 0 \\[1mm]
+  \frac{\partial S}{\partial a_1} = -2x_i \sum_{i=1}^m \; [y_i - a_0 - a_1x_i - a_2y_i] = 0 \\[1mm]
+  \frac{\partial S}{\partial a_2} = -2y_i \sum_{i=1}^m \; [y_i - a_0 - a_1x_i - a_2y_i] = 0
+\end{align*}
+So, the normal equations are:
+\begin{equation}
+  \label{multinormal}
+  \begin{aligned}[c]
+    \sum_{i=1}^m \; z_i &= a_1 \sum_{i=1}^m \;x_i + a_2 \sum_{i=1}^m \;y_i + ma_0 \\[1mm]
+    \sum_{i=1}^m \; z_i\,x_i &= a_1 \sum_{i=1}^m \;x_i^2 + a_2 \sum_{i=1}^m \;x_iy_i + a_0 \sum_{i=1}^m\; x_i \\[1mm]
+    \sum_{i=1}^m \; z_i\,y_i &= a_1 \sum_{i=1}^m \;x_iy_i + a_2 \sum_{i=1}^m \;y_i^2 + a_0 \sum_{i=1}^m\; y_i
+  \end{aligned}
+\end{equation}
+
+\section{Curve Fitting by Polynomials}
+Let $Y = a_0 + a_1x +a_2x^2+ ...+ a_nx^n$ be a polynomial to be fitted to the given data $(x_1,y_1), (x_2,y_2),...,(x_m,y_m)$ by the method of least squares. Then the sum of errors is $\displaystyle S = \sum_{i=1}^m \; [z_i - a_0 - a_1x_i-a_2y_i]^2$. Then the normal equations are:
+\begin{equation}
+  \label{polynormal}
+  \begin{aligned}[c]
+    \sum_{i=1}^m \; y_i &= a_1 \sum_{i=1}^m \;x_i + a_2 \sum_{i=1}^m \;x_i^2 + ...+ ma_0 \\[1mm]
+    \sum_{i=1}^m \; x_i\,y_i &= a_0\sum_{i=1}^m \;x_i + a_1 \sum_{i=1}^m \;x_i^2 + a_2 \sum_{i=1}^m \;x_i^3 + ... + a_n \sum_{i=1}^m\; x_i^{n+1} \\[1mm]
+    ... \\[1mm]
+    \sum_{i=1}^m \; x_i^n\,y_i &= a_0\sum_{i=1}^m \;x_i^n + a_1 \sum_{i=1}^m \;x_i^{n+1} + a_2 \sum_{i=1}^m \;x_i^{n+2} + ... + a_n \sum_{i=1}^m\; x_i^{2n}
+  \end{aligned}
+\end{equation}
+This system constitutes of $(n+1)$ equations in $(n+1)$ unknowns. For larger value of $n$ the system is \textit{ill conditioned}, so orthogonal polynomials are used to fit such data points.
+
+\section{Curve Fitting by a Sum of Exponents}
+Let $\displaystyle A_1e^{\lambda_1 x} + A_2e^{\lambda _2 x} + ... + A_ne^{\lambda_n x}$ be the sum of exponents fitted to the given data \\ $(x_1,y_1), (x_2,y_2),...,(x_m,y_m)$, where $m$ is much larger than $2n$. For the convenience of our presentation, we take $n=2$ and $m >> 4$. Then we have,
+e
+\begin{equation}
+  \label{sumexpo}
+   A_1e^{\lambda_1 x} + A_2e^{\lambda _2 x}
+ \end{equation}
+ From the theory of differential equation theory, ~\ref{sumexpo} is a solution of a second order homogeneous differential equation say,
+ \begin{equation}
+   \label{diffeq}
+   y''(x) = a_1y'(x) + a_2y(x)
+ \end{equation}
+ where $a_1, a_2$ are some constants. Integrating this equation on $[x_0, x]$ repeatedly, we get,
+ \begin{equation}
+   \label{solnexpo}
+   \begin{gathered}
+   y(x_i) + y(x_j) - 2y(x_0) = a_1\left [ \int_{x_0}^{x_i}\, y(x)\, dx + \int_{x_0}^{x_j}\, y(x)\, dx \right ] \\[2mm]
+   + a_2\left [ \int_{x_0}^{x_i}\, (x_i -x )y(x)\, dx + \int_{x_0}^{x_j}\, (x_j - x) y(x)\, dx  \right ]
+   \end{gathered}
+ \end{equation}
+This equation ~\ref{solnexpo} can be set for a linear system to find $a_1$ and $a_2$. Then the values of $\lambda_1$ and $\lambda_2$ can be obtained from characteristic equation of ~\ref{diffeq} which is
+\begin{equation}
+  \label{eq:9}
+  \lambda^2 = a_1 \lambda + a_2
+\end{equation}
+Finally $A_1, \, A_2$ can be obtained from the least squares or any other suitable method.
+\end{document}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:
