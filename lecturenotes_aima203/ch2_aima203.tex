@@ -12,16 +12,48 @@ f(x) = 0
 \end{equation}
 are the zeros, of \(f\), which means, the values of \(x\) that makes the value of \(f\) zero. Basically equations are categorized into two. If \(f\) is a polynomial then the Equation-\ref{eq:8} is a \textbf{polynomial equation} and if \(f\) is a non-polynomial then Equation-\ref{eq:8} is a \textbf{transcendental equation}. For the polynomial equations following results hold:
 \begin{enumerate}
-\item Every polynomial equation of degree \(n\) has at most \(n\) real roots.
-\item If \(n\) is odd then, the polynomial equation has at least one real root whose sign is opposite to that of the last term.
+\item Every polynomial equation of degree \(n\) has at most \(n\) real roots. These roots may be:
+  \begin{enumerate}
+  \item Real and distinct
+  \item Real and same
+  \item Complex
+  \end{enumerate}
 \item If \(n\) is even and the constant term is negative, then the equation has at-least one positive root and at-least one negative root.
 \item The imaginary roots occurs in a pair (conjugate-pair). If the coefficients of \(f\) are rationals then, the irrational roots occurs in pairs (conjugate-pair).
+\item Since imaginary roots occurs in a pair, if \(n\) is odd then, the polynomial equation has at least one real root and this root has its sign opposite to that of the last term.
 
 \item \textbf{Descartes' Rule of Signs}
   \begin{enumerate}
   \item[a).] A polynomial equation cannot have more number of positive real roots than the number of changes of signs in the coefficients of \(f(x)\).
   \item[b).] A polynomial equation cannot have more number of negative real roots than the number of changes of signs in the coefficients of \(f(-x)\).
   \end{enumerate}
+\end{enumerate}
+
+\section{Characteristic of Numerical Methods}
+\begin{enumerate}
+\item What do you understand by numerical methods?
+\item \textit{Can you name a method that is against numerical method?}
+\end{enumerate}
+
+The numerical methods are characterized as follows:
+\begin{enumerate}
+\item \textbf{Initial guess} \\[1mm]
+  It begins with an approximate value of the solution, called as the initial guess.
+\item \textbf{Iteration} \\[1mm]
+  Then the initial guess is successively corrected by iterations.
+\item \textbf{Stopping Criteria} \\[1mm]
+  The iterations are done until certain stopping criteria is meet. If we do not specify the stopping criteria then the iterations will run forever. Generally, the stopping criteria is that the solution has reached the required accuracy. The following tests may be used for that purpose.
+  \begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|r|}
+      \hline
+      1. &$|x_{i+1} -x_i| \leq E_{\alpha} $ & $E_{\alpha}$ is the absolute error in x. \\[3mm]
+      2. &$\displaystyle \frac{|x_{i+1} -x_i|}{x_{i+1}} \leq E_r $ & $E_r$ is the relative error in x. \\[5mm]
+      3. &$|f(x_{i+1})| \leq E $ & $E$ is the value of $f$ at root. \\[3mm]
+      4. &$|f(x_{i+1})-f(x_i)| \leq E $ \hspace{10mm}& $E$ is the difference in function values. \\[2mm]
+      \hline
+    \end{tabular}
+  \end{table}
 \end{enumerate}
 
 \section{Bisection Method}
@@ -32,7 +64,7 @@ are the zeros, of \(f\), which means, the values of \(x\) that makes the value o
 \end{theorem}
 \end{mdframed}
 The Bisection method is based on Theorem-\ref{Bolzano}. The word ``bisection'' means ``half''. Using this method the root \(c\) of \(f\) is given by \(\displaystyle c \approx \frac{a+b}{2}\). Let \(\displaystyle x_1=\frac{a+b}{2}\). If \(f(x_1) \neq 0\) then, the root, \(c\) lies either in \([a,x_1]\) or in \([x_1,b]\). If \(f(a)f(x_1) <0\) then, \(c\) lies in \([a,x_1]\) else, it lies in \([x_1,b]\). \\[4mm]
-At each step of this method, the given interval is bisected, so the length of the interval is halfed. At \(nth\) step the length of the interval is \(\displaystyle \frac{|b-a|}{2^n}\). If the tolerance of the given approximation is \(\epsilon\) then we must have \(\displaystyle \frac{|b-a|}{2^n} \leq \epsilon\). And the number of steps required to reach this accuracy is \(\displaystyle n \geq {log_2(|b-a|)}\).
+At each step of this method, the given interval is bisected, so the length of the interval is halfed. At \(nth\) step the length of the interval is \(\displaystyle \frac{|b-a|}{2^n}\). If the tolerance of the given approximation is \(\epsilon\) then we must have \(\displaystyle \frac{|b-a|}{2^n} \leq \epsilon\). And the number of steps required to reach this accuracy is \(\displaystyle n \geq log_2(|b-a|/\epsilon) = \frac{log_e(|b-a|/\epsilon)}{log_e2}\).
 
 \subsection{Procedure}
 \begin{enumerate}
@@ -49,7 +81,17 @@ At each step of this method, the given interval is bisected, so the length of th
 \subsection{Exercise}
 Using Bisection Method:
 \begin{enumerate}
-\item Find a root of \(f(x)=x^3-x-1=0\), correct to \(4\) decimal places
+\item Find a root of \(f(x)=x^3-x-1=0\), correct to \(4\) decimal places.
+  \item Obtain a root correct up to three decimal places:
+  \begin{multicols}{2}
+    a). $x^3-4x-9=0$ \\
+    b). $5x\, log_{10}^x -6 = 0$
+
+    \columnbreak
+
+    c). $x^2 +x -cosx = 0$ \\
+    d). $x=e^{-x}$
+  \end{multicols}
 \end{enumerate}
 
 \section{Iteration Method}
@@ -65,7 +107,7 @@ The sequence \(x_0, x_1, x_2, ...\) may not converge to a definite number. But i
 \subsection{Exercise}
 Using Iteration Method:
 \begin{enumerate}
-\item Find a root of \(2x-3-cosx=0\), correct to \(3\) decimal places
+\item Find a root of \(2x-3-cosx=0\), correct to \(3\) decimal places.
 \end{enumerate}
 
 \section{Newton-Rapshon's Method}
@@ -80,7 +122,7 @@ Steps:
   f(x_0) + (x_1-x_0)f'(x_0)=0
   \end{equation}
   \begin{footnotesize}
-    The equation-\ref{taylor} is a linear equation, so this is an linear approximation. This equation is infact the tangent to the curve of the function \(f(x)\) at $(x_0, f(x_0)$. And it is the point $x_1$ where the tangent meets the $x-axis$. So, the next approximation after $x_0$ by Newton-Rapshon's method is the point on $x-axis$, where the tangent to the $f$ at $x_0$ meets the $x-axis$. This point can be solved as follows:
+    The equation-\ref{taylor} is a linear equation, so this is an linear approximation. This equation is infact the tangent to the curve of the function \(f(x)\) at $(x_0, f(x_0))$. And it is the point $x_1$ where the tangent meets the $x-axis$. So, the next approximation after $x_0$ by Newton-Rapshon's method is the point on $x-axis$, where the tangent to the $f$ at $x_0$ meets the $x-axis$. This point can be solved as follows:
    \end{footnotesize}
   \begin{align*}
     x_1-x_0 & = - \frac{f(x_0)}{f'(x_0)} \\
@@ -94,7 +136,10 @@ Steps:
 \subsection{Exercise}
 Using Newton-Rapshon's Method:
 \begin{enumerate}
-\item Find a root of \(f(x)=xe^x-1=0\), correct to \(4\) decimal places
+\item Find a root of \(f(x)=xe^x-1=0\), correct to \(4\) decimal places.
+\item Find a non-zero root of the equation $x^2 + 4sinx = 0$.
+\item Using the Newton-Raphson method, derive a formula for finding the $kth$ root of a positive number $N$ and hence compute the value of $(25)^{1/4}$.
+
 \end{enumerate}
 
 \section{Secant Method}
@@ -121,6 +166,16 @@ Steps:
   \end{equation}
 \end{enumerate}
 You can get this relation-\ref{eq:secant} just by plugging $f'(x_n)=\frac{f(x_n)-f(x_{n-1})}{x_n - x_{n-1}}$ as the slope of the tangent in Newton Rapshon's method is just approximated by the slope of the secant in Secant method.
+
+\subsubsection{Exercise}
+\begin{enumerate}
+\item Find a real root of the equation $x^3-2x-5=0$.
+\end{enumerate}
+
+\begin{figure}[h]
+  \centering
+\includegraphics[width=13cm, height=11cm]{secant_example.png}
+\end{figure}
 
 \section{System of Non-linear equations}
 For now we consider only a system of two equations. Let a system of two equations be
@@ -208,6 +263,10 @@ The new approximations are, therefore
 
 \end{document}
 
+\section{Lab Work}
+\begin{enumerate}
+\item Evaluation of Polynomials
+\end{enumerate}
 
 
 
