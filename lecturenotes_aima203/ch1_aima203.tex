@@ -193,6 +193,20 @@ Then \(\Delta X\) is an upper limit on the magnitude of the absolute error and i
 \end{theorem}
 \textit{Verify this theorem by taking $1.23x$; x varies from 1 to 9, to two decimal places}.
 
+\section{General Error Formula}
+Let us consider a function $u$ that depends upon the variables: $x,y,z$, i.e $u=f(x,y,z)$. Let $\Delta x, \Delta y, \Delta z$ be the errors in $x$, $y$, and $z$, respectively. Then the total error in $u$ is $\Delta u$, which is approximated by $du$ as follows: We have the total derivative:
+\begin{equation}
+  \label{totalderive}
+  du = \frac{\partial u}{\partial x} \,dx + \frac{\partial u}{\partial y} \,dy + \frac{\partial u}{\partial z} \,dz
+\end{equation}
+Approximating $dx$ by $\Delta x $, $dy$ by $\Delta y$ and $dz$ by $\Delta z$ we get,
+\begin{equation}
+  \label{generalerror}
+  \Delta u \approx  \frac{\partial u}{\partial x} \,\Delta x + \frac{\partial u}{\partial y} \,\Delta y + \frac{\partial u}{\partial z} \,\Delta z
+\end{equation}
+The relation ~\ref{generalerror} gives the absolute general error formula. Then the relative error formula is given by $E_R = \frac{\Delta u}{u}$.
+
+
 \subsection{Exercise}
 \begin{enumerate}
 \item Round off the following numbers to two decimal places. \\
@@ -206,6 +220,9 @@ Then \(\Delta X\) is an upper limit on the magnitude of the absolute error and i
 \item Find the absolute error in the sum of the numbers \(105.6, \hspace{4mm} 27.28, \hspace{4mm} 5.63, \hspace{4mm} 0.1467, \)  \hspace{4mm} 0.000523, \hspace{4mm} 208.5, \hspace{4mm} 0.0235, \hspace{4mm} \(0.432, \hspace{4mm} 0.0467\), where each number is correct to the digits given.
 
 \item Find the absolute error in the product $uv$, where $u=4.536$ and $v=1.32$, the numbers being correct up to the digits given. Find the relative error of the quotient $u/v$ as well.
+
+\item Find the percentage error in $z=(1/8)\, xy^3$ when $x=3014 \pm 0.0016$ and $y=4.5 \pm 0.05$.
+\item Prove that in a product of three nonzero numbers, the relative error does not exceed the sum of the relative errors of the numbers.
 \end{enumerate}
 
 
