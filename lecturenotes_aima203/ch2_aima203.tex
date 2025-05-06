@@ -98,7 +98,7 @@ Using Bisection Method:
 Steps:
 \begin{enumerate}
 \item Re-write the given equation \(f(x)=0\) in the form \(x= \phi (x)\).
-  This equation is of \textbf{iterative-type}. Meaning we can substitute a value of \(x\) in \(\phi (x)\) to get another value of \(x\), and continue this process to get the desired value of \(x\) if the iteration is of convergent one.
+  This equation is of \textbf{iterative-type}. Meaning we can substitute a value of \(x\) in \(\phi (x)\) to get another value of \(x\), and continue this process to get the desired value of \(x\), if the iteration is of convergent one.
 \item Choose an initial root of \(f\), \(x_0\).
 \item \(x_1=\phi (x_0)\), \(x_2= \phi(x_1)\) and so on.
 \end{enumerate}
@@ -172,11 +172,6 @@ You can get this relation-\ref{eq:secant} just by plugging $f'(x_n)=\frac{f(x_n)
 \item Find a real root of the equation $x^3-2x-5=0$.
 \end{enumerate}
 
-\begin{figure}[h]
-  \centering
-\includegraphics[width=13cm, height=11cm]{secant_example.png}
-\end{figure}
-
 \section{System of Non-linear equations}
 For now we consider only a system of two equations. Let a system of two equations be
 \begin{equation}
@@ -208,6 +203,10 @@ For faster convergence, recently computed values of $x_i$ may be used in the eva
   \alpha = F(\alpha, \beta) \hspace{5mm} and \hspace{1cm} \beta=G(\alpha, \beta)
 \end{equation}
 Hence $(\alpha, \beta)$ is the root of the system~\ref{system}.
+\begin{figure}[h]
+  \centering
+\includegraphics[width=13cm, height=11cm]{secant_example.png}
+\end{figure}
 
 \subsection{Newton-Raphson Method}
 Let $(x_0,y_0$ be an initial approximation to the root of the system of equations in two variables~\ref{system}. If $(x_0+h, y_0+k$ is the root of the system, then we must have
@@ -251,6 +250,11 @@ The new approximations are, therefore
 \begin{equation}
   x_1 = x_0 +h \hspace{5mm} and \hspace{5mm} y_1 = y_0 + k
 \end{equation}
+\begin{figure}[h]
+  \centering
+\includegraphics[width=15cm, height=7cm]{newton_example.png}
+\end{figure}
+
 
 \subsection{Exercise}
 \begin{enumerate}
@@ -261,12 +265,92 @@ The new approximations are, therefore
 \item Solve the system: $x^2-y^2 = 4$, $x^2+y^2=16$.
 \end{enumerate}
 
-\end{document}
+\section{Rate of Convergence}
+If a sequence $x_1, x_2, x_3, ...$ converges to a value $\alpha$ then, the rate of convergence of the sequence $(x_n)$ to $\alpha$ is $p$, if $p$ is the \textbf{largest} possible number such that:
+\begin{equation}
+  \label{rateofconverge}
+ \lim_{n \to \infty} \;  \frac{|x_{n+1} - \alpha|}{|x_n-\alpha|^p} = constant
+\end{equation}
+In another words, if $\epsilon _n = x_n-\alpha$ is the error at $nth$ step then, the sequence of the error $(\epsilon_n)$ is a decreasing sequence and the positive integer $p$ defines the rate at which the sequence of error is decreasing and converging to the correct value $\alpha$. So we have,
+ e\begin{equation*}
+ \lim_{n \to \infty} \;  \frac{|\epsilon _{n+1}|}{|\epsilon _n|^p} = constant
+\end{equation*}
+When $p=1$, we say the sequence or the method converges \textbf{linearly}, when $p=2$ we say the method converges \textbf{quadratically}, when $1 < p < 2$, we say the method converges \textbf{superlinearly}.
+
+\section{Exercise}
+\begin{enumerate}
+\item Find the rate of convergence of Bisection Method.
+\item The rate of convergence of Newton Rapshon's method is quadratic. Does it converge faster than Bisection Method?
+\item Write the rate of convergence of secant method.
+\end{enumerate}
 
 \section{Lab Work}
 \begin{enumerate}
-\item Evaluation of Polynomials
+\item Try a suitable data structure for storing the sequence of outputs in a iteration.
+\item Find a way of representing a function.
+\item Find an efficient way of evaluating a function or a polynomial.
+\item Draw a flow chart for the working of Bisection Method.
+\item Writing a function in Python.
 \end{enumerate}
+
+\begin{lstlisting}
+  def bisection_method(f, a, b, tol=1e-6, max_iter=100):
+    """
+    Find a root of a function f(x) in the interval [a, b] using the bisection method.
+
+    Parameters:
+    f (function): The function for which to find a root.
+    a (float): Left endpoint of the interval.
+    b (float): Right endpoint of the interval.
+    tol (float): Tolerance (stopping criterion).
+    max_iter (int): Maximum number of iterations.
+
+    Returns:
+    float: Approximation of the root.
+    int: Number of iterations performed.
+    """
+    # Check if the interval contains a root
+    if f(a) * f(b) >= 0:
+    raise ValueError("Function must have opposite signs at the
+    endpoints of the interval.")
+
+    iter_count = 0
+    c = a
+
+    while (b - a) / 2 > tol and iter_count < max_iter:
+        c = (a + b) / 2  # Midpoint
+
+        if f(c) == 0:
+            break  # Exact solution found
+        elif f(a) * f(c) < 0:
+            b = c  # Root is in left half
+        else:
+            a = c  # Root is in right half
+
+        iter_count += 1
+
+        return c, iter_count
+
+# Example usage:
+if __name__ == "__main__":
+    # Define the function whose root we want to find
+    def f(x):
+        return x**3 - 2*x - 5
+
+    # Initial interval
+    a, b = 2, 3
+
+    # Apply bisection method
+    root, iterations = bisection_method(f, a, b)
+
+    print(f"Approximate root: {root:.6f}")
+    print(f"Found in {iterations} iterations")
+    print(f"f(root) = {f(root):.6f}")
+\end{lstlisting}
+
+\end{document}
+
+
 
 
 
