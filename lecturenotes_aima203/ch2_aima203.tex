@@ -102,12 +102,12 @@ Steps:
 \item Choose an initial root of \(f\), \(x_0\).
 \item \(x_1=\phi (x_0)\), \(x_2= \phi(x_1)\) and so on.
 \end{enumerate}
-The sequence \(x_0, x_1, x_2, ...\) may not converge to a definite number. But if the sequence converges to a definite number \(\zeta\), then \(\zeta\) is a root of the given equation.
+The sequence \(x_0, x_1, x_2, ...\) may not converge to a definite number. But if the sequence converges to a definite number \(\zeta\), then \(\zeta\) is a root of the given equation. The sufficient condition for the sequence of the approximations $x_0, x_1, x_2,...$ by iteration method to converge is that $|\phi ' (x) | < 1$ in some neighborhood (interval) of $x_0$.
 
 \subsection{Exercise}
 Using Iteration Method:
 \begin{enumerate}
-\item Find a root of \(2x-3-cosx=0\), correct to \(3\) decimal places.
+\item Find a root of \(2x-3-cosx=0\), correct to \(3\) decimal places lying in $[3/2, \pi/2]$.
 \end{enumerate}
 
 \section{Newton-Rapshon's Method}
@@ -115,7 +115,7 @@ Steps:
 \begin{enumerate}
 \item Choose an initial guess solution of the given equation \(f(x)=0\), \(x_0\).
 
-\item Let \(x_1\) be a solution, which is more close to the exact solution of \(f(x)=0\). Then Using Taylor's expansion of \(f\) about \(x_0\): \[f(x_1)=f(x_0) + (x_1-x_0)f'(x_0) + (x_1+x_0)^2f''(x_0) + ... = 0\]
+\item Let \(x_1\) be a solution, which is more close to the exact solution of \(f(x)=0\). Then Using Taylor's expansion of \(f\) about \(x_0\): \[f(x_1)=f(x_0) + (x_1-x_0)f'(x_0) + (x_1-x_0)^2f''(x_0) + ... = 0\]
   Neglecting the second and higher order derivatives, we get
   \begin{equation}
     \label{taylor}
@@ -137,7 +137,7 @@ Steps:
 Using Newton-Rapshon's Method:
 \begin{enumerate}
 \item Find a root of \(f(x)=xe^x-1=0\), correct to \(4\) decimal places.
-\item Find a non-zero root of the equation $x^2 + 4sinx = 0$.
+\item Find a non-zero root of the equation $x^2 + 4sinx = 0$ choosing $x_0 = \pi$.
 \item Using the Newton-Raphson method, derive a formula for finding the $kth$ root of a positive number $N$ and hence compute the value of $(25)^{1/4}$.
 
 \end{enumerate}
@@ -169,7 +169,7 @@ You can get this relation-\ref{eq:secant} just by plugging $f'(x_n)=\frac{f(x_n)
 
 \subsubsection{Exercise}
 \begin{enumerate}
-\item Find a real root of the equation $x^3-2x-5=0$.
+\item Find a real root of the equation $x^3-2x-5=0$ with three iterations.
 \end{enumerate}
 
 \section{System of Non-linear equations}

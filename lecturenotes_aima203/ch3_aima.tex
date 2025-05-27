@@ -125,9 +125,9 @@ The matrix of the form $$A= \begin{bmatrix}
     a_{21} & a_{22} & a_{23} & 0 &... & 0 &0 &0 & 0\\
     0 & a_{32} & a_{33} & a_{34} &... & 0 & 0 &0 & 0\\
     ...\\
-    0 & 0 & 0 & 0 &...& 0 & a_{(n-1)(n-3)} & a_{(n-1)(n-2)} & a_{(n-1)(n-1)} \\
-    0 & 0 & 0 & 0&... & 0 & 0 & a_{n(n-2)} & a_{n(n-1)}
-\end{bmatrix}$$ is called tridiagonal matrix.
+    0 & 0 & 0 & 0 &...& 0 & a_{(n-1)(n-2)} & a_{(n-1)(n-1)} & a_{(n-1)n} \\
+    0 & 0 & 0 & 0&... & 0 & 0 & a_{n(n-1)} & a_{nn}
+\end{bmatrix}$$ is called tridiagonal matrix. It is a square matrix with nonzero elements only on the main diagonal, subdiagonal, superdiagonal.
 The method of $LU$ factorization can conveniently apllied to the system having a tridiagonal matrix as the coefficient matirx.
 
 \subsection{Exercise}
@@ -166,9 +166,9 @@ Corresponding to the vector norms we have the three matrix norms defned as follo
 \item Find $L1, \; L2, \; L\infty$ norms of $x=(1,\,-13,\,5,\,3,\,-4$.
 \item Find the Column, the Euclidean and the Row norm of $A =
   \begin{bmatrix}
-    1 & 2 & 3 \\
-    4 & 5 & 6 \\
-    7 & 8 & 9
+    1 & 3 & 5 \\
+    1 & 4 & 3 \\
+    1 & 3 & 2
   \end{bmatrix}
   $
 \end{enumerate}
@@ -180,7 +180,7 @@ Corresponding to the vector norms we have the three matrix norms defned as follo
 \item On the other hand, if the corespoinding changes in the solution is also small, then the system is \textit{well-conditioned}.
 \end{enumerate}
 
-\begin{definition}[Conition Number]
+\begin{definition}[Condition Number]
   The quantity $c(A) = \Vert A \Vert \Vert A^{-1} \Vert$, gives the measure of the condition of the matrix A, and is called the condition number. Here $\Vert . \Vert$ is any matrix norm.
 \end{definition}
 Ill-conditioning can usually be expected when $|A|$, in the system $Ax=b$, is small. Let $A=[a_{ij}]$ and $\displaystyle s_i = \left [ a^2_{i1} + a^2_{i2} + ... + a^2_{in} \right ] ^{1/2}$. Let $\displaystyle k = \frac{|A|}{s_1s_2...s_n}$. Then the system whose coefficient matrix is $A$ is ill-conditioned if $k$ is very small compared to unity. Otherwise, it is well-conditioned.
@@ -223,16 +223,42 @@ The general system of linear equations with $n$ unknowns and $n$ linear equation
     \label{simul}
     x^{n+1} = Bx^{n} + C
   \end{equation}
+  \begin{mdframed}
+    The necessary condition for the convergence of the iterative method is that the diagonal elements $a_{ii}$ do not vanish. If this is not the case then, the equations should be rearranged so that, the system satisfies this condition.
+  \end{mdframed}
+
+
   \begin{enumerate}
   \item \textbf{Method of simultaneous displacements} \\[1mm]
-    This method~\ref{simul} is due to \textit{Jacobi} and is called method of simultaneous displacements, because $x_1, ..., x_n$ values are displaced simultaneous in \ref{simul}. It can be shown that a sufficient condition for the convergence of this method is $\Vert B \vert < 1$.
+    This method~\ref{simul} is due to \textit{Jacobi} and is called method of simultaneous displacements, because $x_1, ..., x_n$ values are displaced simultaneous in \ref{simul}. It can be shown that a sufficient condition for the convergence of this method is $\Vert B \Vert < 1$.
  \item \textbf{Method of successive displacements} But if the values $x_1,...,x_n$ are displaced sucessively; obtain $x_1$ first from the initialization, then use this value to obtain $x_2$ and so on, then this medthod is called method of successive displacements which is also commonly known as \textit{Gauss-Seidel method}.
  \end{enumerate}
 
+ \begin{mdframed}
+   The Jacobi and Gauss-Seidel methods converge for any choice of the first approximation $(x_j^{(1)})$ $j=1,2,...,n$, if every equation of the system satisfies the condition that
+   \begin{equation}
+     \label{converge}
+     \sum ^{n}_{j=1, j \neq i} \; \left \vert \frac{a_{ij}}{a_{ii}} \right \vert \leq 1, \hspace{7mm} i=1,2,...,n
+   \end{equation}
+   It is found that the Gauss-Seidel method converges \textbf{twice as fast} as the Jacobi method.
+ \end{mdframed}
  \subsection{Exercise}
  \begin{enumerate}
  \item $10x-2y-z-u=3, \;\;\; -2x+10y-z-u = 15, \;\;\; -x-y+10z-2u=27, \\ -x-y-2z+10u = 9$
-   \item $2x-y=1, \;\;\; -x+3y-z = 8, \;\;\; -y+2z=-5$
+ \item $2x-y=1, \;\;\; -x+3y-z = 8, \;\;\; -y+2z=-5$
+
+ \item An approximate solution of the system $10x_1 + x_2 +x_3 = 12, \hspace{3mm} x_1 + 10x_2 +x_3 = 12, \hspace{3mm} x_1 + x_2 + 10x_3 =12$ is given as $x_1^{(0)}=0.4, \hspace{3mm} x_2^{(0)}=0.6, \hspace{3mm} x_3^{(0)}=0.8$. Use the iterative method to improve this solution.
+
+ \item Solve the system: $10x + 2y +z = 9, \hspace{3mm} 2x + 20y -2z = -44, \hspace{3mm} -2x+3y +10z = 22$.
+
+ \item Apply upto six iterations of Gauss-Seidel to solve: $28x+4y-z=32, \hspace{3mm} 2x+17y+4z=35, \hspace{3mm} x+3y+10z=24$.
+
+ \item \textbf{Cholesky's method} A matrix $A$ is called a symmetric matrix if $a_{ij} =a_{ji}$. For symmetric matrix the $LU$ decomposition is more conveniently obtained, since $U=L^{T}$. This method is called Cholesky's method. Solve the system by cholesky's method : $5x_1 + x_3 = 8 , \hspace{3mm} -2x_2 =-4, \hspace{3mm} x_1 + 5x_3 = 16$
  \end{enumerate}
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:
