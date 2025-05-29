@@ -1,5 +1,6 @@
 #+TITLE: Email Address List of Students
 #+AUTHOR: Sandesh Thakuri
+#+STARTUP: overview
 
 
 * AI Batch 2024
@@ -47,6 +48,7 @@ nischal1123@gmail.com
 
 ** Informal List
 bishanadhikari.111@gmail.com
+
 utsavad145@gmail.com
 saugatbashyal12@gmail.com
 prashantbk314@gmail.com
@@ -95,7 +97,7 @@ sijanpandey39@gmail.com,
 sujalbajracharya1@gmail.com,
 sundeepdwd@gmail.com,
 tishys57@gmail.com,
-Tushar Parihast <tusharparihast@gmail.com>,
+<tusharparihast@gmail.com>,
 tuladharyajjyu.best@gmail.com
 
 * AI Batch 2021
