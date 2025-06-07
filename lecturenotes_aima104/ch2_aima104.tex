@@ -48,16 +48,14 @@ The terms \textit{function}, \textit{mapping}, \textit{map}, and \textit{transfo
   Let $A$ be an $m \times n$ matrix. The mapping $x \mapsto Ax$ is linear from $\mathbb{R}^n$ to $\mathbb{R}^m$.\\
   Conversely, for a linear map $T: \mathbb{R}^n \to \mathbb{R}^m$ there exists an $m \times n$ matrix $A$ such that $T(\vec{x})=A\vec{x}$ for all $\vec{x} \in \mathbb{R}^n$. In fact, $A$ is the $m \times n$ matrix whose $jth$ column is the vector $T(e_j)$, where $\{e_j\, : \, j=1,2,...,n\}$ is the the basis of the domain $\mathbb{R} ^n$,i.e $A= \left [ T(e_1)\; ... \; T(e_n)\right ]$.
 \end{theorem}
-\begin{example}
-  Describe the linear mapping that has the matrix $\begin{bmatrix}
-    0 & -1 \\ 1 & 0
-  \end{bmatrix}$. \\[1mm]
-  Let the given matrix is denoted by $A$. $A$ is a $2 \times 2$ So, the map is from $\mathbb{R}^2 \mapsto \mathbb{R}^2$. Then for every $\vec{x}=(x_1,x_2) \in \mathbb{R}^2$, Now $A\vec{x}= (-x_2,x_1)$ which is a \textbf{rotation} transformation that rotates every vector through the angle $90^0$ counterclockwise.
-\end{example}
 
 \subsection{Exercise}
 Find the standard matrix of the linear transformation $T$.
 \begin{enumerate}
+\item For the dilation transformation $T(x)=3x$, $x \in \mathbb{R}^2$.
+
+\item Show that the transformation that rotates each point in $\mathbb{R}^2$, about the origin, through an angle $\phi$ counterclockwise, is a linear transformation by find the standard matrix of the transformation.
+
 \item $T(x_1,x_2) = (2x_2-3x_1, x_1-4x_2, 0, x_2) $
 \item $T:\mathbb{R} ^2 \mapsto \mathbb{R} ^2$ first reflects points through the $x_1$-axis then reflects points through the line $x_2 = x_1$
 \item $T:\mathbb{R} ^2 \mapsto \mathbb{R} ^2$ that rotates each point through an angle $\phi$, with counterclockwise rotation.
@@ -83,6 +81,22 @@ Find the standard matrix of the linear transformation $T$.
     0 & 1
   \end{bmatrix}$$
 \end{enumerate}
+\begin{example}
+  Describe the linear mapping that has the matrix $\begin{bmatrix}
+    0 & -1 \\ 1 & 0
+  \end{bmatrix}$. \\[1mm]
+  Let the given matrix is denoted by $A$. $A$ is a $2 \times 2$ So, the map is from $\mathbb{R}^2 \mapsto \mathbb{R}^2$. Then for every $\vec{x}=(x_1,x_2) \in \mathbb{R}^2$, Now $A\vec{x}= (-x_2,x_1)$ which is a \textbf{rotation} transformation that rotates every vector through the angle $90^0$ counterclockwise.
+\end{example}
+
+\subsection{Types of Transformation}
+Geometrically, linear transformation are basically of the following types:
+\begin{enumerate}
+\item Reflection
+\item Rotation
+\item Contraction and Expansion
+\item Shears: Horizontal and Vertical
+\item Projections
+\end{enumerate}
 
 \section{Kernel and Image of Linear Transformation}
 Let $T:V \mapsto W$ be a linear transformation.
@@ -105,9 +119,21 @@ Let $T:V \mapsto W$ be a linear transformation.
   i.e $Ker(T) = {0}$.
 
 \item The linear transformation $T: V \to W$ is onto if, $dim(R(T) = dim(W)$.
-
 \end{enumerate}
 
+\section{Properties of Linear Transformation}
+Let $T: \mathbb{R}^n \to \mathbb{R}^m$ be a linear transformation.
+\begin{enumerate}
+\item Then $T(0)=0$.
+\item $T$ is one-to-one if and only if the equation $T(x)=0$ has only the trivial solution. (\textit{Indirectly it has got to do with the nullity or nullspace of the matrix.})
+\item $T$ is onto if and only if the columns of the corresponding standard matrix spans the $\mathbb{R}^m$. (\textit{So it has got to do with the column space of the matrix.})
+\end{enumerate}
+Give an example of one-to-one and not one-to-one linear transformation.
 
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:
