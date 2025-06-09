@@ -163,7 +163,7 @@ Corresponding to the vector norms we have the three matrix norms defned as follo
 \end{enumerate}
 \subsection{Exercise}
 \begin{enumerate}
-\item Find $L1, \; L2, \; L\infty$ norms of $x=(1,\,-13,\,5,\,3,\,-4$.
+\item Find $L1, \; L2, \; L\infty$ norms of $x=(1,\,-13,\,5,\,3,\,-4)$.
 \item Find the Column, the Euclidean and the Row norm of $A =
   \begin{bmatrix}
     1 & 3 & 5 \\
@@ -183,7 +183,7 @@ Corresponding to the vector norms we have the three matrix norms defned as follo
 \begin{definition}[Condition Number]
   The quantity $c(A) = \Vert A \Vert \Vert A^{-1} \Vert$, gives the measure of the condition of the matrix A, and is called the condition number. Here $\Vert . \Vert$ is any matrix norm.
 \end{definition}
-Ill-conditioning can usually be expected when $|A|$, in the system $Ax=b$, is small. Let $A=[a_{ij}]$ and $\displaystyle s_i = \left [ a^2_{i1} + a^2_{i2} + ... + a^2_{in} \right ] ^{1/2}$. Let $\displaystyle k = \frac{|A|}{s_1s_2...s_n}$. Then the system whose coefficient matrix is $A$ is ill-conditioned if $k$ is very small compared to unity. Otherwise, it is well-conditioned.
+Ill-conditioning can usually be expected when $det(A)$, in the system $Ax=b$, is small. Let $A=[a_{ij}]$ and $\displaystyle s_i = \left [ a^2_{i1} + a^2_{i2} + ... + a^2_{in} \right ] ^{1/2}$. Let $\displaystyle k = \frac{det(A)}{s_1s_2...s_n}$. Then the system whose coefficient matrix is $A$ is ill-conditioned if $k$ is very small compared to unity. Otherwise, it is well-conditioned.
 
   \subsection{Exercise}
   \begin{enumerate}
