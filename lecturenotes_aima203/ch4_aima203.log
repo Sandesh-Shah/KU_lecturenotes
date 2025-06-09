@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.16)  29 MAR 2025 11:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.30)  9 JUN 2025 14:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1016,7 +1016,10 @@ File: tikzlibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
 Library (tcolorbox): 'tcbposter.code.tex' version '6.2.0'
-)) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
 
 (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
@@ -1119,7 +1122,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip132
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 44.
+Package hyperref Info: Option `colorlinks' set `true' on input line 53.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fncychap/fncychap.sty
 Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
@@ -1264,40 +1267,56 @@ Overfull \hbox (10.0pt too wide) in paragraph at lines 5--5
 [][][][][][][][][]  
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 8.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 7.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 8.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (76.9159pt too wide) in paragraph at lines 7--8
-\OT1/cmr/m/n/12 The cen-tral prob-lem of nu-mer-i-cal anal-y-sis is: given a se
-t of tab-u-lar val-ues $(\OML/cmm/m/it/12 x[]; y[]\OT1/cmr/m/n/12 )\OML/cmm/m/i
-t/12 ; \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; y[]\OT1/cmr/m/n/12 )\OML/cmm/m/it
-/12 ; \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; y[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/
-12 ; :::; \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; y[]\OT1/cmr/m/n/12 )$
- []
-
-[1
+) [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-di
 st/fonts/enc/dvips/base/8r.enc}] [2{/usr/share/texmf/fonts/enc/dvips/cm-super/c
-m-super-ts1.enc}] [3]
-Overfull \hbox (6.94974pt too wide) in paragraph at lines 148--150
+m-super-ts1.enc}]
+[3]
+<images/newt_forward.png, id=118, 1144.275pt x 871.255pt>
+File: images/newt_forward.png Graphic file (type png)
+<use images/newt_forward.png>
+Package pdftex.def Info: images/newt_forward.png  used on input line 147.
+(pdftex.def)             Requested size: 369.87704pt x 312.97356pt.
+
+Overfull \hbox (6.94974pt too wide) in paragraph at lines 159--161
 \OT1/cmr/m/n/12 The for-mula $[][]  \OML/cmm/m/it/12 l[]\OT1/cmr/m/n/12 (\OML/c
 mm/m/it/12 x\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 y[]$\OT1/cmr/m/n/12 , where $\OM
 L/cmm/m/it/12 l[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = []$ 
  []
 
+[4 <./images/newt_forward.png>]
+<images/lagra_ex.png, id=131, 1144.275pt x 829.0975pt>
+File: images/lagra_ex.png Graphic file (type png)
+<use images/lagra_ex.png>
+Package pdftex.def Info: images/lagra_ex.png  used on input line 164.
+(pdftex.def)             Requested size: 369.87704pt x 341.425pt.
 
-Underfull \vbox (badness 1616) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [4]
-[5] [6] (./ch4_aima203.aux)
+ [5 <./images/lagra_ex.png>]
+<images/divided_for.png, id=141, 1139.25626pt x 368.37625pt>
+File: images/divided_for.png Graphic file (type png)
+<use images/divided_for.png>
+Package pdftex.def Info: images/divided_for.png  used on input line 187.
+(pdftex.def)             Requested size: 369.87146pt x 142.26091pt.
+ [6 <./images/divided_for.png>]
+<images/divided.png, id=151, 1139.25626pt x 805.0075pt>
+File: images/divided.png Graphic file (type png)
+<use images/divided.png>
+Package pdftex.def Info: images/divided.png  used on input line 211.
+(pdftex.def)             Requested size: 369.87146pt x 312.98128pt.
+ [7 <./images/divided.png>]
+(./ch4_aima203.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1306,10 +1325,10 @@ Package rerunfilecheck Info: File `ch4_aima203.out' has not changed.
 (rerunfilecheck)             Checksum: E17B34359E39B88D44B29EB9630D8DAA;1187.
  ) 
 Here is how much of TeX's memory you used:
- 41487 strings out of 474222
- 971368 string characters out of 5748733
- 1943975 words of memory out of 5000000
- 63031 multiletter control sequences out of 15000+600000
+ 41564 strings out of 474222
+ 973067 string characters out of 5748733
+ 1941975 words of memory out of 5000000
+ 63098 multiletter control sequences out of 15000+600000
  566888 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  121i,13n,131p,756b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1325,10 +1344,10 @@ blic/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 nts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmti12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on ch4_aima203.pdf (6 pages, 161913 bytes).
+Output written on ch4_aima203.pdf (7 pages, 677220 bytes).
 PDF statistics:
- 209 PDF objects out of 1000 (max. 8388607)
- 149 compressed objects within 2 object streams
- 42 named destinations out of 1000 (max. 500000)
- 213 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 232 PDF objects out of 1000 (max. 8388607)
+ 163 compressed objects within 2 object streams
+ 49 named destinations out of 1000 (max. 500000)
+ 233 words of extra memory for PDF output out of 10000 (max. 10000000)
 

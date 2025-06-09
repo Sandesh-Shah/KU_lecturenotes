@@ -4,7 +4,8 @@
 \begin{document}
 \chapter{Interpolation}
 \section{Introduction}
-The central problem of numerical analysis is: given a set of tabular values $(x_0,y_0), (x_1,y_1),(x_2,y_2),...,(x_n,y_n)$ satisfying the realtion $y=f(x)$, where the explict nature of $f(x)$ is not known, is to find a simpler function $\phi (x)$ such that $\phi (x)$ and $f(x)$ agree at the set of the tabulated points. Such process is called \textbf{interpolation}. If $\phi (x)$ is a polynomial, then the process is called \textit{polynomial interpolation}, and $\phi (x)$ a interpolating polynomial. In this chapter we are concerned with only polynomial interpolation.
+The central problem of numerical analysis is: given a set of tabular values \\
+$(x_0,y_0), (x_1,y_1),(x_2,y_2),...,(x_n,y_n)$ satisfying the realtion $y=f(x)$, where the explict nature of $f(x)$ is not known, is to find a simpler function $\phi (x)$ such that $\phi (x)$ and $f(x)$ agree at the set of the tabulated points. Such process is called \textbf{interpolation}. If $\phi (x)$ is a polynomial, then the process is called \textit{polynomial interpolation}, and $\phi (x)$ a interpolating polynomial. In this chapter we are concerned with only polynomial interpolation.
 
 \begin{theorem}[Weiestrass Theorem]
 If $f(x)$ is continuous in $x_0 \geq x \geq x_n$, then given $\epsilon >0$, there exists a polynomial $P(x)$ such that $|f(x)-P(x)| < \epsilon$, for all $x \in (x_0, x_n)$.
@@ -141,6 +142,16 @@ This formula~\ref{newtbackward} is the \textbf{Newton's backward difference inte
 The Newton's forward difference interpolation formula is useful for interpolating near the begining of the tabular values and the Newton's backward difference interpolation formula is useful for interpolating near the end of the tabular values.
 \end{remark}
 
+\begin{figure}[h]
+  \centering
+\includegraphics[width=13cm, height=11cm]{newt_forward.png}
+\end{figure}
+
+
+\begin{enumerate}
+\item Find the cubic polynomial which takes the following values: $y(1)=24, \;\;\;  y(3)=120,  \;\;\; y(5)=336,  \;\;\; y(7)=720$. Then obtain the value of $y(8)$.
+\item Find a cubic polynomial which fits the data: $(-2, -12)  \;\;\; (-1, -8),  \;\;\; (2,3),  \;\;\; (3,5)$.
+\end{enumerate}
 \section{Interpolation with Unevenly spaced points}
 This section discusses the inerpolation method for unequally spaced values of the argument.
 
@@ -148,6 +159,10 @@ This section discusses the inerpolation method for unequally spaced values of th
 Let $y(x)$ be continuous and differentiable $(n+1)$ times in the interval $(a,b)$. Given $(n+1)$ points, $(x_0,y_0), \, (x_1,y_1), \, ..., \, (x_n,y_n)$ of $x$ and $y(x)$, where $x$ values not necessarily equally spaced, we find a polynomial $L_n(x)$ of $n$th degree such that, $y(x)$ and $L_n(x)$ agree at the given points. \\
 The formula $\sum_{i=0}^n \; l_i(x)\, y_i$, where $\displaystyle l_i(x) = \frac{(x-x_0)(x-x_1)...(x-x_{i-1})(x-x_{i+1})...(x-x_n)}{(x_i-x_0)(x_i-x_1)...(x_i-x_{i-1})(x_i-x_{i+1})...(x_i-x_n)} $ \\[2mm]  is called the Lagrange's Interpolating formula.
 
+\begin{figure}[h]
+  \centering
+\includegraphics[width=13cm, height=12cm]{lagra_ex.png}
+\end{figure}
 \subsection{Disadvantage of Lagrange's Interpolation}
 The Lagrange's Interpolation formula has the disadvantage that if another interpolation point were added, then interpolation coefficients $l_i(x)$ will have to be recomputed. We therefore see an interpolation polynomial which has the property that a polynomial of higer degree may be derived from it by simply adding new terms. Newton's general interpolation formula is one such formula.
 
@@ -164,10 +179,13 @@ Again,
 \begin{align*}
   [x_0,x_1,x_2] &= \frac{[x_2, x_0]-[x_0,x_1]}{x_2 - x_0} \\[1mm]
                 &= \frac{1}{x_2 - x_0} \left [ \frac{y_2- y_1}{x_2 - x_1} - \frac{y_1 - y_0}{x_1 - x_0} \right ] \\[1mm]
-                  &= \frac{1}{x_2 - x0} \left [ \frac{y_2}{x_2 - x_1} -y_1 \left ( \frac{1}{x_2-x_1} + \frac{1}{x_1 - x_0} \right ) + \frac{y_0}{x_1 - x_0} \right ] \\[1mm]
+                  &= \frac{1}{x_2 - x_0} \left [ \frac{y_2}{x_2 - x_1} -y_1 \left ( \frac{1}{x_2-x_1} + \frac{1}{x_1 - x_0} \right ) + \frac{y_0}{x_1 - x_0} \right ] \\[1mm]
   &= \frac{y_0}{(x_0-x_1)(x_0-x_2)} + \frac{y_1}{(x_1-x_0)(x_1-x_2)} + \frac{y_2}{(x_2-x_0)(x_2-x_1)}
 \end{align*}
-
+\begin{figure}[h]
+  \centering
+\includegraphics[width=13cm, height=5cm]{divided_for.png}
+\end{figure}
 \subsection{Newton's General Interpolation Formula}
 We have,  $\displaystyle [x,x_0] = \frac{y - y_0}{x - x_0} \implies y = y_0 + (x-x_0)[x,x_0]$ \\[1mm]
 And $\displaystyle [x,x_0,x_1] =  \frac{[x, x_0]-[x_0,x_1]}{x - x_1} \implies = [x,x_0] = [x_0,x_1] + (x-x_1)[x,x_0,x_1]$ \\[1mm]
@@ -186,7 +204,12 @@ Proceeding this way we get,
     + (x-x_0)(x-x_1)(x-x_2)...(x-x_n)[x,x_0,x_1,...,x_n]
   \end{gathered}
   \end{equation}
-  This Equation~\ref{eq:ngeneral} is called the Newton's general interpolation formula with divided differnces.
+  This Equation~\ref{eq:ngeneral} is called the Newton's general interpolation formula with divided differences.
+
+  \begin{figure}[h!]
+  \centering
+\includegraphics[width=13cm, height=11cm]{divided.png}
+\end{figure}
 
   \section{Inverse Interpolation}
   Given a set of values of $x$ and $y$, the process of finding the value of $x$ for a certain value of $y$ is called inverse inerpolation.
@@ -195,3 +218,8 @@ Proceeding this way we get,
     \item When the values of $x$ are equally spaced, the method of successive approximations on Newton's method should be used.
   \end{itemize}
 \end{document}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:
