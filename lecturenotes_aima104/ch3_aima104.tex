@@ -7,10 +7,27 @@
 Let $A$ be any square matrix, real or complex. A number $\lambda$ is an \textbf{eigenvalue} of $A$ if the equation $$Ax\; = \; \lambda\,x$$
 is true for some nonzero vector $x$. The vector $x$ is and \textbf{eigenvector} associated with the eigenvalue $\lambda$. Both the eigenvalue and the eigenvector may be complex.
 
-\begin{theorem}
-  A scalar $\lambda$ is an eigenvalue of a matrix $A$ if and only if $Det(A-\lambda I)=0$.
-\end{theorem}
-The equation $Det(A-\lambda I)=0$ is called the \textbf{characteristic equation} of $A$. It is the equation from which we can compute the eigenvalues of $A$. The function \\ $p: p(\lambda) = Det(A-\lambda I)$ is the \textbf{characteristic polynomial} of $A$.
+\subsection{Exercise}
+\begin{enumerate}
+\item Is $
+  \begin{bmatrix}
+    1 \\ 4
+  \end{bmatrix}$ an eigenvector of $\begin{bmatrix} -3 & 1  \\  -3 & -8  \\ \end{bmatrix}$ ?
+\item Is $\lambda =2$ a eigenvalue of
+  a. $\begin{bmatrix}
+    3 & 2  \\
+    3 & 8  \\
+  \end{bmatrix}$ ?
+\end{enumerate}
+
+\begin{mdframed}
+
+  \begin{theorem}
+    A scalar $\lambda$ is an eigenvalue of a matrix $A$ if and only if $Det(A-\lambda I)=0$.
+  \end{theorem}
+  The equation $Det(A-\lambda I)=0$ is called the \textbf{characteristic equation} of $A$. It is the equation from which we can compute the eigenvalues of $A$. The function \\ $p: p(\lambda) = Det(A-\lambda I)$ is the \textbf{characteristic polynomial} of $A$.
+
+\end{mdframed}
 
 \subsection{Eigenspace}
 For an eigenvalue $\lambda$ of a matrix $A$, the set $\{x\; : \; Ax=\lambda x\}$ forms a vector space. This forms a vector space because the vector \(x\) is a nonzero vector for it be an eigenvector. If \(x\) is a nonzero solution of \(Ax=\lambda x \implies (A-\lambda I)x=0\), which is a homogeneous system, then this homogeneous system has infinitely many solution. And this vector space is called  eigenspace.
@@ -41,12 +58,48 @@ For an eigenvalue $\lambda$ of a matrix $A$, the set $\{x\; : \; Ax=\lambda x\}$
     \end{bmatrix}$
   \end{multicols}
 
+\item Find a basis for the eigenspace corresponding to each eigenvalue.
+  \begin{multicols}{3}
+    a. $\begin{bmatrix}
+      5 & 0  \\
+      2 & 1  \\
+    \end{bmatrix}$
+
+    \columnbreak
+
+    b. $\begin{bmatrix}
+      10 & -9 \\
+      4 & -2  \\
+    \end{bmatrix}$
+    \columnbreak
+
+    c. $\begin{bmatrix}
+      4 & 0 & 0 \\
+      -2 & -1 & 0 \\
+      -2 & 0 & 1
+    \end{bmatrix}$
+  \end{multicols}
+
 \item Let $A= \begin{bmatrix}
   0 & 1 \\
   -1 & 0
-\end{bmatrix}$. Find the eigenvalue-eigenvector pairs. Explore the geometric effect of letting $\displaystyle x^{(k)}=Ax^{(k-1)}$ and $k=0,1,2,...$.
+\end{bmatrix}$. Find the eigenvalue-eigenvector pairs. Explore the geometric effect of letting $\displaystyle x^{(k)}=Ax^{(k-1)}$ and $k=0,1,2,...$.\
+
+\item Prove that $A$ and $A^{t}$ have the same eigenvalues.
 \end{enumerate}
 
+\subsection{Important Results}
+\begin{theorem}
+  The eigenvalues of a triangular matrix are the entries on its main diagonal.
+\end{theorem}
+
+\begin{theorem}
+  If $v_1, ..., v_r$ are eigenvectors that corresponds to distinct eigenvalues $\lambda _1, ..., \lambda _r$of an $n \times n$ matrix $A$, then the set $\{v_1, ..., v_r\}$ is linearly independent.
+  \end{theorem}
+
+  \begin{theorem}
+    Zero is an eigenvalue of $A$ if and only if $A$ is not invertible.
+  \end{theorem}
 \section{Diagonalization}
 \begin{mdframed}
   A square matrix A is said to be diagonalizable if, there exists an invertible matrix $P$ and a diagonal matrix $D$, such that $$A = PDP^{-1}.$$ If $A = PDP^{-1}$ then $A$ is said to be similar to $D$.

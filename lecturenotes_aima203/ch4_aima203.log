@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.30)  9 JUN 2025 14:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.30)  11 JUN 2025 12:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1344,7 +1344,7 @@ blic/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 nts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmti12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on ch4_aima203.pdf (7 pages, 677220 bytes).
+Output written on ch4_aima203.pdf (7 pages, 677222 bytes).
 PDF statistics:
  232 PDF objects out of 1000 (max. 8388607)
  163 compressed objects within 2 object streams

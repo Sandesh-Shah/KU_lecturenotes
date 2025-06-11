@@ -11,7 +11,7 @@ The \textbf{cubic} spline is the most popular in engineering applications. Befor
 \subsection{Linear Splines}
 Suppose the given data points are $(x_i,y_i), \; i=0,1,\, ..., \, n$ and  $h_i = x_i-x_{i-1} , \; i=1,\, 2, \, ..., \, n$. \\
 Let $s_i(x)$ be a straight line from $x_{i-1}$ to $x_i$. Then, the slope of $s_i(x)$ is \\
-$\displaystyle m_i = \frac{y_i - y_{i-1}}{x_i - x-{i-1}}$ and $s_i(x)= y_i + m_i(x-x_i)$. \\[2mm]
+$\displaystyle m_i = \frac{y_i - y_{i-1}}{x_i - x_{i-1}}$ and $s_i(x)= y_i + m_i(x-x_i)$. \\[2mm]
 From the discussion above the $s_i(x)$ are the \textbf{linear splines}.
 
 \subsubsection{Drawback}
@@ -68,3 +68,8 @@ Imposing natural spline condition $s_i''(x_0) = s_i''(x_n) = 0$ in ~\ref{cubic},
 This system is called \textbf{tridiagonal system} and there an efficient and an accurate method for solving it.
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:
