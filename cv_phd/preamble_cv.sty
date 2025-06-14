@@ -1,0 +1,45 @@
+\ProvidesPackage{preamble_cv}
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  left=15mm,
+  right=15mm,
+  bottom=15mm,
+  top=15mm
+}
+\linespread{1.2}
+\usepackage{Archivo}
+\usepackage[T1]{fontenc}
+\sffamily
+
+\usepackage{subcaption}
+\usepackage{graphicx, wrapfig, xcolor, multicol, mdframed, enumerate}
+\mdfdefinestyle{myframe}{%
+    linewidth=1pt,
+    outerlinewidth=2pt,
+    %roundcorner=20pt,
+    innerrightmargin=4pt,
+    innerleftmargin=4pt,
+        leftmargin = 4pt,
+        rightmargin = 4pt
+    %backgroundcolor=gray!50!white}
+        }
+
+
+\usepackage{tikz, pgfplots}
+\usepgflibrary{shadings}
+\usetikzlibrary{positioning, shapes.geometric, fit}
+\pgfplotsset{compat=1.18}
+
+\usepackage{amsmath, amssymb, amsthm, mathtools, amsfonts, titling}
+\usepackage[most]{tcolorbox}
+\graphicspath{{images/}}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+  }
+%---------------------------------------------------------------------------------------------------------
