@@ -102,26 +102,16 @@ For an eigenvalue $\lambda$ of a matrix $A$, the set $\{x\; : \; Ax=\lambda x\}$
   \end{theorem}
 \section{Diagonalization}
 \begin{mdframed}
-  A square matrix A is said to be diagonalizable if, there exists an invertible matrix $P$ and a diagonal matrix $D$, such that $$A = PDP^{-1}.$$ If $A = PDP^{-1}$ then $A$ is said to be similar to $D$.
+  A square matrix A is said to be diagonalizable if, there exists an invertible matrix $P$ and a diagonal matrix $D$, such that $$A = PDP^{-1}.$$ If $A = PDP^{-1}$ then $A$ is said to be similar to $D$. \\
+  This is standardize as if, $A$ is similar to a diagonal matrix.
 \end{mdframed}
+\vspace{4mm}
 
-\subsection{Similarity}
-If $A$ an $B$ are $n \times n$ matrices, then $A$ \textbf{similar to} $B$ if there is an invertible matrix $P$ such that $$A = PBP^{-1}$$ or equivalently $B=P^{-1}AP$. Writing $Q=P^{-1}$, we can say that $B$ is similar to $A$, and we simply say $A$ and $B$ are similar.
-\begin{theorem}
-  If $n \times n$ matrices $A$ and $B$ are similar, then they have the same characteristic polynomial and hence the same eigenvalues (with the same multiplicities).
-\end{theorem}
-\begin{proof}
- \hspace{1cm} Given, $B=P^{-1}AP$ we have, $(B-\lambda I) = P^{-1}AP - \lambda P^{-1}P = P^{-1}(A- \lambda I) P$. Then
-    \begin{align*}
-      det(B-\lambda I) &= \det[P^{-1}(A- \lambda I) P] \\
-                       &= \det(P^{-1}).\, \det(A- \lambda I).\, \det(P) \\
-                       &= \det(P^{-1}).\, \det(P). \, \det(A- \lambda I) \\
-                       &= \det(A- \lambda I)
-    \end{align*}
-  As, $\det(P^{-1}).\, \det(P) = \det(P^{-1}.P)=det(I) = 1$. Hence $A$ and $B$ has same characteristic polynomial. And the proof follows.
-\end{proof}
-\subsection{The Diagonalization Theorems}
-Suppose $A$ is $n \times n$ matrix with $n$ different eigenvalues: $\lambda_1, \lambda_2, ..., \lambda_n$ so that the set of $n$ corresponding eigenvectors $v_1, v_2, ..., v_n$ are linearly independent. Now, $Av_1=\lambda _n v_1, Av_2=\lambda _2 v_2, ...., Av_n = \lambda _n v_n$. Let $P$ be the matrix whose columns are the eigenvectors, i.e $P = [v_1, \; v_2, \; ... \; v_n] $. Then
+If $A = PDP^{-1}$ then prove that $A^k = PD^kP^{-1}$.
+\clearpage
+
+\subsection{The Diagonalization Procedure}
+Suppose $A$ is an $n \times n$ matrix with $n$ different eigenvalues: $\lambda_1, \lambda_2, ..., \lambda_n$ so that the set of $n$ corresponding eigenvectors $v_1, v_2, ..., v_n$ are linearly independent. Now, $Av_1=\lambda _1 v_1, Av_2=\lambda _2 v_2, ...., Av_n = \lambda _n v_n$. Let $P$ be the matrix whose columns are the eigenvectors, i.e $P = [v_1, \; v_2, \; ... \; v_n] $. Then
 \begin{equation}
   \label{eq:1}
 AP = [\lambda _1 v_1, \; \lambda_2 v_2, \; ... \; \lambda_n v_n] =
@@ -137,7 +127,7 @@ where $ D = \begin{bmatrix}
   0 & \lambda_2 & ... & 0 \\
   ... \\
   0 & 0 & ... & \lambda_1 \\
-\end{bmatrix} $, so that $AP = PD$ gives, $A = P^{-1} D P$. This is summarized as the following theorem.
+\end{bmatrix} $, so that $AP = PD$ gives, $A = P D P^{-1}$. This is summarized as the following theorem.
 
 \setcounter{thm}{2}
 \begin{thm}[\textbf{The Diagonalization Theorem}]
@@ -217,6 +207,22 @@ $$A=
   -1 & -2 & 0 & -3
 \end{bmatrix}
 $$
+
+\subsection{Similarity}
+If $A$ an $B$ are $n \times n$ matrices, then $A$ \textbf{similar to} $B$ if there is an invertible matrix $P$ such that $$A = PBP^{-1}$$ or equivalently $B=P^{-1}AP$. Writing $Q=P^{-1}$, we can say that $B$ is similar to $A$, and we simply say $A$ and $B$ are similar.
+\begin{theorem}
+  If $n \times n$ matrices $A$ and $B$ are similar, then they have the same characteristic polynomial and hence the same eigenvalues (with the same multiplicities).
+\end{theorem}
+\begin{proof}
+ \hspace{1cm} Given, $B=P^{-1}AP$ we have, $(B-\lambda I) = P^{-1}AP - \lambda P^{-1}P = P^{-1}(A- \lambda I) P$. Then
+    \begin{align*}
+      det(B-\lambda I) &= \det[P^{-1}(A- \lambda I) P] \\
+                       &= \det(P^{-1}).\, \det(A- \lambda I).\, \det(P) \\
+                       &= \det(P^{-1}).\, \det(P). \, \det(A- \lambda I) \\
+                       &= \det(A- \lambda I)
+    \end{align*}
+  As, $\det(P^{-1}).\, \det(P) = \det(P^{-1}.P)=det(I) = 1$. Hence $A$ and $B$ has same characteristic polynomial. And the proof follows.
+\end{proof}
 \end{document}
 
 %%% Local Variables:
