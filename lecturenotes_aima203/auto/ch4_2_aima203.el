@@ -10,6 +10,7 @@
     "subfiles"
     "subfiles10")
    (LaTeX-add-labels
+    "cubic_equation"
     "cubic"))
  :latex)
 
