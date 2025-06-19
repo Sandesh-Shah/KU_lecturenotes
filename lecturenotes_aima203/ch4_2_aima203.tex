@@ -11,7 +11,7 @@ The \textbf{cubic} spline is the most popular in engineering applications. Befor
 \subsection{Linear Splines}
 Suppose the given data points are $(x_i,y_i), \; i=0,1,\, ..., \, n$ and  $h_i = x_i-x_{i-1} , \; i=1,\, 2, \, ..., \, n$. \\
 Let $s_i(x)$ be a straight line from $x_{i-1}$ to $x_i$. Then, the slope of $s_i(x)$ is \\
-$\displaystyle m_i = \frac{y_i - y_{i-1}}{x_i - x_{i-1}}$ and $s_i(x)= y_i + m_i(x-x_i)$. \\[2mm]
+$\displaystyle m_i = \frac{y_i - y_{i-1}}{x_i - x_{i-1}}$ and $s_i(x)= y_{i-1} + m_i(x-x_{i-1})$. \\[2mm]
 From the discussion above the $s_i(x)$ are the \textbf{linear splines}.
 
 \subsubsection{Drawback}
@@ -21,8 +21,8 @@ The linear splines derived above are continuous in $[x_0, x_n]$, but their slpes
 Let $s_i(x)$ be a quadratic approximation of the data points in the sub-interval $[x_{i-1} -x_i]$ satisfying the following conditions:
 \begin{enumerate}
 \item $s_i(x)$ and $s_i'(x)$ are continuous on $[x_0,x_n]$,
-\item $s_i(x)=y_i, \hspace{1cm} i=0,\, 1,\, 2, \, ..., \, n$
-\item $s_i'(x) = \frac{1}{h_i} [ (x_i -x)m_{i-1} + (x-x_{i-1})m_i$ as $s_i'(x)$ is linear, where $m_i = s_i'(x)$.
+\item $s_i(x_i)=y_i, \hspace{1cm} i=0,\, 1,\, 2, \, ..., \, n$
+\item $s_i'(x) = \frac{1}{h_i} [ (x_i -x)m_{i-1} + (x-x_{i-1})m_i ]$ as $s_i'(x)$ is linear, where $m_i = s_i'(x)$.
 \end{enumerate}
 \textbf{Integrating} $s_i'(x)$ with respect to $x$, we obtain
 \begin{equation}
@@ -32,10 +32,11 @@ Putting $x=x_{i-1}$ we get,
 \begin{equation}
   c_i = y_{i-1} + \frac{h_i}{2}m_{i-1}
 \end{equation}
-Imposing the continuity condition on the spline functions $s_i(x)$ and imposing the natural spline condition $s''_1(x_1)=0$ we obtain the following realtions to calculate $m_i$.
+Imposing the continuity condition on the spline functions $s_i(x)$ we get,
 \begin{equation}
-  m_{i-1} +m_{i} = \frac{2}{h_i}(y_i -y_{i-1}), \hspace{1cm} i = 1,\, 2, \, ..., \, n \hspace{3mm} \text{and} \hspace{3mm} m_0 = m_1
+  m_{i-1} +m_{i} = \frac{2}{h_i}(y_i -y_{i-1}), \hspace{2cm} i = 1,\, 2, \, ..., \, n
 \end{equation}
+Imposing the natural spline condition $s''_1(x_1)=0$ we obtain, $ m_0 = m_1$
 
 \subsubsection{Drawbacks}
 The second derivative of the quadratic splines derived above are discontinuous which is an obvious disadvantages. This drawback is removed in the cubic splines.

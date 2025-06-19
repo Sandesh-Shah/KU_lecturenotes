@@ -197,14 +197,18 @@ If $n\times n$ $A$ has $n$ distinct eigenvalues, with corresponding eigenvectors
   \end{enumerate}
 \end{theorem}
 
+\subsection{Multiplicities of an eigenvalue}
+\begin{itemize}
+\item The algebraic multiplicity of $\lambda$ is the number of times $(\lambda - t)$ occurs as a factor of in its characteristic polynomial.
+\item The geometric multiplicity of an eigenvalue $\lambda$ is the dimension of the corresponding eigenspace $E_{\lambda}$. i.e $dim\{E_{\lambda}\}$.
+\end{itemize}
 \subsection{Exercise}
 Diagonalizable the following matrix, if possible.
 $$A=
 \begin{bmatrix}
-  5 & 0 & 0 & 0 \\
-  0 & 5 & 0 & 0 \\
-  1 & 4 & -3 & 0 \\
-  -1 & -2 & 0 & -3
+  4 & 0 & 0  \\
+  1 & 4 & 0  \\
+   0& 0 & 5  \\
 \end{bmatrix}
 $$
 
@@ -223,6 +227,12 @@ If $A$ an $B$ are $n \times n$ matrices, then $A$ \textbf{similar to} $B$ if the
     \end{align*}
   As, $\det(P^{-1}).\, \det(P) = \det(P^{-1}.P)=det(I) = 1$. Hence $A$ and $B$ has same characteristic polynomial. And the proof follows.
 \end{proof}
+
+\section{Linear Transformation and Diagonalization}
+We will see that the transformation $x \mapsto As$ is essentially same as the very simple mapping $u \maps to Du$ when viewed from the proper perspective.
+\begin{theorem}
+  Suppose $A = PDP^{-1}$, where $D$ is a diagonal $n \times n$. If $B$ is the basis for $\mathbb{R}$, formed from the columns of $P$, then $D$ is the $B$-matix for the transformation $x \mapsto Ax$.
+\end{theorem}
 \end{document}
 
 %%% Local Variables:
