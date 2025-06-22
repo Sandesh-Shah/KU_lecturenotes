@@ -8,6 +8,8 @@
    (TeX-run-style-hooks
     "latex2e"
     "subfiles"
-    "subfiles10"))
+    "subfiles10")
+   (LaTeX-add-labels
+    "orthopro"))
  :latex)
 

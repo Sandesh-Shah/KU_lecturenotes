@@ -204,13 +204,24 @@ If $n\times n$ $A$ has $n$ distinct eigenvalues, with corresponding eigenvectors
 \end{itemize}
 \subsection{Exercise}
 Diagonalizable the following matrix, if possible.
-$$A=
+\begin{multicols}{2}
+1. $A=
 \begin{bmatrix}
   4 & 0 & 0  \\
   1 & 4 & 0  \\
    0& 0 & 5  \\
 \end{bmatrix}
-$$
+$
+\columnbreak
+
+2. $
+\begin{bmatrix}
+  4 & -9 \\
+  4 & 8
+\end{bmatrix}
+$
+
+\end{multicols}
 
 \subsection{Similarity}
 If $A$ an $B$ are $n \times n$ matrices, then $A$ \textbf{similar to} $B$ if there is an invertible matrix $P$ such that $$A = PBP^{-1}$$ or equivalently $B=P^{-1}AP$. Writing $Q=P^{-1}$, we can say that $B$ is similar to $A$, and we simply say $A$ and $B$ are similar.
@@ -229,10 +240,58 @@ If $A$ an $B$ are $n \times n$ matrices, then $A$ \textbf{similar to} $B$ if the
 \end{proof}
 
 \section{Linear Transformation and Diagonalization}
-We will see that the transformation $x \mapsto As$ is essentially same as the very simple mapping $u \maps to Du$ when viewed from the proper perspective.
+We will see that the transformation $x \to  Ax$ is essentially same as the very simple mapping $x \to Dx$ when viewed from the proper perspective.
 \begin{theorem}
-  Suppose $A = PDP^{-1}$, where $D$ is a diagonal $n \times n$. If $B$ is the basis for $\mathbb{R}$, formed from the columns of $P$, then $D$ is the $B$-matix for the transformation $x \mapsto Ax$.
+  Suppose $A = PDP^{-1}$, where $D$ is a diagonal $n \times n$. If $B$ is the basis for $\mathbb{R}$, formed from the columns of $P$, then $D$ is the $\mathcal{B}$-matix for the transformation $x \mapsto Ax$.
 \end{theorem}
+\begin{proof}
+  Let the order of matrix $A$ be $n$. Since $A$ is diagonalizable, $A$ has $n$ linearly independent eigenvectors: $\mathcal{B}=\{v_1, ..., v_n\}$, that forms a basis of $\mathbb{R}^n$.
+  Suppose for $x=x_1e_1 + ... + x_ne_n$ we have $x = x'_1v_1 + ...+ x'_nv_n$.
+  \begin{equation}
+    \label{diaglinear}
+    \begin{aligned}
+      Ax = A(x'_1v_1 + ...+ x'_nv_n) &= x'_1Av_1 + ... +x'_nAv_n \\[1mm]
+                                      &= [Av_1 \; ... \; Av_n](x'_1 \; ... \; x'_n)^t \\[1mm]
+                                      &=[\lambda_1 v_1 \; ... \; \lambda_n v_n](x'_1 \; ... \; x'_n)^t \\[1mm]
+      =& \begin{bmatrix}
+  \lambda_1 & 0 & ... & 0 \\
+  0 & \lambda_2 & ... & 0 \\
+  ... \\
+  0 & 0 & ... & \lambda_1 \\
+      \end{bmatrix}x \\[1mm]
+      &= Dx
+    \end{aligned}
+  \end{equation}
+  Here, $\displaystyle [\lambda_1 v_1 \; ... \; \lambda_n v_n] = \begin{bmatrix}
+  \lambda_1 & 0 & ... & 0 \\
+  0 & \lambda_2 & ... & 0 \\
+  ... \\
+  0 & 0 & ... & \lambda_1 \\
+\end{bmatrix}$. This is because for $(x'_1 \; ... \; x'_n)^t$, the vectors $(v_1, ..., v_n)$ are the unit vectors, just like $e_1, ..., e_n$ are for $x_1, ..., x_n$.
+\end{proof}
+\begin{remark}
+  \textit{This proof is not need for the students.}
+\end{remark}
+
+\subsection{Exercise}
+Find a basis $\mathcal{B}$ for $\mathbb{R}^2$ with the property that the transformation matrix of the transformation given by the following matrix is Diagonal.
+\begin{multicols}{2}
+  1. $
+  \begin{bmatrix}
+    0 & 1 \\
+    -3 & 4
+  \end{bmatrix}
+  $
+  \columnbreak
+
+  2. $
+  \begin{bmatrix}
+    5 & -3 \\
+    -7 & 1
+  \end{bmatrix}
+  $
+
+\end{multicols}
 \end{document}
 
 %%% Local Variables:

@@ -10,6 +10,7 @@
     "subfiles"
     "subfiles10")
    (LaTeX-add-labels
-    "eq:1"))
+    "eq:1"
+    "diaglinear"))
  :latex)
 

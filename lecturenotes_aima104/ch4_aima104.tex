@@ -53,6 +53,29 @@ The two vectors $u$ and $v$ are orthogonal vectors if their dot product is zero,
 \subsection{Orthogonal Sets}
 A set of vectors $\{ u_1, ...u_p\}$ in a vector space $V$ is said to be \textbf{orthogonal set} if each pair of distinct vectors from the set is orthogonal,i.e for all $u_i, u_j \in V$ we have $u_i.u_j = 0$ whenever $i \neq j$.
 
+\begin{definition}
+  An orthogonal basis for a vector space $V$ is a basis for $V$ that is an orthogonal set.
+\end{definition}
+
+\begin{theorem}
+  \label{orthopro}
+  Let $\{u_1, ..., u_p\}$ be an orthogonal basis for a subspace $W$ of $\mathbb{R}^n$. For each $y$ in $W$, the coordinates of $y$ with respect to the orthogonal basis : $y = c_1u_1 + \; ... \; c_n u_n$ are given by $\displaystyle c_j = \frac{y.u_j}{u_j.u_j}$.
+\end{theorem}
+
+\subsection{Orthogonal Projection}
+The coordinate $c_j$ of $y$ in Theorem~\ref{orthopro} is actually orthogonal projection of $y$ into the vector $u_j$. This can be generalized. For any given vector $u$. The orthogonal projection of a vector $y$ on $u$ is given by the formula $\displaystyle \hat{y} = \frac{y.u}{u.u}$
+
+Or, it can be derived as follows using the inner-product. $(y-\alpha u)$ and $u$ are orthogonal so, $(y-\alpha u).u=0$. This gives us $\displaystyle \alpha = \frac{y.u}{u.u}$. For two dimensional vectors, another orthogonal component $z$ can be easily obtained as by subtracting the projection from the vector $y$. $z = y - \hat{y}$.
+
+\section{Orthonormal Sets}
+A set $\{u_1, ..., u_p\}$ is an orthonormal set if it is an orthogonal set of unit vectors. And a basis of orthonormal set is a orthonormal basis. The simplest orthonormal basis is $\{e_1, \; ...\; e_n$ for $\mathbb{R}^n$.
+
+Matrices whose columns form an orthonormal set are important in applications and in computer algorithms for matrix computations.
+
+\begin{theorem}
+  An $m \times n$ matrix $U$ has orthonormal columns if and only if $U^tU=I$
+\end{theorem}
+
 \end{document}
 
 
