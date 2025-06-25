@@ -14,9 +14,6 @@
     "singlenormal1"
     "singlenormal2"
     "multinormal"
-    "polynormal"
-    "sumexpo"
-    "diffeq"
-    "solnexpo"))
+    "polynormal"))
  :latex)
 

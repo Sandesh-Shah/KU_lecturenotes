@@ -63,33 +63,25 @@ Let $Y = a_0 + a_1x +a_2x^2+ ...+ a_nx^n$ be a polynomial to be fitted to the gi
 \end{equation}
 This system constitutes of $(n+1)$ equations in $(n+1)$ unknowns. For larger value of $n$ the system is \textit{ill conditioned}, so orthogonal polynomials are used to fit such data points.
 
-\section{Curve Fitting by a Sum of Exponents}
-Let $\displaystyle A_1e^{\lambda_1 x} + A_2e^{\lambda _2 x} + ... + A_ne^{\lambda_n x}$ be the sum of exponents fitted to the given data \\ $(x_1,y_1), (x_2,y_2),...,(x_m,y_m)$, where $m$ is much larger than $2n$. For the convenience of our presentation, we take $n=2$ and $m >> 4$. Then we have,
-e
+\section{Weighted Least Square Approximation}
+For the errors are weighted by $W_i$, then the sum of weighed errors is: \\
+$\displaystyle S= \sum_{i=1} ^ m\; W_i\, e_i^2 =  \sum_{i=1} ^ m \; W_i\, [y_i - f(x_i)]^2$. So that the normal equations of the linear curve fitting $Y=a_0 +a_1x$ becomes:
 \begin{equation}
-  \label{sumexpo}
-   A_1e^{\lambda_1 x} + A_2e^{\lambda _2 x}
- \end{equation}
- From the theory of differential equation theory, ~\ref{sumexpo} is a solution of a second order homogeneous differential equation say,
- \begin{equation}
-   \label{diffeq}
-   y''(x) = a_1y'(x) + a_2y(x)
- \end{equation}
- where $a_1, a_2$ are some constants. Integrating this equation on $[x_0, x]$ repeatedly, we get,
- \begin{equation}
-   \label{solnexpo}
-   \begin{gathered}
-   y(x_i) + y(x_j) - 2y(x_0) = a_1\left [ \int_{x_0}^{x_i}\, y(x)\, dx + \int_{x_0}^{x_j}\, y(x)\, dx \right ] \\[2mm]
-   + a_2\left [ \int_{x_0}^{x_i}\, (x_i -x )y(x)\, dx + \int_{x_0}^{x_j}\, (x_j - x) y(x)\, dx  \right ]
-   \end{gathered}
- \end{equation}
-This equation ~\ref{solnexpo} can be set for a linear system to find $a_1$ and $a_2$. Then the values of $\lambda_1$ and $\lambda_2$ can be obtained from characteristic equation of ~\ref{diffeq} which is
-\begin{equation}
-  \label{eq:9}
-  \lambda^2 = a_1 \lambda + a_2
+\begin{aligned}
+  \sum_{i=1}^m \;W_i\, y_i &= a_1 \sum_{i=1}^m \;W_i\,x_i + ma_0 \\[1mm]
+  \sum_{i=1}^m \; W_i\,x_iy_i &= a_0\sum_{i=1}^m \;xW_i\,_i + a_1 \sum_{i=1}^m \;W_i\,x_i^2
+\end{aligned}
 \end{equation}
-Finally $A_1, \, A_2$ can be obtained from the least squares or any other suitable method.
+
+\section{Linearization of Nonlinear Laws}
+\begin{enumerate}
+\item $\displaystyle y =ax + \frac{b}{x}$ \\[1mm]
+This can be written as $xy = b + ax^2$. Put $xy=Y$, $b=A_0$ and $x^2 = X$. Then the given nonlinear equation becomes the linear equation $Y = A_0 + A_1X$.
+\end{enumerate}
+
+\item
 \end{document}
+
 
 %%% Local Variables:
 %%% mode: LaTeX
