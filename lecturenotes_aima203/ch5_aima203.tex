@@ -76,10 +76,36 @@ $\displaystyle S= \sum_{i=1} ^ m\; W_i\, e_i^2 =  \sum_{i=1} ^ m \; W_i\, [y_i -
 \section{Linearization of Nonlinear Laws}
 \begin{enumerate}
 \item $\displaystyle y =ax + \frac{b}{x}$ \\[1mm]
-This can be written as $xy = b + ax^2$. Put $xy=Y$, $b=A_0$ and $x^2 = X$. Then the given nonlinear equation becomes the linear equation $Y = A_0 + A_1X$.
+  This can be written as $xy = b + ax^2$. Put $xy=Y$, $b=A_0$, $ a= A_1$ and $x^2 = X$. Then the given nonlinear equation becomes the linear equation $Y = A_0 + A_1X$.
+
+  \item $\displaystyle y =ae^{bx}$ \\[1mm]
+This can be written as $xy = b + ax^2$. Put $lny=Y$, $lna=A_0$, $b=A_1$ and $x = X$. Then the given nonlinear equation becomes the linear equation $Y = A_0 + A_1X$.
 \end{enumerate}
 
-\item
+\subsection{Exercise}
+\begin{enumerate}
+\item Fit a linear equation to the data points with the given weights. \\
+  $(0,-1), \, (2,5), \, (5,12), \, (7,20)$ and $W=(1,1,10,1)$
+\item Fit the a second-degree polynomial to the given data points: \\
+  $(0,71), \, (1,89), \, (2,67), (3,43), \, (4,31), \, (5,18), \, (6,9)$
+
+\item Determine the normal equations for the cubic polynomial fitting.
+\item What is the difference between interpolation and curve fitting for a given data points?
+\item Convert the following nonlinear equations into suitable linear equations for the curve fitting using linear least square fitting.
+  \begin{multicols}{3}
+    a). $xy^a=b$
+    \columnbreak
+
+    b). $y=ab^x$
+    \columnbreak
+
+    c). $y=ax^b$
+  \end{multicols}
+
+\item Fit a function of the form $y=ax^b$ to the data points:
+  $(61,350), \, (26,400), \, (7,500), (2.6,600)$
+
+\end{enumerate}
 \end{document}
 
 
