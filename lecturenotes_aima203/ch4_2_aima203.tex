@@ -15,7 +15,7 @@ $\displaystyle m_i = \frac{y_i - y_{i-1}}{x_i - x_{i-1}}$ and $s_i(x)= y_{i-1} +
 From the discussion above the $s_i(x)$ are the \textbf{linear splines}.
 
 \subsubsection{Drawback}
-The linear splines derived above are continuous in $[x_0, x_n]$, but their slpes are discontinuous, i.e their first derivatives are discontinuous.
+The linear splines derived above are continuous in $[x_0, x_n]$, but their slopes are discontinuous, i.e their first derivatives are discontinuous.
 
 \subsection{Quadratic Splines}
 Let $s_i(x)$ be a quadratic approximation of the data points in the sub-interval $[x_{i-1} -x_i]$ satisfying the following conditions:
@@ -98,18 +98,23 @@ This system is called \textbf{tridiagonal system} and there an efficient and an 
   \end{align*}
 \end{example}
 
-\section{Cubic B splines}
-The cubic spline formulae derived in the preceding section are global in nature, which means that they do not permit any local changes in the given data. The B-splines are the basis functions of the splines that facilitates us the local changes. \\
-A B-spline of order $n$, is denoted by $s_{n,i}(x)$ is a spline of degree $(n-1)$ with knots $k_{i-n}, k_{i-n+1},...,k_i$, which is zero everywhere except in the interval $[k_{i-n}, k_i]$.
-\begin{definition}
-  A cubic B-spline $s_{4,i}(x)$ is a spline of degree $3$ with knots $k_{i-4}, k_{i-3},k_{i-2},k_{i-1},k_i$, such that
+\subsection{Exercise}
+\begin{enumerate}
+\item For the data points: $(0,0), \; (\pi /2,1), \; (\pi,0)$, determine the following:
   \begin{enumerate}
-  \item on each interval, $s_{4,i}(x)$ is a polynomial of degree $3$ or less,
-  \item $s_{4,i}(x), \; s'_{4,i}(x), \; s''_{4,i}(x)$ are continuous, and
-   \item $s_{4,i}(x) > 0$ inside $[k_{i-4}, k_i]$.
+  \item natural quadratic splines
+  \item natural cubic splines
+  \item $y(\pi /6)$ using natural cubic spline
   \end{enumerate}
-\end{definition}
+\item Determine $y(\pi/6)$ using the natural cubic splines from the data points: \\ $(0,0), \; (\pi /4,1/ \sqrt{2}), \; (\pi /2 ,1), \; (3\pi /4, 1/ \sqrt{2}), \; (\pi,0)$.
+
+\item What do you understand by natural spline? Explain why the natural cubic spline condition have $M_0 = 0$ and $M_n = 0$.
+  \end{enumerate}
+
+
 \end{document}
+
+
 
 %%% Local Variables:
 %%% mode: LaTeX
