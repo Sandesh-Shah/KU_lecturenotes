@@ -13,12 +13,18 @@
     "newtforward6"
     "newtforwarddif"
     "newtforwarddif2"
+    "newtforw1x"
+    "newtforw2x"
     "newtbackwarddif"
     "newtbackwarddif2"
     "numint"
     "trap"
     "simp1"
     "simp2"
+    "Boole's"
+    "Weddle's"
+    "romberg"
+    "gaussian"
     "trapdouble"
     "simpdouble"))
  :latex)
