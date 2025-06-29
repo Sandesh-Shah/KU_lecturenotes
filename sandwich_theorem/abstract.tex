@@ -1,0 +1,90 @@
+\documentclass[a4paper,twoside,12pt]{article}
+\linespread{1}                     % For line spacing
+\usepackage{amssymb}                 % For AMS symbol
+\usepackage{amsmath,amsthm,latexsym}                 % This is useful for the matrix $\begin{bmatrix} a & b\\ 0 & c\end{bmatrix}$
+\usepackage{verbatim}                % For comments in paragraph
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{epsfig}              % For imbeding graph
+\usepackage{color}                  % Color for the text
+\usepackage[normal]{caption2}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+\setlength{\columnsep}{0.8cm}
+\usepackage{makeidx}
+%\usepackage[normal]{subfigure}
+\usepackage{url}
+\usepackage{lineno}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{plain}
+%%%%%%%%%%%%%
+\textheight23cm%25.0cm
+\textwidth16.3cm
+\oddsidemargin-0.1cm
+\evensidemargin0.1cm
+%\topmargin-1cm
+\headsep.3cm
+%\usepackage{pstricks}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}% Clear header/footer
+\fancyhead[OC]{The Extended Sandwich Theorem; S. Thakuri}%Author on Odd page, Centred
+\fancyhead[EC]{The Extended Sandwich Theorem; S. Thakuri }% Title on Even page, Centred
+\fancyfoot[C]{\thepage}%
+
+\title{\bfseries The Extension of the Sandwich theorem for limits}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{algorithm}[theorem]{Algorithm}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{document}
+\linenumbers
+\vspace{2mm}
+{\Large
+\begin{center}
+\bf{\LARGE \bfseries The Extension of the Sandwich theorem for limits}
+\end{center}}
+\begin{center}
+Sandesh Thakuri$^{1}$, Bishnu Hari Subedi$^{2}$
+\end{center}
+
+\begin{center}
+{\footnotesize
+  $^{1}$Department of Artificial Intelligence, SoE, Kathmandu University, Nepal \\[1mm]
+ \(^{2}\)Central Department of Mathematics, IoST, Tribhuvan University, Kirtipur, Nepal \\[2mm]
+ Correspondence to: Sandesh Thakuri, Email: sandesh.775509@cdmath.tu.edu.np \\[1mm]
+\textit{ 2020 Mathematics Subject Classification. 26A03}
+}
+\end{center}
+
+\vspace{5mm}
+\noindent
+\textbf{Abstract:} {The scope of the Sandwich theorem for limit in analysis is limited to two sided-limits only. This paper extends the scope of the Sandwich theorem by considering one-sided limit as well and gives a more general version of  the Sandwich theorem by making the criterion of the Sandwich theorem more loose.}
+
+
+The Sandwich theorem is simple yet powerful tool in analysis to determine and to analyze the limit of a function at a given point. We can leverage the known limits to calculate the unknown limits. Suppose, we know the limits of \(g(x)\) and \(h(x)\) at \(x=c\) to be the same limit \(L\) and here \(f(x)\) happens to be sandwich between \(g(x)\) and \(h(x)\) in some neighborhood of \(c\). Then we can conclude the limit of \(f(x)\) at \(x=c\) as \(L\) by the Sandwich theorem which is as follows.
+
+\begin{theorem}[The Sandwich Theorem] \cite{thomas}
+Suppose $g(x) \leq f(x) \leq h(x)$ in some open interval containing $c$, expect possibly at $x=c$ itself. Suppose also that $$\lim_{x \to c} g(x) = \lim_{x \to c} h(x) =L  .$$ Then $\displaystyle \lim_{x \to c} f(x)=L$.
+\end{theorem}
+
+\textbf{Keywords:} Limit, One-Sided Limit, Sandwich Theorem, Function.
+
+
+\bibliographystyle{aomalpha}
+\begin{thebibliography}{9}
+    \bibitem{thomas}
+Thomas, G. B. (2017) \emph{Thomas' Calculus}. Pearson India Education Services Pvt. Ltd, India.
+\end{thebibliography}
+\end{document}

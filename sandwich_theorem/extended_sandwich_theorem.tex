@@ -1,0 +1,188 @@
+\documentclass[a4paper,twoside,12pt]{article}
+\linespread{1}                     % For line spacing
+\usepackage{amssymb}                 % For AMS symbol
+\usepackage{amsmath,amsthm,latexsym}                 % This is useful for the matrix $\begin{bmatrix} a & b\\ 0 & c\end{bmatrix}$
+\usepackage{verbatim}                % For comments in paragraph
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{epsfig}              % For imbeding graph
+\usepackage{color}                  % Color for the text
+\usepackage[normal]{caption2}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+\setlength{\columnsep}{0.8cm}
+\usepackage{makeidx}
+\usepackage[normal]{subfigure}
+\usepackage{url}
+\usepackage{lineno}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{plain}
+%%%%%%%%%%%%%
+\textheight23cm%25.0cm
+\textwidth16.3cm
+\oddsidemargin-0.1cm
+\evensidemargin0.1cm
+%\topmargin-1cm
+\headsep.3cm
+%\usepackage{pstricks}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}% Clear header/footer
+\fancyhead[OC]{The Extended Sandwich Theorem; S. Thakuri}%Author on Odd page, Centred
+\fancyhead[EC]{The Extended Sandwich Theorem; S. Thakuri }% Title on Even page, Centred
+\fancyfoot[C]{\thepage}%
+
+% Added package by the author-------------------------------------------------------------------------------------------------
+\usepackage{tikz, pgfplots}
+\usepgflibrary{shadings}
+\usetikzlibrary{positioning, shapes.geometric}
+\pgfplotsset{compat=1.18}
+
+\title{\bfseries The Extension of the Sandwich theorem for limits}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{algorithm}[theorem]{Algorithm}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{document}
+\linenumbers
+\vspace{2mm}
+{\Large
+\begin{center}
+\bf{\LARGE \bfseries A Variant of the Sandwich theorem for limits}
+\end{center}}
+\begin{center}
+Sandesh Thakuri$^{1}$, Bishnu Hari Subedi$^{2}$
+\end{center}
+
+\begin{center}
+{\footnotesize
+  $^{1}$Department of Artificial Intelligence, SoE, Kathmandu University, Nepal \\[1mm]
+ \(^{2}\)Central Department of Mathematics, IoST, Tribhuvan University, Kirtipur, Nepal \\[2mm]
+ Correspondence to: Sandesh Thakuri, Email: sandesh.775509@cdmath.tu.edu.np \\[1mm]
+\textit{ 2020 Mathematics Subject Classification. 26A03}
+}
+\end{center}
+
+\vspace{5mm}
+\noindent
+\textbf{Abstract:} {The scope of the Sandwich theorem for limit in analysis is limited to two sided-limits only. This paper extends the scope of the Sandwich theorem by considering one-sided limit as well and gives a more general version of  the Sandwich theorem by making the criterion of the Sandwich theorem more loose, i.e it relaxes the condition of the Sandwich theorem.}
+
+\section{Introduction}
+The Sandwich theorem is simple yet powerful tool in analysis to determine and to analyze the limit of a function at a given point. We can leverage the known limits to calculate the unknown limits. Suppose, we know the limits of \(g(x)\) and \(h(x)\) at \(x=c\) to be the same limit \(L\) and here \(f(x)\) happens to be sandwich between \(g(x)\) and \(h(x)\) in some neighborhood of \(c\). Then we can conclude the limit of \(f(x)\) at \(x=c\) as \(L\) by the Sandwich theorem which is as follows.
+
+\begin{theorem}[The Sandwich Theorem] \cite{thomas}
+Suppose $g(x) \leq f(x) \leq h(x)$ in some open interval containing $c$, expect possibly at $x=c$ itself. Suppose also that $$\lim_{x \to c} g(x) = \lim_{x \to c} h(x) =L  .$$ Then $\displaystyle \lim_{x \to c} f(x)=L$.
+\end{theorem}
+
+
+As an illustration, we know the limit of \(1/x\) is \(0\) as \(x
+\to \infty\). This implies the limit of \(-1/x\) is also \(0\) as \(x \to \infty\). These are the known limits.\\
+The value of sine function lies between \(-1\) and \(1\) so that \[\displaystyle -\frac{1}{x} \leq \frac{sinx}{x} \leq \frac{1}{x}\]
+Now, \(\displaystyle \lim_{x \to \infty} -\frac{1}{x}=0\) and \(\displaystyle \lim_{x \to \infty} \frac{1}{x}=0\) so we can use the Sandwich theorem to conclude that \(\displaystyle \lim_{x \to \infty} \frac{sinx}{x}=0\).
+\vspace{5mm}
+\section{Limitation of the Sandwich Theorem}
+The sandwich theorem requires the existence of the two sided limits for the lower bound function $g(x)$ and the upper bound function $h(x)$. This is the limitation of the sandwich theorem.
+We know \(\displaystyle - \left | x \right | \leq sinx \leq \left | x \right | \) which implies \[-\frac{\left | x \right |}{x} \leq \frac{sinx}{x} \leq \frac{\left | x \right |}{x}\]
+
+But we cannot conclude the limit of \(\displaystyle \lim_{x \to 0} \frac{sinx}{x}\) using the Sandwich Theorem with the bounds above. It is so, because the \(\displaystyle \lim_{x \to 0} \frac{|x|}{x}\) does not exist. \\[2mm]
+The \(\displaystyle \lim_{x \to 0} \frac{|x|}{x}\) does not exist because left hand limit and right hand limit of \(\displaystyle \frac{|x|}{x}\) at x=0 are different. They are different but they are finite.\\
+\(\displaystyle \lim_{x \to 0^-} \frac{|x|}{x}=-1\) \hspace{5mm} and \hspace{5cm} \(\displaystyle \lim_{x \to 0^+} \frac{|x|}{x}=1\).
+
+\vspace{5mm}
+\section{The Thakuri's Variant of Sandwich Theorem}
+\begin{theorem}[The Thakuri's Extended Sandwich Theorem]
+Suppose $g(x) \leq f(x) \leq h(x)$ in some open interval containing $c$, expect possibly at $x=c$ itself. Suppose also that $$\lim_{x \to c^-} g(x) = \lim_{x \to c^+} h(x) =L  .$$ Then $\displaystyle \lim_{x \to c} f(x)=L$.
+\end{theorem}
+
+Now using this Extended Sandwich theorem it can be conclude that \(\displaystyle \lim_{x \to 0} \frac{sinx}{x}=1\) as follows. \\[2mm]
+ \(\displaystyle \lim_{x \to 0^-} -\frac{|x|}{x}=1\) \hspace{7cm}
+ \(\displaystyle \lim_{x \to 0^+} \frac{|x|}{x}=1\) \\[3mm]
+
+ Hence \(\displaystyle \lim_{x \to 0} \frac{sinx}{x}=1\).
+
+ \section{Remarks on the our variant of Sandwich theorem}
+ \begin{itemize}
+ \item  While the \(\displaystyle \lim_{x \to 0} \frac{sinx}{x}\) can be determined by the sandwich theorem using the tighter-bound $cosx \leq sinx/x \leq 1$, the purpose of our sandwich theorem is not to assert that this limit cannot be determined by the Sandwich theorem. This limit can be determined without the sandwich theorem as well.
+
+ \item The purpose of our variant of sandwich theorem is to loosen the criterion of the sandwich theorem so that even for the bounds as illustrated above where two sided limits do not exits, it is applicable to use the sandwich theorem.
+
+\item \textbf{The question of whether there exists any limit which can be determined by our variant but not by the classical sandwich theorem is another research problem that our research brings to the mathematics community.}
+ \end{itemize}
+
+\vspace{5mm}
+ \section{Proof of the Extended Sandwich Theorem}
+
+ \begin{definition}[Precise definition of limit] \cite{thomas}
+     Let $f(x)$ be defined on an open interval about $c$, except possibly $c$ itself. We say that the limit of $f(x)$ as $x$ approaches $c$ is the number $L$, and write $$\lim_{x \to c} f(x)=L$$,
+     if, for every number $\epsilon > 0$, there exists a corresponding number $\delta >0$ such that for all $x$, \[0<|x-c|< \delta \implies |f(x)-L|<\epsilon .\]
+ \end{definition}
+
+ \begin{definition}[One-sided limits] \cite{thomas}
+ We say that $f(x)$ has right-hand limit $L$ at $c$, and write $$\lim_{x \to c^+} f(x) = L$$
+ if for every number $\epsilon >0$ there exists a corresponding number $\delta >0$ such that for all $x$ $$c<x<c+\delta \implies |f(x) - L| < \epsilon .$$ and we say that $f$ has left-hand limit L at $c$, and write $$\lim_{x \to c^-} f(x) = L$$
+ if for every number $\epsilon >0$ there exists a corresponding number $\delta >0$ such that for all $x$ $$c - \delta<x<c \implies |f(x) - L| < \epsilon .$$
+ \end{definition}
+\vspace{5mm}
+
+ \begin{proof}
+
+ Let \(\epsilon > 0\)
+ \begin{align}
+   \lim_{x \to c^-} g(x) = L & \implies \exists {\delta}_1 >0 : 0<c-x< \delta_1 \implies |g(x)-L|< \epsilon \\
+                             &\implies \exists {\delta}_1 >0 : -\delta_1 <x-c< 0 \implies -\epsilon < g(x)-L< \epsilon \\
+   &\implies \exists {\delta}_1 >0 : -\delta_1 <x-c< 0 \implies L -\epsilon < g(x)< L  + \epsilon
+ \end{align}
+
+ Again,
+ \begin{align}
+   \lim_{x \to c^+} h(x) =L & \implies \exists {\delta}_2 >0 : 0<x-c<\delta_2 \implies |h(x)-L|< \epsilon \\
+   & \implies \exists {\delta}_2 >0 : 0<x-c<\delta_2 \implies L -\epsilon < h(x)< L  + \epsilon
+ \end{align}
+ Let \(\delta = \text{min}\{\delta_1, \delta_2\}\). Then for \(g(x) < f(x) < h(x)\) and \(\delta >0\) we have, from 3 and 5, \\
+ \(L -\epsilon < g(x) < h(x)< L  + \epsilon \) [\(\because g(x) < h(x)\)] so we have,
+ \begin{align}
+-\delta < x-c < \delta & \implies   L -\epsilon < g(x) < f(x) < h(x)< L  + \epsilon \\
+  |x-c| < \delta & \implies L -\epsilon < f(x)< L  + \epsilon \\
+   & \implies |f(x) -L| < \epsilon
+ \end{align}
+
+ Hence, $\displaystyle \lim_{x \to c} f(x)=L$. This proves the extended theorem.
+\end{proof}
+
+\section{Rudin's Variant of Sandwich Theorem}
+
+\subsection{Distinction of our Variant from Rudin's Variant}
+\begin{itemize}
+\item While Rudin's variant of Sandwich theorem incorporates one-one sided limits. The Rudin formulation of Sandwich theorem is for one-sided limits only. Our variant of Sandwich theorem not only incorporates the one-sided limits on the criterion and but is for two-sided limits.
+
+\item Rudin variant for one-sided limit is analogous to the classical Sandwich theorem for two-side limits. Our variant is not analogous to the classical Sandwich theorem. Rudin's variant has Sandwich theorem for left-hand side limit and for right-hand side limit separately. Our variant has left-hand limit and right-had limit only to loosen the criterion and it is not for the one-sided limit. It is for the two-sided limit.
+  \end{itemize}
+
+
+\vspace{5mm}
+\bibliographystyle{aomalpha}
+\begin{thebibliography}{9}
+    \bibitem{thomas}
+Thomas, G. B. (2017) \emph{Thomas' Calculus}. Pearson India Education Services Pvt. Ltd, India.
+\end{thebibliography}
+
+\end{document}
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
