@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.16)  28 JUN 2025 14:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.16)  1 JUL 2025 10:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1283,29 +1283,23 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-di
 st/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-su
 per-ts1.enc}]
-Overfull \hbox (10.62152pt too wide) in paragraph at lines 69--71
-\OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 :\OT1/cm
-r/m/n/12 7183)\OML/cmm/m/it/12 ;  \OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 :\OT1/cmr/
-m/n/12 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 3\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 3
-201)\OML/cmm/m/it/12 ;  \OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 4\O
-ML/cmm/m/it/12 ; \OT1/cmr/m/n/12 4\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 0522)\OML/c
-mm/m/it/12 ;  \OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 6\OML/cmm/m/i
-t/12 ; \OT1/cmr/m/n/12 4\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 9530)\OML/cmm/m/it/12
- ;  \OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 8\OML/cmm/m/it/12 ; \OT
-1/cmr/m/n/12 6\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 0496)\OML/cmm/m/it/12 ;  \OT1/c
-mr/m/n/12 (2\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/
-12 7\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 3891)\OML/cmm/m/it/12 ;  \OT1/cmr/m/n/12 
-(2\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 9\OML/c
-mm/m/it/12 :\OT1/cmr/m/n/12 0250)$. 
- []
-
 [2] [3]
-Overfull \hbox (57.47859pt too wide) detected at line 126
+Overfull \hbox (57.47859pt too wide) detected at line 151
 [][][][][]
  []
 
+[4]
+<images/gaussian.png, id=130, 745.78625pt x 541.02126pt>
+File: images/gaussian.png Graphic file (type png)
+<use images/gaussian.png>
+Package pdftex.def Info: images/gaussian.png  used on input line 212.
+(pdftex.def)             Requested size: 341.42715pt x 256.07968pt.
 
-Overfull \hbox (15.11504pt too wide) in paragraph at lines 143--144
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (15.11504pt too wide) in paragraph at lines 216--217
 []\OT1/cmr/m/n/12 Compute the val-ues of $\OML/cmm/m/it/12 I \OT1/cmr/m/n/12 = 
 [][]  []$ us-ing the trape-zoidal rule with $\OML/cmm/m/it/12 h \OT1/cmr/m/n/12
  = 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 5\OML/cmm/m/it/12 ;  \OT1/cmr/m/n/12 0\OM
@@ -1313,23 +1307,28 @@ L/cmm/m/it/12 :\OT1/cmr/m/n/12 25\OML/cmm/m/it/12 ;  \OT1/cmr/m/n/12 0\OML/cmm/
 m/it/12 :\OT1/cmr/m/n/12 125$.
  []
 
-[4]
-<images/gaussian.png, id=127, 745.78625pt x 541.02126pt>
-File: images/gaussian.png Graphic file (type png)
-<use images/gaussian.png>
-Package pdftex.def Info: images/gaussian.png  used on input line 194.
-(pdftex.def)             Requested size: 341.42715pt x 256.07968pt.
+[5]
+Underfull \vbox (badness 1565) has occurred while \output is active []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[5] [6 <./images/gaussian.png>]
-<images/doubleint.png, id=153, 1303.87125pt x 980.66376pt>
+ [6 <./images/gaussian.png>]
+<images/doubleint.png, id=156, 1303.87125pt x 980.66376pt>
 File: images/doubleint.png Graphic file (type png)
 <use images/doubleint.png>
-Package pdftex.def Info: images/doubleint.png  used on input line 237.
+Package pdftex.def Info: images/doubleint.png  used on input line 256.
 (pdftex.def)             Requested size: 426.79713pt x 312.98085pt.
- [7 <./images/doubleint.png>] (./ch6_aima203.aux)
+ [7 <./images/doubleint.png>]
+<images/trapezoidexample.png, id=168, 804.00375pt x 544.0325pt>
+File: images/trapezoidexample.png Graphic file (type png)
+<use images/trapezoidexample.png>
+Package pdftex.def Info: images/trapezoidexample.png  used on input line 264.
+(pdftex.def)             Requested size: 426.78244pt x 256.08546pt.
+<images/simpsonexample.png, id=169, 815.045pt x 588.1975pt>
+File: images/simpsonexample.png Graphic file (type png)
+<use images/simpsonexample.png>
+Package pdftex.def Info: images/simpsonexample.png  used on input line 269.
+(pdftex.def)             Requested size: 426.78574pt x 284.5305pt.
+ [8 <./images/trapezoidexample.png> <./images/simpsonexample.png>] (./ch6_aima2
+03.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1338,33 +1337,34 @@ Package rerunfilecheck Info: File `ch6_aima203.out' has not changed.
 (rerunfilecheck)             Checksum: 21CD1689C213079ABBFC609F53FF721F;801.
  ) 
 Here is how much of TeX's memory you used:
- 41547 strings out of 474222
- 972312 string characters out of 5748733
- 1944975 words of memory out of 5000000
- 63073 multiletter control sequences out of 15000+600000
- 567247 words of font info for 66 fonts, out of 8000000 for 9000
+ 41581 strings out of 474222
+ 973121 string characters out of 5748733
+ 1943975 words of memory out of 5000000
+ 63098 multiletter control sequences out of 15000+600000
+ 567868 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  121i,13n,131p,756b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/tex
-mf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texlive/texmf-dist/font
-s/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on ch6_aima203.pdf (7 pages, 564780 bytes).
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf/font
+s/type1/public/cm-super/sfrm1200.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/urw/zapfchan/uzcmi8a.pfb>
+Output written on ch6_aima203.pdf (8 pages, 723407 bytes).
 PDF statistics:
- 251 PDF objects out of 1000 (max. 8388607)
- 178 compressed objects within 2 object streams
- 56 named destinations out of 1000 (max. 500000)
- 199 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 271 PDF objects out of 1000 (max. 8388607)
+ 191 compressed objects within 2 object streams
+ 63 named destinations out of 1000 (max. 500000)
+ 209 words of extra memory for PDF output out of 10000 (max. 10000000)
 

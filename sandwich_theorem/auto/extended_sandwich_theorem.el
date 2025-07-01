@@ -45,6 +45,9 @@
     "tikz"
     "pgfplots")
    (LaTeX-add-bibitems
+    "hardy"
+    "rudin"
+    "tao"
     "thomas")
    (LaTeX-add-amsthm-newtheorems
     "theorem"

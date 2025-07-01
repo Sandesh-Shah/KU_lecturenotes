@@ -13,7 +13,7 @@ In this chapter we shall be concerned with the problems of numerical differentia
 \end{itemize}
 
 \section{Numerical Differentiation}
-The general method for deriving the numerical differentiation formulae is to differentiate the interpolating polynomial. Hence, corresponding to each of the Interpolating formula derived, we may derive a formula for the derivative.
+The general method for deriving the numerical differentiation formulae is to \textbf{differentiate the interpolating polynomial}. Hence, corresponding to each of the Interpolating formula derived, we may derive a formula for the derivative.
 
 \subsection{Newton's forward difference formulae}
 The Newton's forward difference formula is:
@@ -24,7 +24,7 @@ The Newton's forward difference formula is:
   + \frac{u(u-1)(u-2)...(u-(n-1))}{n!}\, \Delta ^n y_0
 \end{gathered}
 \end{equation}
-where, $x=x_0 + uh$ and $h = x_{i+1} - x_{i}$. Differentiating ~\ref{newtforward6} with respect to $x$,
+where, $\mathbf{x=x_0 + uh}$ and $h = x_{i+1} - x_{i}$. Differentiating ~\ref{newtforward6} with respect to $x$,
 
 \begin{equation}
   \label{newtforwarddif}
@@ -52,7 +52,7 @@ and
 \end{equation}
 
 \subsection{Newton's backward difference formula}
-In a similar way, different formulae can be derived by starting with other interpolation formulae. Thus, Newton's backward difference formula gives
+In a similar way, different formulae can be derived by starting with other interpolation formulae. Thus, Newton's backward difference formula gives: where $\mathbf{x = x_n + uh}$
 \begin{equation}
   \label{newtbackwarddif}
   \left [ \frac{dy}{dx} \right ] _{x=x_n} = \frac{1}{h} \left [\nabla \, y_n + \frac{1}{2} \nabla ^2 \, y_n + \frac{1}{3} \nabla ^3 \, y_n + ... \right ]
@@ -66,8 +66,33 @@ and
    If the $x$-values of the data points are equally spaced then it is common to use Newton's interpolation.
 \end{remark}
 \subsection{Exercise}
-Find the $dy/dx$ and $d^2y/dx^2$ at $x=1.2, \; x=1.6, \; x=2.2$ from the data: \\[1mm]
-$(1, 2.7183), \; (1.2, 3.3201), \; (1.4, 4.0522), \; (1.6, 4.9530), \; (1.8, 6.0496), \; (2.0, 7.3891), \; (2.2, 9.0250)$.
+\begin{enumerate}
+\item Find the $dy/dx$ and $d^2y/dx^2$ at $x=1.2, \; x=1.6, \; x=2.2$ from the data:
+  \begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      x& 1& 1.2& 1.4& 1.6&1.8\\
+      y &2.7183& 3.3201& 4.0522& 4.9530& 6.60496\\
+      \hline
+    \end{tabular}
+  \end{table}
+
+\item The distance traversed by a particle at different times are given below. Find the velocity and the acceleration of the particle at $t=0.1$ seconds.
+  \begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      t& 0.0& 0.1& 0.2& 0.3\\
+      x & 3.01 & 3.16& 3.29& 3.36\\
+      \hline
+    \end{tabular}
+  \end{table}
+
+\item From the given data points $(x,y)$, find $\displaystyle \frac{dy}{dx}$ at $x=2$ using the natural cubic spline method.
+$(2,11), \; (3,49), \; (4,123)$.
+\end{enumerate}
+
 \section{Numerical Integration}
 The general problem of numerical integration may be stated as: Given a set of data points of a function $y=f(x)$, where $f(x)$ is not known explicitly, it is required compute the value of the definite integral $$I = \int_a^b \; y\,dx$$ As with the case of numerical differentiation, one replaces $f(x)$ by an interpolating polynomial $\phi(x)$ and obtains, on integration, an approximate value of the definite integral. Thus, different integration formulae can be obtained depending upon the type of the interpolation formula used. Approximating $y$ by Newton's forward difference formula, we obtained
 $$ I = \int_{x_0}^{x_n} \; \left [ y_0 + p \Delta y_0 + \frac{p(p-1)}{2}\, \Delta^2 y_0 + \frac{p(p-1)(p-2)}{6}\, \Delta ^3 y_0 + ... \right ] \, dx$$
@@ -139,13 +164,6 @@ $\displaystyle \int_{x_0}^{x_3} \; y\,dx = 3h \left [ y_0 + \frac{3}{2} \Delta \
   \end{enumerate}
 
 \item Evaluate using Simpson's $3/8$ rule: $\displaystyle \int_0^1 \, \frac{dx}{1+x}$ with $h=1/6$.
-
-\item Compute the values of $I = \displaystyle \int_0^1 \, \frac{dx}{1+x^2}$ using the trapezoidal rule with $h=0.5, \; 0.25, \; 0.125$. Then obtain a better estimate using \textbf{Romberg's method}.
-
-\item Compute $\displaystyle I\left (\frac{\pi}{4} \right ), \; I\left (\frac{\pi}{8} \right ), \; I\left (\frac{\pi}{8}, \frac{\pi}{4} \right )$ for : $I = \displaystyle \int_0^{\pi/4} \, cos^2x\, dx$.
-
-\item Using Trapezoidal rule and Simpson's $1/3$ rule evaluate the double integral $$\int_{_2}^2 \, \int_0^4 \; (x^2 -xy + y^2) \; dx\, dy.$$
-
 \end{enumerate}
 \subsection{Boole's and Weddle's Rules, \textit{Extra material}}
 To incorporate the fourth order difference as well we need $5$ data points $x_0, ..., x_4$ and we need to integrate from $x_0$ to $x_4$. Then we obtain Boole's formula:
@@ -195,9 +213,12 @@ In the general case, the limits of the integral have to be changed to that of ~\
 \end{figure}
 \subsection{Exercise}
 \begin{enumerate}
+ \item Compute the values of $I = \displaystyle \int_0^1 \, \frac{dx}{1+x^2}$ using the trapezoidal rule with $h=0.5, \; 0.25, \; 0.125$. Then obtain a better estimate using \textbf{Romberg's method}.
+
+\item Compute $\displaystyle I\left (\frac{\pi}{4} \right ), \; I\left (\frac{\pi}{8} \right ), \; I\left (\frac{\pi}{8}, \frac{\pi}{4} \right )$ for : $I = \displaystyle \int_0^{\pi/4} \, cos^2x\, dx$.
 \item Derive the Gauss quadrature formula for $n=2$ and apply it to evaluate the integral $\displaystyle \int_{-1}^1 \, \frac{dx}{1+x^2}$.
 
-\item Use the three point Gauss formula to evaluate the integral $\displaystyle \int_0^1 \, \frac{dx}{1+x}$.
+\item Use the three point Gauss formula to evaluate the integral $\displaystyle \int_0^1 \, \frac{dx}{1+x}$. Compare this result with that obtained by Simpson's 1/3-rule with $h=0.125$.
 \end{enumerate}
 \section{Double Integration}
 Formulae for the evaluation of double integral can be obtained by repeatedly applying the trapezoidal and Simpson's rules derived earlier.
@@ -230,13 +251,23 @@ By repeated application of Simpson's rule to we get,
     & 4\{f(x_i,y_{j-1}) + 4f(x_i,y_j) + f(x_i,y_{j+1})\} + f(x_{i+1},y_{j-1}) + 4f(x_{i+1},y_j) + f(x_{i+1},y_{j+1})]
   \end{aligned}
 \end{equation}
-\vspace{1cm}
-
 \begin{figure}[h]
   \centering
 \includegraphics[width=15cm, height=11cm]{doubleint.png}
 \end{figure}
 
+\textbf{Questions:} Using Trapezoidal rule and Simpson's $1/3$ rule evaluate the double integral $$\int_{_2}^2 \, \int_0^4 \; (x^2 -xy + y^2) \; dx\, dy.$$
+\newpage
+
+\begin{figure}[h]
+  \centering
+\includegraphics[width=15cm, height=9cm]{trapezoidexample.png}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+\includegraphics[width=15cm, height=10cm]{simpsonexample.png}
+\end{figure}
 \end{document}
 
 %%% Local Variables:
