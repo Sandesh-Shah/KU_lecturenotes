@@ -20,26 +20,26 @@ The Newton's forward difference formula is:
 \begin{equation}
   \label{newtforward6}
  \begin{gathered}
-  y_n(x) = y_0 + u \Delta y_0 + \frac{u(u-1)}{2!}\, \Delta ^2 y_0 + \frac{u(u-1)(u-2)}{3!}\, \Delta ^3 y_0 + ... \\[1mm]
-  + \frac{u(u-1)(u-2)...(u-(n-1))}{n!}\, \Delta ^n y_0
+  y_n(x) = y_0 + p \Delta y_0 + \frac{p(p-1)}{2!}\, \Delta ^2 y_0 + \frac{p(p-1)(p-2)}{3!}\, \Delta ^3 y_0 + ... \\[1mm]
+  + \frac{p(p-1)(p-2)...(p-(n-1))}{n!}\, \Delta ^n y_0
 \end{gathered}
 \end{equation}
-where, $\mathbf{x=x_0 + uh}$ and $h = x_{i+1} - x_{i}$. Differentiating ~\ref{newtforward6} with respect to $x$,
+where, $\mathbf{x=x_0 + ph}$ and $h = x_{i+1} - x_{i}$. Differentiating ~\ref{newtforward6} with respect to $x$,
 
 \begin{equation}
   \label{newtforwarddif}
   \begin{aligned}
-    \frac{dy}{dx} =\frac{dy}{du} \frac{du}{dx} = \frac{1}{h} \left [ \Delta y_0 + \frac{2u -1}{2}\, \Delta^2\,  y_0 + \frac{3u^2-6u + 2}{6}\, \Delta^3 \, y_0 + ... \right ]
+    \frac{dy}{dx} =\frac{dy}{dp} \frac{dp}{dx} = \frac{1}{h} \left [ \Delta y_0 + \frac{2p -1}{2}\, \Delta^2\,  y_0 + \frac{3p^2-6p + 2}{6}\, \Delta^3 \, y_0 + ... \right ]
   \end{aligned}
 \end{equation}
 Differentiating ~\ref{newtforwarddif} with respect to $x$, we get,
 \begin{equation}
   \label{newtforwarddif2}
   \begin{aligned}
-    \frac{d^2y}{dx^2} = \frac{1}{h^2} \left [ \Delta^2 y_0 + \frac{6u -6}{6}\, \Delta^3 \,  y_0 + \frac{12u^2-36u + 22}{24}\, \Delta^4 \, y_0 + ... \right ]
+    \frac{d^2y}{dx^2} = \frac{1}{h^2} \left [ \Delta^2 y_0 + \frac{6p -6}{6}\, \Delta^3 \,  y_0 + \frac{12p^2-36p + 22}{24}\, \Delta^4 \, y_0 + ... \right ]
   \end{aligned}
 \end{equation}
-These formulae are used for \textit{non-tabular} values of $x$. For tabular values of $x$, the formulae take simpler form. For $x=x_0$, we have $u=0$, and using this we can find the relations of $\displaystyle \left [ \frac{dy}{dx} \right ]  _{x=x_0} and \left [\frac{d^2y}{dx^2} \right ] _{x=x_0}$ which is in a simpler form.
+These formulae are used for \textit{non-tabular} values of $x$. For tabular values of $x$, the formulae take simpler form. For $x=x_0$, we have $p=0$, and using this we can find the relations of $\displaystyle \left [ \frac{dy}{dx} \right ]  _{x=x_0} and \left [\frac{d^2y}{dx^2} \right ] _{x=x_0}$ which is in a simpler form.
 \newpage
 \begin{equation}
   \label{newtforw1x}

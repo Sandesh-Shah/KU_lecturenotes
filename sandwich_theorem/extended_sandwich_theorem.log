@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.16)  30 JUN 2025 21:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.16)  1 JUL 2025 20:05
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1086,13 +1086,13 @@ ed.
 (rerunfilecheck)             Checksum: 35985A01F4CBDEE96632EF4D29C43272;1709.
  ) 
 Here is how much of TeX's memory you used:
- 34369 strings out of 474222
- 793341 string characters out of 5748733
+ 34373 strings out of 474222
+ 793387 string characters out of 5748733
  1942975 words of memory out of 5000000
- 56030 multiletter control sequences out of 15000+600000
+ 56034 multiletter control sequences out of 15000+600000
  568204 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,12n,93p,969b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,12n,93p,989b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texli
@@ -1108,10 +1108,10 @@ sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texm
 f/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on extended_sandwich_theorem.pdf (5 pages, 194167 bytes).
+Output written on extended_sandwich_theorem.pdf (5 pages, 194325 bytes).
 PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
- 127 compressed objects within 2 object streams
+ 170 PDF objects out of 1000 (max. 8388607)
+ 129 compressed objects within 2 object streams
  30 named destinations out of 1000 (max. 500000)
  69 words of extra memory for PDF output out of 10000 (max. 10000000)
 
