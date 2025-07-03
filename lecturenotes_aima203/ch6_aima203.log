@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.16)  1 JUL 2025 18:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.16)  2 JUL 2025 19:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1292,14 +1292,14 @@ Overfull \hbox (57.47859pt too wide) detected at line 151
 <images/gaussian.png, id=130, 745.78625pt x 541.02126pt>
 File: images/gaussian.png Graphic file (type png)
 <use images/gaussian.png>
-Package pdftex.def Info: images/gaussian.png  used on input line 212.
+Package pdftex.def Info: images/gaussian.png  used on input line 214.
 (pdftex.def)             Requested size: 341.42715pt x 256.07968pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (15.11504pt too wide) in paragraph at lines 216--217
+Overfull \hbox (15.11504pt too wide) in paragraph at lines 218--219
 []\OT1/cmr/m/n/12 Compute the val-ues of $\OML/cmm/m/it/12 I \OT1/cmr/m/n/12 = 
 [][]  []$ us-ing the trape-zoidal rule with $\OML/cmm/m/it/12 h \OT1/cmr/m/n/12
  = 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 5\OML/cmm/m/it/12 ;  \OT1/cmr/m/n/12 0\OM
@@ -1307,25 +1307,22 @@ L/cmm/m/it/12 :\OT1/cmr/m/n/12 25\OML/cmm/m/it/12 ;  \OT1/cmr/m/n/12 0\OML/cmm/
 m/it/12 :\OT1/cmr/m/n/12 125$.
  []
 
-[5]
-Underfull \vbox (badness 1565) has occurred while \output is active []
-
- [6 <./images/gaussian.png>]
+[5] [6 <./images/gaussian.png>]
 <images/doubleint.png, id=156, 1303.87125pt x 980.66376pt>
 File: images/doubleint.png Graphic file (type png)
 <use images/doubleint.png>
-Package pdftex.def Info: images/doubleint.png  used on input line 256.
+Package pdftex.def Info: images/doubleint.png  used on input line 258.
 (pdftex.def)             Requested size: 426.79713pt x 312.98085pt.
  [7 <./images/doubleint.png>]
 <images/trapezoidexample.png, id=168, 804.00375pt x 544.0325pt>
 File: images/trapezoidexample.png Graphic file (type png)
 <use images/trapezoidexample.png>
-Package pdftex.def Info: images/trapezoidexample.png  used on input line 264.
+Package pdftex.def Info: images/trapezoidexample.png  used on input line 266.
 (pdftex.def)             Requested size: 426.78244pt x 256.08546pt.
 <images/simpsonexample.png, id=169, 815.045pt x 588.1975pt>
 File: images/simpsonexample.png Graphic file (type png)
 <use images/simpsonexample.png>
-Package pdftex.def Info: images/simpsonexample.png  used on input line 269.
+Package pdftex.def Info: images/simpsonexample.png  used on input line 271.
 (pdftex.def)             Requested size: 426.78574pt x 284.5305pt.
  [8 <./images/trapezoidexample.png> <./images/simpsonexample.png>] (./ch6_aima2
 03.aux)
@@ -1361,7 +1358,7 @@ re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf/font
 s/type1/public/cm-super/sfrm1200.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /urw/zapfchan/uzcmi8a.pfb>
-Output written on ch6_aima203.pdf (8 pages, 723413 bytes).
+Output written on ch6_aima203.pdf (8 pages, 722891 bytes).
 PDF statistics:
  271 PDF objects out of 1000 (max. 8388607)
  191 compressed objects within 2 object streams

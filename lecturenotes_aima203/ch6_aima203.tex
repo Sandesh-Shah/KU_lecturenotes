@@ -135,7 +135,7 @@ $\displaystyle \int_{x_0}^{x_2} \; y\,dx = 2h \left [ y_0 + \Delta \, y_0 + \fra
 \end{equation}
 
 \begin{remark}
-  It should be noted that this rule requires the division of the whole range into an even number of sub-intervals of width $h$.
+  It should be noted that this rule requires the division of the whole range into a number of sub-intervals that is a multiple of 2, of width $h$.
 \end{remark}
 
 \subsection{Simpson's 3/8-Rule}
@@ -149,7 +149,9 @@ $\displaystyle \int_{x_0}^{x_3} \; y\,dx = 3h \left [ y_0 + \frac{3}{2} \Delta \
                              &= \frac{3h}{8} \, \{ y_0 + 3(y_1 + y_2 + y_4 + y_5 + ... + y_{n-1}) + 2 (y_3 + y_6  ... + y_{n-3} ) + y_n \}
   \end{aligned}
 \end{equation}
-
+\begin{remark}
+  It should be noted that this rule requires the division of the whole range into a number of sub-intervals that is a multiple of 3, of width $h$.
+\end{remark}
 \subsection{Exercise}
 \begin{enumerate}
 \item For the given $(x,y)$ data points: Evaluate $\int_0^2 \, ydx$ using the trapezoidal rule.\\  $(0.0,0.399),\, (0.5,0.352),\,(1.0,0.242),\, (1.5,0.129),\,(2.0,0.054)$.
@@ -213,9 +215,9 @@ In the general case, the limits of the integral have to be changed to that of ~\
 \end{figure}
 \subsection{Exercise}
 \begin{enumerate}
- \item Compute the values of $I = \displaystyle \int_0^1 \, \frac{dx}{1+x^2}$ using the trapezoidal rule with $h=0.5, \; 0.25, \; 0.125$. Then obtain a better estimate using \textbf{Romberg's method}.
+ \item Compute the values of $I = \displaystyle \int_0^1 \, \frac{dx}{1+x^2}$ using the trapezoidal rule with $h=0.5, \; 0.25, \; 0.125$. Then obtain a better estimates using \textbf{Romberg's method}.
 
-\item Compute $\displaystyle I\left (\frac{\pi}{4} \right ), \; I\left (\frac{\pi}{8} \right ), \; I\left (\frac{\pi}{8}, \frac{\pi}{4} \right )$ for : $I = \displaystyle \int_0^{\pi/4} \, cos^2x\, dx$.
+\item Compute the values of $I = \displaystyle \int_0^{\pi/2} \, cos^2x\, dx$ using the trapezoidal rule with $h= \pi /4, \; \pi/8$. Then obtain a better estimates using \textbf{Romberg's method}.
 \item Derive the Gauss quadrature formula for $n=2$ and apply it to evaluate the integral $\displaystyle \int_{-1}^1 \, \frac{dx}{1+x^2}$.
 
 \item Use the three point Gauss formula to evaluate the integral $\displaystyle \int_0^1 \, \frac{dx}{1+x}$. Compare this result with that obtained by Simpson's 1/3-rule with $h=0.125$.

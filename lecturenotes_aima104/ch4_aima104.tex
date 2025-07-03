@@ -29,6 +29,38 @@ For any scalar $\alpha$, $\Vert \alpha v \Vert = \vert \alpha \vert \Vert v \Ver
 \subsubsection{Distance between vectors}
 For $u$ and $v$ in a vector space $V$, the distance between them is written as dist(u,v) and is defined as $dist(u,v) = \Vert u-v \Vert$.
 
+\subsection{Exercise}
+\begin{enumerate}
+\item Compute the following for the given vectors: \\
+  $u=
+  \begin{bmatrix}
+    -1 \\ 2
+  \end{bmatrix}, \vspace{4mm}
+   v=
+   \begin{bmatrix}
+     4 \\6
+   \end{bmatrix},
+   vspace{5mm}
+   w=
+   \begin{bmatrix}
+     3 \\ -1 \\ 5
+   \end{bmatrix},\vspace{4mm}
+   x=
+   \begin{bmatrix}
+     6 \\ -2 \\3
+   \end{bmatrix}
+   $
+   \begin{multicols}{2}
+     a). $\displaystyle u.u, \;\; v.u, \;\; \frac{v.u}{u.u}, \;\; \Vert v \Vert $
+     \columnbreak
+
+     b). $\displaystyle w.w, \;\; x.w, \;\; \frac{x.w}{w.w}, \;\; \Vert x \Vert$
+   \end{multicols}
+ \item Find the distance between $u$ and $v$, and $w$ and $x$.
+ \item Use matrix product and transpose definition to verify, property-2 and 3 of the inner product.
+ \item Explain why $u.u \geq 0$. When is $u.u =0$.?
+\end{enumerate}
+
 \section{Orthogonal Vectors}
 The two vectors $u$ and $v$ are orthogonal vectors if their dot product is zero,i.e $u.v = 0$. Observe that the zero vector is orthogonal to every vector as $0^Tv=0$ for all $v$.
 \begin{thm}[The Pythagorean Theorem]
@@ -50,6 +82,13 @@ The two vectors $u$ and $v$ are orthogonal vectors if their dot product is zero,
   \end{enumerate}
 \end{thm}
 
+\subsection{Exercise}
+\begin{enumerate}
+ \item Verify parallelogram law: $\Vert u+v \Vert ^2 = 2 \Vert u \Vert ^2 + 2 \Vert v \Vert ^2$.
+ \item Suppose $y$ is orthogonal to $u$ and $v$. Show that $y$ is orthogonal to every $w$ in $Span\{u,v\}$.
+ \item Let $W$ be a subspace of $\mathbb{R}^n$, then show that $W^{\perp}$ a subspace of $\mathbb{R}^n$.
+\item Show that if $x$ is in both $W$ and $W^{\perp}$, then $x=0$.
+\end{enumerate}
 \subsection{Orthogonal Sets}
 A set of vectors $\{ u_1, ...u_p\}$ in a vector space $V$ is said to be \textbf{orthogonal set} if each pair of distinct vectors from the set is orthogonal,i.e for all $u_i, u_j \in V$ we have $u_i.u_j = 0$ whenever $i \neq j$.
 
@@ -62,6 +101,73 @@ A set of vectors $\{ u_1, ...u_p\}$ in a vector space $V$ is said to be \textbf{
   Let $\{u_1, ..., u_p\}$ be an orthogonal basis for a subspace $W$ of $\mathbb{R}^n$. For each $y$ in $W$, the coordinates of $y$ with respect to the orthogonal basis : $y = c_1u_1 + \; ... \; c_n u_n$ are given by $\displaystyle c_j = \frac{y.u_j}{u_j.u_j}$.
 \end{theorem}
 
+\subsection{Exercise}
+\begin{enumerate}
+\item Determine whether the following sets of vectors are orthogonal or not.
+  \begin{enumerate}
+  \item $
+    \begin{bmatrix}
+      1 \\ -2 \\ 1
+    \end{bmatrix}, \vspace{5mm}
+    \begin{bmatrix}
+      0 \\ 1 \\ 2
+    \end{bmatrix},  \vspace{5mm}
+    \begin{bmatrix}
+      -5 \\ -2 \\ 1
+    \end{bmatrix}$
+  \end{enumerate}
+
+\item Show that $\{u_1, u_2\}$ is an orthogonal basis of $\mathbb{R}^2$ and find the coordinates of $x$ in terms of this basis.
+  \begin{enumerate}
+  \item   $u_1 =
+  \begin{bmatrix}
+    2 \\ 3
+  \end{bmatrix} ,  \vspace{5mm}
+  u_2 =
+  \begin{bmatrix}
+    6 \\ 4
+  \end{bmatrix},  \vspace{5mm}
+  x =
+  \begin{bmatrix}
+    9 \\ -7
+  \end{bmatrix}
+  $
+
+ \item $u_1 =
+  \begin{bmatrix}
+    3 \\ 1
+  \end{bmatrix} ,  \vspace{5mm}
+  u_2 =
+  \begin{bmatrix}
+    2 \\ -6
+  \end{bmatrix},  \vspace{5mm}
+  x =
+  \begin{bmatrix}
+    -6 \\ 3
+  \end{bmatrix}
+  $
+
+  \item Compute the orthogonal projection of $
+    \begin{bmatrix}
+      1 \\ 7
+    \end{bmatrix}
+    $ onto to the line through $
+    \begin{bmatrix}
+      -4 \\ 2
+    \end{bmatrix}
+    $ and the origin.
+
+  \item Compute the distance of $ y
+    \begin{bmatrix}
+      3 \\ 1
+    \end{bmatrix}
+    $ to the line through
+    $u= \begin{bmatrix}
+      8 \\ 6
+    \end{bmatrix}
+    $ and the origin.
+    \end{enumerate}
+\end{enumerate}
 \subsection{Orthogonal Projection}
 The coordinate $c_j$ of $y$ in Theorem~\ref{orthopro} is actually orthogonal projection of $y$ into the vector $u_j$. This can be generalized. For any given vector $u$. The orthogonal projection of a vector $y$ on $u$ is given by the formula $\displaystyle \hat{y} = \frac{y.u}{u.u}$
 
