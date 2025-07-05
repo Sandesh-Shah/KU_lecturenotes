@@ -84,23 +84,50 @@ The two vectors $u$ and $v$ are orthogonal vectors if their dot product is zero,
 
 \subsection{Exercise}
 \begin{enumerate}
- \item Verify parallelogram law: $\Vert u+v \Vert ^2 = 2 \Vert u \Vert ^2 + 2 \Vert v \Vert ^2$.
+ \item Verify parallelogram law: $\Vert u+v \Vert ^2 + \Vert u-v \Vert ^2 = 2 \Vert u \Vert ^2 + 2 \Vert v \Vert ^2$.
  \item Suppose $y$ is orthogonal to $u$ and $v$. Show that $y$ is orthogonal to every $w$ in $Span\{u,v\}$.
  \item Let $W$ be a subspace of $\mathbb{R}^n$, then show that $W^{\perp}$ a subspace of $\mathbb{R}^n$.
 \item Show that if $x$ is in both $W$ and $W^{\perp}$, then $x=0$.
 \end{enumerate}
+
 \subsection{Orthogonal Sets}
 A set of vectors $\{ u_1, ...u_p\}$ in a vector space $V$ is said to be \textbf{orthogonal set} if each pair of distinct vectors from the set is orthogonal,i.e for all $u_i, u_j \in V$ we have $u_i.u_j = 0$ whenever $i \neq j$.
-
+\setcounter{theorem}{2}
+\begin{mdframed}
+\begin{theorem}
+  Any orthogonal set is a linearly independent set.
+\end{theorem}
 \begin{definition}
   An orthogonal basis for a vector space $V$ is a basis for $V$ that is an orthogonal set.
 \end{definition}
-
 \begin{theorem}
   \label{orthopro}
   Let $\{u_1, ..., u_p\}$ be an orthogonal basis for a subspace $W$ of $\mathbb{R}^n$. For each $y$ in $W$, the coordinates of $y$ with respect to the orthogonal basis : $y = c_1u_1 + \; ... \; c_n u_n$ are given by $\displaystyle c_j = \frac{y.u_j}{u_j.u_j}$.
 \end{theorem}
+\end{mdframed}
 
+\subsection{Orthogonal Projection}
+The coordinate $c_j$ of $y$ in Theorem~\ref{orthopro} is actually orthogonal projection of $y$ into the vector $u_j$. This can be generalized. For any given vector $u$. The orthogonal projection of a vector $y$ on $u$ is given by the formula $\displaystyle \hat{y} = \frac{y.u}{u.u}\, u$
+
+Or, it can be derived as follows using the inner-product. $(y-\alpha u)$ and $u$ are orthogonal so, $(y-\alpha u).u=0$. This gives us $\displaystyle \alpha = \frac{y.u}{u.u}$. For two dimensional vectors, another orthogonal component $z$ can be easily obtained as by subtracting the projection from the vector $y$. $z = y - \hat{y}$.
+
+\section{Orthonormal Sets, {\mdseries \small \textcolor{red}{Important}}}
+\begin{remark}
+  A vector having length unity is called unit vector. Given a vector $v$ if we divide it by its magnitude which its length we obtain a unit vector along $v$, i.e $\displaystyle \frac{v}{\Vert v \Vert}$.
+\end{remark}
+
+\begin{mdframed}
+  A set $\{u_1, ..., u_p\}$ is an orthonormal set if it is an orthogonal set of unit vectors. And a basis of orthonormal set is a orthonormal basis. The simplest orthonormal basis is $\{e_1, \; ...\; e_n$ for $\mathbb{R}^n$.
+\end{mdframed}
+
+
+Matrices whose columns form an orthonormal set are important in applications and in computer algorithms for matrix computations.
+
+\subsection{Unitary Matrix}
+A real matrix $U$ is said to be unitary if $U^tU=I$. If $U$ is complex then, $\overline{U}\, ^t U= I$, where $\overline{U}\, ^t$ is denoted by ${U}^{\dagger}$.
+\begin{theorem}
+  An $m \times n$ matrix $U$ has orthonormal columns if and only if $U^tU=I$
+\end{theorem}
 \subsection{Exercise}
 \begin{enumerate}
 \item Determine whether the following sets of vectors are orthogonal or not.
@@ -166,21 +193,90 @@ A set of vectors $\{ u_1, ...u_p\}$ in a vector space $V$ is said to be \textbf{
       8 \\ 6
     \end{bmatrix}
     $ and the origin.
-    \end{enumerate}
+  \end{enumerate}
+\item Take a square unitary matrix of order 2 and a vector $x \in \mathbb{R}^2$ and verify that \\ $\Vert Ux \Vert = \Vert x \Vert$. What can you infer from this property of a unitary matrix?
+
+ \item Show that the Hadamard quantum gate defined by $H =
+   \begin{bmatrix}
+     1/\sqrt{2} & 1/\sqrt{2} \\[1mm]
+     1/\sqrt{2} & -1/\sqrt{2}
+   \end{bmatrix}
+   $ is a unitary matrix.
+ \end{enumerate}
+
+ \section{The Gram-Schmidt Process}
+ The Gram-Schmidt Process is a simple algorithm for producing an orthogonal or orthonormal basis for any nonzero subspace of $\mathbb{R}^n$. It uses the concept of \textbf{projection}. First we describe this process when a basis consisting of two vectors $\{x_1,x_2\}$ are given. Now we construct an orthogonal basis $\{v_1, v_2\}$ using the two vectors: $x_1$ and $x_2$ as follows:
+ \begin{enumerate}
+ \item Let $v_1 = x_1$.
+  \item Draw the orthogonal projection from $x_2$ to $v_1$, which is given by $\displaystyle \frac{x_2.v_1}{v_1.v_1} \, v_1$. Now, from the theory of orthogonal projection given above, the vector perpendicular to $v_1$ is given by $\displaystyle v_2 = x_2 - \frac{x_2.v_1}{v_1.v_1} \, v_1$.
+ \end{enumerate}
+
+ For a given basis of $p$ vectors $\{x_1,x_2, ..., x_p\}$, we can continue the process of drawing the orthogonal projections and subtraction to get orthogonal vectors as follows:
+ %\setcounter{enumerate}{2}
+ \begin{enumerate}
+ \item To obtain $v_3$ draw the orthogonal projection from $x_3$ onto the Span$v_1,v_2$ and \\[1mm] subtract this from $x_3$: $\displaystyle v_3 = x_3 - \frac{x_3.v_1}{v_1.v_1} \, v_1 - \frac{x_3.v_2}{v_2.v_2} \, v_2$.
+
+  \item $\displaystyle v_p = x_p - \frac{x_p.v_1}{v_1.v_1} \, v_1 - \frac{x_p.v_2}{v_2.v_2} \, v_2 - ... - \frac{x_p.v_{p-1}}{v_1.v_{p-1}} \, v_{p-1}$.
+  \end{enumerate}
+
+  \begin{remark}
+    After constructing orthogonal basis orthonormal basis can be easily constructed from the orthogonal basis. \textit{How?}
+  \end{remark}
+
+  \section{Exercise}
+  \begin{enumerate}
+  \item Find an orthonormal basis from the given vectors:
+    \begin{multicols}{2}
+    a). $\begin{bmatrix}
+      3 \\ 0 \\ 1
+    \end{bmatrix}, \vspace{5mm}
+    \begin{bmatrix}
+      8 \\ 5 \\ 6
+    \end{bmatrix}
+    $
+    \columnbreak
+
+b).$\begin{bmatrix}
+      0 \\ 4 \\ 2
+    \end{bmatrix}, \vspace{5mm}
+    \begin{bmatrix}
+      5 \\ 6 \\ 7
+    \end{bmatrix}
+    $
+  \end{multicols}
+
+\item Find an orthogonal basis for the column space of the matrix:
+  \begin{multicols}{2}
+    a).  $\begin{bmatrix}
+        3 & -5 & 1 \\
+        1 & 1 & 1 \\
+        -1 & 5 &-2 \\
+        3 & -7 & 8
+    \end{bmatrix}$
+    \columnbreak
+
+    b).
+    $\begin{bmatrix}
+      -1 & 6 & 6 \\
+      3 & -8 & 3 \\
+      1 & -2 & 6 \\
+      1 & -4 & -3
+    \end{bmatrix}$
+  \end{multicols}
+
+\item Find the $QR$ factorization of the matrices given in the previous question.
 \end{enumerate}
-\subsection{Orthogonal Projection}
-The coordinate $c_j$ of $y$ in Theorem~\ref{orthopro} is actually orthogonal projection of $y$ into the vector $u_j$. This can be generalized. For any given vector $u$. The orthogonal projection of a vector $y$ on $u$ is given by the formula $\displaystyle \hat{y} = \frac{y.u}{u.u}$
 
-Or, it can be derived as follows using the inner-product. $(y-\alpha u)$ and $u$ are orthogonal so, $(y-\alpha u).u=0$. This gives us $\displaystyle \alpha = \frac{y.u}{u.u}$. For two dimensional vectors, another orthogonal component $z$ can be easily obtained as by subtracting the projection from the vector $y$. $z = y - \hat{y}$.
-
-\section{Orthonormal Sets}
-A set $\{u_1, ..., u_p\}$ is an orthonormal set if it is an orthogonal set of unit vectors. And a basis of orthonormal set is a orthonormal basis. The simplest orthonormal basis is $\{e_1, \; ...\; e_n$ for $\mathbb{R}^n$.
-
-Matrices whose columns form an orthonormal set are important in applications and in computer algorithms for matrix computations.
-
+\subsection{QR Factorization}
 \begin{theorem}
-  An $m \times n$ matrix $U$ has orthonormal columns if and only if $U^tU=I$
+  If $A$ is an $m \times n$ matrix with linearly independent columns, then $A$ can be factored as $A=QR$, where $Q$ is an $m \times n$ matrix whose columns form an \textbf{orthonormal basis for $Col(A)$} and $R$ is an $n \times n$ \textbf{upper triangular matrix with positive entries on its diagonal}.
 \end{theorem}
+
+\begin{proof}
+  Given linearly independent columns of the matrix $A$, we can construct $Q$ from the Gram-Schmidt process or any process. Then $Q$ being real unitary matrix we have $Q^t\, Q = I$. Then $Q^t\, A = Q^t\,Q R \implies R = Q^t\, A$.
+\end{proof}
+\section{Extra Materials}
+The angle between the two vectors in plane and space can be generalized by the inner product. For two vectors $u,v \in \mathbb{R}^n$ we have, $u.v = \Vert u \Vert\, \Vert v \Vert \, cos\theta$, where $\theta$ is the angle between the two vectors: $u,v$.
 
 \end{document}
 
