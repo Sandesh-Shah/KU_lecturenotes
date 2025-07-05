@@ -44,6 +44,9 @@
     "fancyhdr"
     "tikz"
     "pgfplots")
+   (LaTeX-add-labels
+    "two-side"
+    "one-side")
    (LaTeX-add-bibitems
     "boules"
     "hardy"
@@ -57,6 +60,9 @@
     "algorithm"
     "definition"
     "example"
-    "remark"))
+    "remark"
+    "thm")
+   (LaTeX-add-amsthm-newtheoremstyles
+    "theorem"))
  :latex)
 
