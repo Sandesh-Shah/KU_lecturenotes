@@ -31,14 +31,21 @@ We consider the IVP ~\ref{ivp}. If $y(x)$ is the exact solution of this IVP, the
   y(x) = y_0 + (x-x_0)y'_0 + \frac{(x-x_0)^2}{2!}\, y''_0 + ...
 \end{equation}
 Differentiating ~\ref{ivp} successively, with respect to $x$, we obtain, $y'', y''', ...$. Since ~\ref{ivptay} is an infinite series, for $y(x_0)$ correct to $N$ decimal places we solve the following equation \\
-$n^{th}$ term of Taylor series $\leq$ Upper limiting error = $\displaystyle \frac{(x-x_0)^n}{n!} \, f^{(n)} (x_0) = \frac{1}{2} 10^{-N}$. \\[1mm]
+$n^{th}$ term of Taylor series $\leq$ Upper limiting error  $\displaystyle \implies \frac{(x-x_0)^n}{n!} \, f^{(n)} (x_0) \leq \frac{1}{2} 10^{-N}$. \\[1mm]
 If this holds then, the $n$ number of terms is sufficient otherwise, we need to include additional terms.
+\begin{figure}[h]
+  \centering
+\includegraphics[width=13cm, height=10cm]{taylor_method_example.png}
+\end{figure}
 
 \section{Picard's Method of Successive Approximation}
-Integrating the above differential equation ~\ref{ivp}, we obtain
+Integrating the above differential equation ~\ref{ivp}, as follows, we obtain:
 \begin{equation}
   \label{picard1}
-  y = y_0 + \int_{x_0}^x \; f(x,y)\,dx
+  \begin{gathered}[b]
+    \int_{x_0}^x \; y'\,dx = \int_{x_0}^x \; f(x,y)\,dx \\
+      y = y_0 + \int_{x_0}^x \; f(x,y)\,dx
+  \end{gathered}
 \end{equation}
 This equation in which the unknown function $y$ appears under the integral sign is called an \textit{integral equation}. Such equation can be solved by the method of successive approximations as follows:
 \begin{equation}
@@ -48,21 +55,30 @@ This equation in which the unknown function $y$ appears under the integral sign 
 Proceeding in this way, we obtain:
 \begin{equation}
   \label{picardit}
-    y^{(n)} = y_0 + \int_{x_0}^x \; f(x,y^{(n-1)}\,dx \hspace{5mm} \text{with} \hspace{3mm}  y^{(0)} = y_0
+    y^{(n)} = y_0 + \int_{x_0}^x \; f(x,y^{(n-1)})\,dx \hspace{5mm} \text{with} \hspace{3mm}  y^{(0)} = y_0
 \end{equation}
 It has been proved that if $f(x,y)$ is bounded in some region about the point $(x_0, y_0)$ and if $f(x,y)$ satisfies the \textit{Lipschitz condition}, viz.,
 \begin{equation*}
   |f(x,y)-f(x,\overline{y})| \leq K |y - \overline{y}|
 \end{equation*}
 for some constant $K$, then the sequence $y^{(n)}$ converges to the solution of the equation ~\ref{ivp}.
-
+\begin{figure}[h]
+  \centering
+\includegraphics[width=13cm, height=10cm]{picard_method_example.png}
+\end{figure}
 \subsection{Exercise}
 \begin{enumerate}
-\item Estimate the value of $y(0.2)$ using Taylor's series method from the IVP:  \\ $\displaystyle y'' -xy' -y = 0$ with $y(0) = 1$ and $y(0) =0$.
+    \item Find by Taylor's series method:
+\begin{enumerate}
+    \item the value of $y(0.1)$ given that $y'=x-y^2$, $y(0)=1$.
 
-\item Find $y(0.1)$ correct to 4 decimal places using Taylor's series: $y'=x-y^2$, $y(0)=1$.
-
-\item Solve the equation $y' = x+ y^2$, $y(0) = 1$ using Picard's method correct to $4$ decimal places and estimate the value of $y(0.2)$.
+    \item the value of $y(0)=1$ given that $\displaystyle \frac{dy}{dx} = 1 + xy$ correct up to four decimal places.
+    \end{enumerate}
+\item Use Picard's method to obtain:
+\begin{enumerate}
+    \item $y(0.1)$ and $y(0.2)$ given that $\displaystyle \frac{dy}{dx} = x + yx^4, \;\;\; y(0)=3$.
+    \item $y(0.1)$ given that $\displaystyle \frac{dy}{dx} = \frac{y-x}{y+x}, \;\;\; y(0)=1$.
+    \end{enumerate}
 \end{enumerate}
 
 \section{Euler's Method}
@@ -81,7 +97,10 @@ Using the backward difference $\left [ \displaystyle \frac{y_{n+1} -y_n}{h} = y'
 \end{equation}
 We obtain $y_{n+1}$ in $f(x_{n+1}, y_{n+1})$ from the Euler's forward method. Actually, \\
 $y^{1}_{n+1} = y_n + h\,f(x_n,y_n) \hspace{5mm} n=0,1,2,...$ and $y_{n+1} = y_n + h\,f(x_{n+1}, y^{1}_{n+1}) \hspace{10mm} n=0,1,2,...$
-
+\begin{figure}[h]
+  \centering
+\includegraphics[width=13cm, height=10cm]{euler.png}
+\end{figure}
 \subsection{Modified Euler's Method}
 In the Modified Euler's Method the formula for iteration is
 \begin{equation}
@@ -91,7 +110,25 @@ In the Modified Euler's Method the formula for iteration is
      y_{n+1} = y_n + \frac{h}{2} \,\left [ f(x_n,y_n) + f(x_{n+1} + y^{1}_{n}) \right ]
   \end{gathered}
 \end{equation}
+\subsection{Exercise}
+\begin{enumerate}
+    \item Use Euler's method to find $y(0.5)$ using $h=0.1$:
+    \begin{multicols}{2}
+        a). $\displaystyle \frac{dy}{dx}=\frac{3}{5}x^3y, \;\;\; y(0)=1$
+        \columnbreak
 
+        b). $\displaystyle \frac{dy}{dx}=1+y^2, \;\;\; y(0)=0$
+    \end{multicols}
+
+    \item Use Euler's modified method to find $y(0.2)$ and $y(0.4)$ using $h=0.2$:\\  $\displaystyle \frac{dy}{dx}=x+y, \;\;\; y(0)=0$.
+    \end{enumerate}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=14cm, height=10cm]{modified.png} \\[2cm]
+
+  \includegraphics[width=14cm, height=10cm]{rungee.png}
+\end{figure}
 \section{Runge-Kutta Methods}
 Euler's method is less efficient in practical problems. It requires $h$ to be small for obtaining reasonable accuracy. To overcome this issue, Runge-Kutta methods are designed.
 Let $k_0 =hf(x_0,y_0)$ and $k_1 = hf(x_1, y_0 + hf(x_0,y_0)$. The special case of second order Runge-Kutta Method gives $\displaystyle y_1 = y_0 + \frac{h}{2}(k_0 + k_1)$, which is equivalent to Modified Euler's Method. So, the iteration formula for the \textbf{second-order Runge-Kutta Method} is:
@@ -116,6 +153,21 @@ The iteration formula for the Fourth-Order Runge-Kutta method is as follows:
     y_{n+1} &= y_n + \frac{h}{6} \,\left [k_n + 2k_{n+1} + 2k_{n+2} + k_{n+3}\right ]
   \end{aligned}
 \end{equation}
+\subsection{Exercise}
+\begin{enumerate}
+    \item Use Runge-Kutta fourth order formula
+    \begin{enumerate}
+        \item to find $y(0.2)$ and $y(0.4)$ given $\displaystyle y'=\frac{y^2-x^2}{y^2+x^2}, \;\;\; y(0)=1$.
+
+        \item to find $y(1.2)$ and $y(1.4)$ given $\displaystyle y'=\frac{3x+y}{x+2y}, \;\;\; y(1)=1$.
+
+        \item to find $y(0.2)$ given $\displaystyle y'' +y=0, \;\;\; y(0)=1, \;\; y'(0)=0$.
+    \end{enumerate}
+
+  \item Given $\displaystyle \frac{dy}{dx}=y(1+x^2), \;\;\; y(0)=1$ find the values for $x=0.2, 0.4, 0.6$ using the Euler, the modified Euler, and the fourth order Runge-Kutta methods. Compare the results thus obtained.
+  \item Solve the boundary value problems by finite difference method taking $y(0)=0, \;\; y(1)=1$ for $y=0.5, 0.25$:
+    \hspace{3mm} a). $y''-y=0$ \hspace{7mm} b).$y''-x^2y'-e^xy=1/(1+x)$
+\end{enumerate}
 
 \section{Simultaneous and Higher Order Equations}
 Consider a pair simultaneous equations:

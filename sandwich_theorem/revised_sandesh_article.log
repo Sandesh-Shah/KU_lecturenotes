@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.16)  6 JUL 2025 18:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.16)  6 JUL 2025 19:23
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**extended_sandwich_theorem.tex
-(./extended_sandwich_theorem.tex
+**revised_sandesh_article.tex
+(./revised_sandesh_article.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -963,8 +963,8 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count343
 \l__pdf_internal_box=\box116
 )
-(./extended_sandwich_theorem.aux)
-\openout1 = `extended_sandwich_theorem.aux'.
+(./revised_sandesh_article.aux)
+\openout1 = `revised_sandesh_article.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
 LaTeX Font Info:    ... okay on input line 69.
@@ -1002,9 +1002,9 @@ LaTeX Font Info:    ... okay on input line 69.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring OFF on input line 69.
- (./extended_sandwich_theorem.out) (./extended_sandwich_theorem.out)
+ (./revised_sandesh_article.out) (./revised_sandesh_article.out)
 \@outlinefile=\write4
-\openout4 = `extended_sandwich_theorem.out'.
+\openout4 = `revised_sandesh_article.out'.
 
 
 Package pgfplots notification 'compat/show suggested version=true': document ha
@@ -1082,27 +1082,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[6] (./extended_sandwich_theorem.aux)
+[6] (./revised_sandesh_article.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-Package rerunfilecheck Info: File `extended_sandwich_theorem.out' has not chang
-ed.
-(rerunfilecheck)             Checksum: 1C378E7132167667653730D6C538E5BA;2775.
+Package rerunfilecheck Info: File `revised_sandesh_article.out' has not changed
+.
+(rerunfilecheck)             Checksum: 4023F346B106CB8E5045CAE852B6AB09;2731.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 91 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 34402 strings out of 474222
- 793734 string characters out of 5748733
+ 34403 strings out of 474222
+ 793705 string characters out of 5748733
  1943975 words of memory out of 5000000
- 56052 multiletter control sequences out of 15000+600000
+ 56053 multiletter control sequences out of 15000+600000
  568204 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,12n,93p,1093b,800s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,12n,93p,1090b,800s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
@@ -1118,10 +1118,10 @@ onts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></
 usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on extended_sandwich_theorem.pdf (6 pages, 204479 bytes).
+Output written on revised_sandesh_article.pdf (6 pages, 204019 bytes).
 PDF statistics:
- 210 PDF objects out of 1000 (max. 8388607)
- 168 compressed objects within 2 object streams
+ 212 PDF objects out of 1000 (max. 8388607)
+ 170 compressed objects within 2 object streams
  41 named destinations out of 1000 (max. 500000)
  101 words of extra memory for PDF output out of 10000 (max. 10000000)
 

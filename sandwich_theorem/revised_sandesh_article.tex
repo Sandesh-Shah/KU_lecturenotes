@@ -31,7 +31,7 @@
 \pagestyle{fancy}
 \fancyhf{}% Clear header/footer
 \fancyhead[OC]{Sandesh Thakuri and Bishnu Hari Subedi}%Author on Odd page, Centred
-\fancyhead[EC]{The Thakuri's Variant of Sandwich Theorem}% Title on Even page, Centred
+\fancyhead[EC]{The Thakuri's Extension of the Sandwich Theorem}% Title on Even page, Centred
 \fancyfoot[C]{\thepage}%
 
 % Added package by the author-------------------------------------------------------------------------------------------------
@@ -40,7 +40,7 @@
 \usetikzlibrary{positioning, shapes.geometric}
 \pgfplotsset{compat=1.18}
 
-\title{\bfseries A Variant of the Sandwich theorem for two-sided limits}
+\title{\bfseries An Extension of the Sandwich theorem for two-sided limits}
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
@@ -71,7 +71,7 @@
 \vspace{2mm}
 {\Large
 \begin{center}
-\bf{\LARGE \bfseries A Variant of the Sandwich theorem for two-sided limits}
+\bf{\LARGE \bfseries An Extension of the Sandwich theorem for two-sided limits}
 \end{center}}
 \begin{center}
 Sandesh Thakuri$^{1}$, Bishnu Hari Subedi$^{2}$
@@ -88,7 +88,7 @@ Sandesh Thakuri$^{1}$, Bishnu Hari Subedi$^{2}$
 
 \vspace{5mm}
 \noindent
-\textbf{Abstract:} {The criterion for the classical Sandwich theorem for two-sided limits is the existence of two-sided limit for the bounding functions. We show that this criterion can be relaxed. We prove that it is sufficient for the existence of the left-hand limit for the lower bound function and the existence of right-hand limit for the upper bound function; and of-course they must be equal. This paper relaxes the criterion of the classical Sandwich theorem by replacing the two-sided limits with one-sided limits in the criterion and gives a new variant of the Sandwich theorem. While Rudin ~\cite{rudin} has given a proof of the Sandwich theorem for two sided limits and many has formulated the Sandwich theorem for the one-sided limits, these still don't relax the criterion of the Sandwich theorem for two-sided limits ~\cite{thomas}. They have incorporated the one-sided limits for the Sandwich theorem for one-sided limits but has not relax the condition for the Sandwich theorem for two-sided limits as we have done.
+\textbf{Abstract:} {The criterion for the classical Sandwich theorem for two-sided limits is the existence of two-sided limit for the bounding functions. We show that this criterion can be relaxed. We prove that it is sufficient for the existence of the left-hand limit for the lower bound function and the existence of right-hand limit for the upper bound function; and of-course they must be equal. This paper relaxes the criterion of the classical Sandwich theorem by replacing the two-sided limits with one-sided limits in the criterion and gives an extension of the Sandwich theorem. While Rudin ~\cite{rudin} has given a proof of the Sandwich theorem for two sided limits and many has formulated the Sandwich theorem for the one-sided limits, these still don't relax the criterion of the Sandwich theorem for two-sided limits ~\cite{thomas}. They have incorporated the one-sided limits for the Sandwich theorem for one-sided limits but has not relax the condition for the Sandwich theorem for two-sided limits as we have done.
 \section{Introduction}
 The Sandwich theorem is simple yet powerful tool in analysis to determine and to analyze the limit of a function at a given point. We can leverage the known limits to calculate the unknown limits. Suppose, we know the limits of \(g(x)\) and \(h(x)\) at \(x=c\) to be the same limit \(L\) and here \(f(x)\) happens to be sandwich between \(g(x)\) and \(h(x)\) in some neighborhood of \(c\). Then we can conclude the limit of \(f(x)\) at \(x=c\) as \(L\) by the Sandwich theorem for two-sided limits. The Sandwich theorem for two-sided limits is simply called the Sandwich theorem which is as follows.
 
@@ -111,26 +111,27 @@ The \(\displaystyle \lim_{x \to 0} \frac{|x|}{x}\) does not exist because left h
 \(\displaystyle \lim_{x \to 0^-} \frac{|x|}{x}=-1\) \hspace{5mm} and \hspace{5cm} \(\displaystyle \lim_{x \to 0^+} \frac{|x|}{x}=1\). \\[3mm]
 We are not claiming that the limitation of the Sandwich theorem is not being able to determine the \(\displaystyle \lim_{x \to 0} \frac{sinx}{x}\). We are stating that the limitation of Sandwich theorem is its requirement of  the existence of the two sided limits for the bounding functions thus not being able to determine the above limit with the above bounds.
 \vspace{5mm}
-\section{The Thakuri's Variant of Sandwich Theorem for two sided limits}
-\begin{theorem}[The Thakuri's Variant Sandwich Theorem]
+\section{Thakuri's Extension of the Sandwich Theorem for two sided limits}
+\begin{theorem}[Thakuri's Extension]
+  \label{thakuri}
 Suppose $g(x) \leq f(x) \leq h(x)$ in some open interval containing $c$, expect possibly at $x=c$ itself. Suppose also that $$\lim_{x \to c^-} g(x) = \lim_{x \to c^+} h(x) =L  .$$ Then $\displaystyle \lim_{x \to c} f(x)=L$.
 \end{theorem}
-Now using this variant Sandwich theorem we can use the above bounds to conclude that \(\displaystyle \lim_{x \to 0} \frac{sinx}{x}=1\) as follows. \\[2mm]
+Now using the Thakuri's extension of the Sandwich theorem we can use the above bounds to conclude that \(\displaystyle \lim_{x \to 0} \frac{sinx}{x}=1\) as follows. \\[2mm]
  \(\displaystyle \lim_{x \to 0^-} -\frac{|x|}{x}=1\) \hspace{7cm}
  \(\displaystyle \lim_{x \to 0^+} \frac{|x|}{x}=1\) \\[1mm]
  Hence \(\displaystyle \lim_{x \to 0} \frac{sinx}{x}=1\).
 
- \subsection{Remarks on the our variant of Sandwich theorem}
+ \subsection{Remarks on the our extension of Sandwich theorem}
  \begin{itemize}
- \item  While the \(\displaystyle \lim_{x \to 0} \frac{sinx}{x}\) can be determined by the sandwich theorem using the tighter-bound $cosx \leq sinx/x \leq 1$ ~\cite{boules}, the purpose of our variant of sandwich theorem is not to assert that this limit cannot be determined by the Sandwich theorem. This limit can be determined without the Sandwich theorem as well.
+ \item  While the \(\displaystyle \lim_{x \to 0} \frac{sinx}{x}\) can be determined by the sandwich theorem using the tighter-bound $cosx \leq sinx/x \leq 1$ ~\cite{boules}, the purpose of our extension of the Sandwich theorem is not to assert that this limit cannot be determined by the Sandwich theorem. This limit can be determined without the Sandwich theorem as well.
 
- \item The purpose of our variant of the Sandwich theorem is to loosen the criterion of the sandwich theorem so that even for the bounds as illustrated above where two sided limits do not exits, it is applicable to use the sandwich theorem.
+ \item The purpose of our extension of the Sandwich theorem is to loosen the criterion of the sandwich theorem so that even for the bounds as illustrated above where two sided limits do not exits, it is applicable to use the sandwich theorem.
 
-\item \textbf{The question of whether there exists any limit which can be determined by our variant but not by the classical sandwich theorem is another research problem that our research brings to the mathematics community.}
+\item \textbf{The question of whether there exists any limit which can be determined by our extension but not by the classical sandwich theorem is another research problem that our research brings to the mathematics community.}
  \end{itemize}
 
 \vspace{5mm}
- \subsection{Proof of the Variant of the Sandwich Theorem}
+ \subsection{Proof of Thakuri's Extension of the Sandwich Theorem}
 
  \begin{definition}[Precise definition of limit] \cite{thomas}
      Let $f(x)$ be defined on an open interval about $c$, except possibly $c$ itself. We say that the limit of $f(x)$ as $x$ approaches $c$ is the number $L$, and write $$\lim_{x \to c} f(x)=L$$,
@@ -173,7 +174,7 @@ Now using this variant Sandwich theorem we can use the above bounds to conclude 
 
 \section{Previous Works on One-sided limits and Inequalities}
 \subsection{Hardy's discussion on one-sided limits}
-The proper use of one-sided limits in comparing the limits of two functions was done by Hardy in his book. There Hardy shows that inequalities between functions are preserved in the limit but the strictness of the inequalities is not preserved. That is, if $g(x) < f(x)$ for $x \in (c-\delta ,c )$, for some $\delta >0$ and $\lim_{x \to c^-} g(x) = L$, $\lim_{x \to c^+} f(x) =M$, then $L \leq M$ ~\cite{hardy}. But the converse is not true as Hardy shows, $L \leq M$ does not necessarily imply $g(x) < f(x)$. \\[2mm]
+The proper use of one-sided limits in comparing the limits of two functions was done by Hardy in his book ~\cite{hardy}. There Hardy shows that inequalities between functions are preserved in the limit but the strictness of the inequalities is not preserved. That is, if $g(x) < f(x)$ for $x \in (c-\delta ,c )$, for some $\delta >0$ and $\lim_{x \to c^-} g(x) = L$, $\lim_{x \to c^+} f(x) =M$, then $L \leq M$ ~\cite{hardy}. But the converse is not true as Hardy shows, $L \leq M$ does not necessarily imply $g(x) < f(x)$. \\[2mm]
 This result is crucial in handling the inequalities in limits. Hardy highlights that limits "smooth out" strict inequalities, converting $<$ or $>$ into $\leq$ or $\geq$ ~\cite{hardy}. This is crucial for setting inequalities in calculus (e.g., \textbf{sandwich theorem}) and understanding continuity and differentiability.
 
 Combining the Hardy's results for the both one-sided limits we can easily obtain: $g(x) \leq f(x)$ some open interval containing $c$, expect possibly at $x=c$ itself, and if both the limits of $g(x)$ and $f(x)$ exists, as $x \to c$, then $$\lim_{x \to c} g(x) \leq  \lim_{x \to c} f(x).$$ And this paved a way to the Sandwich theorem. So, in some way this discussion of Hardy is the basis for the Sandwich theorem and its variants. Next we discuss one-sided version of the Sandwich theorem which are as follows:
@@ -191,26 +192,26 @@ Combining the Hardy's results for the both one-sided limits we can easily obtain
 \end{thm}
 The proof of these one-sided theorems directly follows from the proof, given by Rudin, of the Sandwich theorem ~\ref{two-side} for two-sided limits ~\cite{rudin}.
 
-\subsection{Distinction of our Variant from the other's one-sided limit variant}
+\subsection{Distinction of our extension from the other's:}
 \begin{itemize}
-\item While the variant, Theorem ~\ref{one-side} of Sandwich theorem incorporates one-one sided limits; this variant is for one-sided limits only. Our variant of Sandwich theorem not only incorporates the one-sided limits on the criterion and but is for two-sided limits.
+\item While the variant, Theorem ~\ref{one-side} of Sandwich theorem incorporates one-one sided limits; this variant is for one-sided limits only. Our Theorem ~\ref{thakuri} not only incorporates the one-sided limits on the criterion and but is for two-sided limits.
 
 \item The variant, Theorem ~\ref{one-side} and other variant of the Sandwich theorem for the one-sided limits is analogous to the classical Sandwich theorem for two-side limits. These variants are for the one-side limits. Our variant is for the two-sided limits. The left-hand limit and right-had limit in our variant is only to loosen the criterion of the Sandwich theorem.
 \end{itemize}
 
-\section{Significance of the Thakuri's Variant}
+\section{Significance of the Thakuri's Extension}
 \begin{enumerate}
-\item The Thakuri's version of Sandwich theorem for two-sided limits has made significance in relaxing the criterion of the classical Sandwich theorem for two sided limits. This version of Sandwich theorem allows us to use the even the bounds for which only one-sided limits exists.
+\item The Thakuri's extension of Sandwich theorem for two-sided limits has made significance in relaxing the criterion of the classical Sandwich theorem for two sided limits. This version of Sandwich theorem allows us to use the even the bounds for which only one-sided limits exists.
 
-\item Another significance of the Thakuri's version is it has brought another research problem to the mathematics community. The question of whether there exists any limit which can be determined by our variant but not by the classical sandwich theorem.
+\item Another significance of the Thakuri's extension is, it has brought another research problem to the mathematics community. The question of whether there exists any limit which can be determined by our extension but not by the classical sandwich theorem.
 
 \end{enumerate}
 
 \section{Conclusion}
 \begin{itemize}
-\item Even though the Thakuri's variant of Sandwich theorem seems obvious, it is still is a new variant which the significance discussed above.
+\item Even though the Thakuri's extension of Sandwich theorem seems obvious, it is still is a new variant which the significance discussed above.
 
-\item For the common problems Thakuri's variant may not have a significant advantage but for some specific problem it can have a significant advantage. Also, having a new way to solve problem can give new perspective and new insights.
+\item For the common problems Thakuri's extension may not have a significant advantage but for some specific problem it can have a significant advantage. Also, having a new way to solve problem can give new perspective and new insights.
 
 \item Even though we have been able to show the distinction of the Thakuri's version version from the other version's that are out there, the Thakuri's version is inspired from the other versions, especially from the one-side limit version ~\ref{one-side}.
 
