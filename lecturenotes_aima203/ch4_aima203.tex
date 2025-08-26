@@ -132,8 +132,8 @@ Then we get the following formula for $y_n(x)$.
 \begin{equation}
   \label{newtbackward}
  \begin{gathered}
-  y_n(x) = y_n + p \nabla y_n + \frac{p(p-1)}{2!}\, \nabla ^2 y_n + \frac{p(p-1)(p-2)}{3!}\, \nabla ^3 y_n + ... \\[1mm]
-  + \frac{p(p-1)(p-2)...(p-(n-1))}{n!}\, \nabla ^n y_n
+  y_n(x) = y_n + p \nabla y_n + \frac{p(p+1)}{2!}\, \nabla ^2 y_n + \frac{p(p+1)(p+2)}{3!}\, \nabla ^3 y_n + ... \\[1mm]
+  + \frac{p(p+1)(p+2)...(p+(n-1))}{n!}\, \nabla ^n y_n
 \end{gathered}
 \end{equation}
 This formula~\ref{newtbackward} is the \textbf{Newton's backward difference interpolation} formula.

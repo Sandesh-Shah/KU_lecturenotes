@@ -230,6 +230,9 @@ The finite difference method for the solution of a two-point boundary value prob
     b). $\displaystyle y''(x) \approx \frac{y(x+h) - 2y(x)+ y(x-h)}{h^2}$
   \end{multicols}
 \end{enumerate}
+\begin{mdframed}
+  In principle the central difference formula should be $\displaystyle y'(x) \approx \frac{y(x+h/2) - y(x-h/2)}{h}$ but for easier computation during program execution the above formula has been adopted.
+\end{mdframed}
 These formulae can be easily derived by expanding $y(x)$ in the neighborhood of $x$ using Taylor's series. In general for higher order derivatives central difference formula gives better accuracy so,this formula is commonly used.
 
 \subsection{General Method:}
@@ -254,36 +257,50 @@ To solve the boundary-value problem ~\ref{bvp}:
  \end{enumerate}
 
 \begin{example}
-  Solve: $y'' - cosx\, y' -sinx \, y = e^x, \hspace{10mm} y(0)=0, \hspace{3mm} y(1)=1$ \\
+  Solve: $y'' - cosx\, y' -sinx \, y = e^x, \hspace{10mm} y(0)=0, \hspace{3mm} y(1)=1$, taking $n=4$.\\
   \textbf{Solution Steps:}
   \begin{enumerate}
   \item   Here, $x_0 = 0$ and $x_n = 1$. Choosing $n=4$ we get $h = (1-0)/4 = 0.25$.
 
-  \item At $x=x_i$ we have $\displaystyle \frac{y_{i+1} - 2y_i+ y_{i-1}}{h^2} -cosx_i \; \frac{y_{i+1} - y_{i-1}}{2h} - sinx_i \; y_i = e^{x_i}$ \\[1mm]
-    Substituting $h=0.25$, we  get, $\displaystyle \frac{y_{i+1} - 2y_i+ y_{i-1}}{(0.25)^2} -cosx_i \; \frac{y_{i+1} - y_{i-1}}{2(0.25)} - sinx_i \; y_i = e^{x_i}$
+  \item At $x=x_i$ we have $\displaystyle \frac{y_{i+1} - 2y_i+ y_{i-1}}{h^2} -cosx_i \; \frac{y_{i+1} - y_i}{h} - sinx_i \; y_i = e^{x_i}$ \\[1mm]
+    Substituting $h=0.25$, we  get, $\displaystyle \frac{y_{i+1} - 2y_i+ y_{i-1}}{(0.25)^2} -cosx_i \; \frac{y_{i+1} - y_i}{0.25} - sinx_i \; y_i = e^{x_i}$
 
-\item Simplifying: $(16+2cosx_i)y_{i-1} + (sinx_i-32)y_i + (16 -2cosx_i)y_{i+1} = e^{x_i}$
+\item Simplifying: $16y_{i-1} + (-32+4cosx_i-sinx_i)y_i + (16 -4cosx_i)y_{i+1} = e^{x_i}$
 
 
 \item Substituting $x_0=0, \;\;\; x_1=0.25, \;\;\; x_2=0.5, \;\;\; x_3= 0.75$ and $y_0=1, \;\;\; y_4=1$:
   \begin{align*}
-    (16+2cos(0.25))0 + (sin(0.25)-32)y_1 + (16 -2cos(0.25))y_2 &= e^{0.25} \\[1mm]
-    (16+2cos(0.5))y_1 + (sin(0.5)-32)y_2 + (16 -2cos(0.5))y_3 &= e^{0.5} \\[1mm]
-    (16+2cos(0.75))y_2 + (sin(0.75)-32)y_3 + (16 -2cos(0.75))1 &= e^{0.75}
+    (16)0 + (-32+4cos(0.25)-sin(0.25)) (16 -4cos(0.25))y_2 &= e^{0.25} \\[1mm]
+    16y_1 + (-32+4cos(0.5)-sin(0.5))y_2 + (16 -4cos(0.5))y_3 &= e^{0.5} \\[1mm]
+    16y_2 + (-32+4cos(0.75)-sin(0.75))y_3 + (16 -4cos(0.75))1 &= e^{0.75}
   \end{align*}
 
 \item Simplifying:
   \begin{equation}
     \label{examplesystem}
   \begin{aligned}[c]
-    -32.24\, y_1 + 14.06 \, y_2 &= 1.28 \\[1mm]
-    17.75 \, y_1 - 32.48\, y_2 14.24 \, y_3 &= 1.64 \\[1mm]
-    17.46 \, y_2  -32.68\, y_3 + 14.54 &= 2.11
+    -28.371\, y_1 + 12.124 \, y_2 &= 1.284 \\[1mm]
+    16 \, y_1 - 28.969\, y_2 +12.489 \, y_3 &= 1.648 \\[1mm]
+    16 \, y_2  -29.754\, y_3 + 14.54 &= -10.956
   \end{aligned}
 \end{equation}
 
-\item Solving: $y_1 = 0.01, \;\;\; y_2=0.38, \;\;\; y_3=0.98$.
-  \end{enumerate}
+\item Solving: $y_1 = 0.016, \;\;\; y_2=0.144, \;\;\; y_3=0.445$.
+\end{enumerate}
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|}
+    \hline
+    x&y \\
+    \hline
+    0 & 0 \\
+    0.25 & 0.016 \\
+    0.5 & 0.144 \\
+    0.75 & 0.454 \\
+    1 & 1 \\
+    \hline
+  \end{tabular}
+\end{table}
 
 \end{example}
 \end{document}

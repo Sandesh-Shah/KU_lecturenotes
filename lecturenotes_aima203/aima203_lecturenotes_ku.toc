@@ -2,31 +2,124 @@
 \contentsline {section}{\numberline {1.1}Introduction}{4}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Approximate Value}{4}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Significant Digits}{4}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}Rounding off}{5}{subsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.1.4}Truncation}{5}{subsection.1.1.4}%
-\contentsline {section}{\numberline {1.2}Error}{5}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Types of Error}{5}{subsection.1.2.1}%
-\contentsline {subsubsection}{Absolute Error}{5}{section*.2}%
-\contentsline {subsubsection}{Relative Error}{5}{section*.3}%
-\contentsline {subsubsection}{Percentage Error}{5}{section*.4}%
-\contentsline {subsection}{\numberline {1.2.2}Absolute errors of Sum, Product and Product}{6}{subsection.1.2.2}%
-\contentsline {subsubsection}{Sum}{6}{section*.5}%
-\contentsline {subsubsection}{Product}{6}{section*.6}%
-\contentsline {subsubsection}{Quotient}{6}{section*.7}%
-\contentsline {subsection}{\numberline {1.2.3}Operations on numbers of different absolute accuracies}{6}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}Upper limit of Absolute Error}{6}{subsection.1.2.4}%
-\contentsline {subsection}{\numberline {1.2.5}Exercise}{7}{subsection.1.2.5}%
-\contentsline {chapter}{\numberline {2}Root Finding}{8}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Introduction}{8}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Bisection Method}{8}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Procedure}{9}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Exercise}{9}{subsection.2.2.2}%
-\contentsline {section}{\numberline {2.3}Iteration Method}{9}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Exercise}{10}{subsection.2.3.1}%
-\contentsline {section}{\numberline {2.4}Newton-Rapshon's Method}{10}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Exercise}{10}{subsection.2.4.1}%
-\contentsline {section}{\numberline {2.5}Secant Method}{10}{section.2.5}%
-\contentsline {section}{\numberline {2.6}System of Non-linear equations}{11}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Method of Iteration}{11}{subsection.2.6.1}%
-\contentsline {subsection}{\numberline {2.6.2}Newton-Raphson Method}{12}{subsection.2.6.2}%
-\contentsline {subsection}{\numberline {2.6.3}Exercise}{12}{subsection.2.6.3}%
+\contentsline {subsection}{\numberline {1.1.3}Exercise}{5}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}Approximations}{5}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Rounding off}{5}{subsection.1.2.1}%
+\contentsline {subsubsection}{Chopping}{6}{section*.3}%
+\contentsline {subsubsection}{Symmetric Rounding}{6}{section*.4}%
+\contentsline {subsection}{\numberline {1.2.2}Truncation}{6}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}Error}{6}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Types of Error}{6}{subsection.1.3.1}%
+\contentsline {subsubsection}{Absolute Error}{6}{section*.5}%
+\contentsline {subsubsection}{Relative Error}{7}{section*.6}%
+\contentsline {subsubsection}{Percentage Error}{7}{section*.7}%
+\contentsline {subsection}{\numberline {1.3.2}Absolute errors of Sum, Product and Product}{7}{subsection.1.3.2}%
+\contentsline {subsubsection}{Sum}{7}{section*.8}%
+\contentsline {subsubsection}{Product}{7}{section*.9}%
+\contentsline {subsubsection}{Quotient}{7}{section*.10}%
+\contentsline {subsection}{\numberline {1.3.3}Operations on numbers of different absolute accuracies}{7}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Upper limit of Absolute Error}{8}{subsection.1.3.4}%
+\contentsline {section}{\numberline {1.4}General Error Formula}{8}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Exercise}{8}{subsection.1.4.1}%
+\contentsline {chapter}{\numberline {2}Root Finding}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduction}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Characteristic of Numerical Methods}{10}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Bisection Method}{10}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Procedure}{11}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Exercise}{11}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Iteration Method}{11}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Exercise}{11}{subsection.2.4.1}%
+\contentsline {section}{\numberline {2.5}Newton-Rapshon's Method}{12}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Exercise}{12}{subsection.2.5.1}%
+\contentsline {section}{\numberline {2.6}Secant Method}{12}{section.2.6}%
+\contentsline {subsubsection}{Exercise}{13}{section*.12}%
+\contentsline {section}{\numberline {2.7}System of Non-linear equations}{13}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Method of Iteration}{13}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}Newton-Raphson Method}{14}{subsection.2.7.2}%
+\contentsline {subsection}{\numberline {2.7.3}Exercise}{15}{subsection.2.7.3}%
+\contentsline {section}{\numberline {2.8}Rate of Convergence}{16}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Exercise}{16}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Lab Work}{16}{section.2.10}%
+\contentsline {chapter}{\numberline {3}System of Linear Equations}{18}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{18}{section.3.1}%
+\contentsline {section}{\numberline {3.2}LU Factorization Method}{19}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Method}{19}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Tridiagonal Systems}{20}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Exercise}{20}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Vector and Matrix Norms}{20}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Exercise}{21}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}Ill-conditioned Linear Systems}{21}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Exercise}{21}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Method for Ill-conditioned Systems}{21}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}Iterative Method}{22}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Exercise}{23}{subsection.3.5.1}%
+\contentsline {chapter}{\numberline {4}Interpolation}{24}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{24}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Finite Differences}{24}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Forward Differences}{24}{subsection.4.2.1}%
+\contentsline {subsubsection}{Second Forward Differnces}{25}{section*.15}%
+\contentsline {subsubsection}{Higer Order Forward Differnces}{25}{section*.16}%
+\contentsline {subsubsection}{Programming}{25}{section*.17}%
+\contentsline {subsection}{\numberline {4.2.2}Backward Differences}{25}{subsection.4.2.2}%
+\contentsline {subsubsection}{Second Backward Differnces}{25}{section*.18}%
+\contentsline {subsubsection}{Higer Order Backward Differnces}{25}{section*.19}%
+\contentsline {subsection}{\numberline {4.2.3}Central Differences}{26}{subsection.4.2.3}%
+\contentsline {subsubsection}{Second Central Differnces}{26}{section*.20}%
+\contentsline {subsubsection}{Higer Order Central Differnces}{26}{section*.21}%
+\contentsline {subsection}{\numberline {4.2.4}Equivallency of the differences}{26}{subsection.4.2.4}%
+\contentsline {section}{\numberline {4.3}Newton's formula for Interpolation}{26}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Newton's backward difference Interpolation}{27}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}Interpolation with Unevenly spaced points}{27}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Lagrange's Interpolation Formula}{28}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Disadvantage of Lagrange's Interpolation}{28}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}Divided Differences}{29}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Newton's General Interpolation Formula}{29}{subsection.4.5.1}%
+\contentsline {section}{\numberline {4.6}Inverse Interpolation}{30}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Introduction}{31}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Linear Splines}{31}{subsection.4.7.1}%
+\contentsline {subsubsection}{Drawback}{31}{section*.26}%
+\contentsline {subsection}{\numberline {4.7.2}Quadratic Splines}{31}{subsection.4.7.2}%
+\contentsline {subsubsection}{Drawbacks}{32}{section*.27}%
+\contentsline {section}{\numberline {4.8}Cubic Splines}{32}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Exercise}{33}{subsection.4.8.1}%
+\contentsline {chapter}{\numberline {5}Least Square Problems}{35}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introduction}{35}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Fitting a Straight Line}{35}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Multiple Linear Least Square}{36}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Curve Fitting by Polynomials}{36}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Weighted Least Square Approximation}{37}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Linearization of Nonlinear Laws}{37}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Exercise}{37}{subsection.5.4.1}%
+\contentsline {chapter}{\numberline {6}Numerical Differentiation and Numerical Integration}{38}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Numerical Differentiation}{38}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Newton's forward difference formulae}{38}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Newton's backward difference formula}{39}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Exercise}{39}{subsection.6.1.3}%
+\contentsline {section}{\numberline {6.2}Numerical Integration}{39}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Trapezoidal Rule}{40}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Simpson's 1/3-Rule}{40}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Simpson's 3/8-Rule}{41}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.4}Exercise}{41}{subsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.2.5}Boole's and Weddle's Rules, \textit {Extra material}}{42}{subsection.6.2.5}%
+\contentsline {subsection}{\numberline {6.2.6}Romberg Integration}{42}{subsection.6.2.6}%
+\contentsline {subsection}{\numberline {6.2.7}Gaussian Quadrature}{42}{subsection.6.2.7}%
+\contentsline {subsection}{\numberline {6.2.8}Exercise}{43}{subsection.6.2.8}%
+\contentsline {section}{\numberline {6.3}Double Integration}{43}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Trapezoidal Rule}{43}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Simpson's Rule}{44}{subsection.6.3.2}%
+\contentsline {chapter}{\numberline {7}Solving Ordinary Differential Equations}{46}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Introduction}{46}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Taylor's series method}{46}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Picard's Method of Successive Approximation}{47}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Exercise}{48}{subsection.7.3.1}%
+\contentsline {section}{\numberline {7.4}Euler's Method}{48}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Backward Euler's Method}{49}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Modified Euler's Method}{49}{subsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.3}Exercise}{49}{subsection.7.4.3}%
+\contentsline {section}{\numberline {7.5}Runge-Kutta Methods}{50}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Fourth-Order Runge-Kutta Method}{51}{subsection.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.2}Exercise}{51}{subsection.7.5.2}%
+\contentsline {section}{\numberline {7.6}Simultaneous and Higher Order Equations}{51}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Boundary Value Problems}{52}{section.7.7}%
+\contentsline {section}{\numberline {7.8}Finite-Difference Method}{52}{section.7.8}%
+\contentsline {subsection}{\numberline {7.8.1}General Method:}{53}{subsection.7.8.1}%

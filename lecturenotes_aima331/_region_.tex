@@ -1,0 +1,255 @@
+\message{ !name(ch3_aima331.tex)}\documentclass[aima331_lecturenotes_ku.tex]{subfiles}
+\setcounter{chapter}{2}
+\begin{document}
+
+\message{ !name(ch3_aima331.tex) !offset(-3) }
+
+\chapter{Fourier Transform}
+\section{Fourier Integral}
+Fourier series are powerful tools for problems involving functions that are periodic or are of interest on a finite interval only. The idea of Fourier series extended to the functions that are nonperiodic gives Fourier Integral. The Fourier Integral Representation of a function $f(x)$ is
+\begin{equation}
+   \label{fourier_integral}
+  \begin{gathered}[t]
+    f(x) = \int_0^{\infty} \; \left [ A(w)\, cos\,wx + B(w)\, sin\,wx \right] \\[2mm]
+     \text{where,} \hspace{2mm} A(w) =\frac{1}{\pi} \int_{-\infty}^{\infty} \; f(v)\,cos\,wv\,dv, \hspace{7mm} B(w) =\frac{1}{\pi} \int_{-\infty}^{\infty} \; f(v)\,sin\,wv\,dv
+    \end{gathered}
+  \end{equation}
+
+\section{Fourier Cosine and Sine Transform}
+An integral transform is a transformation in the form of an integral that produces from given functions new functions depending on a different variable. The Fourier transforms can be obtained from the Fourier integral.
+
+\subsection{Fourier Cosine Integral and Fourier Sine Integral}
+For an even or odd function the Fourier integral becomes simpler. Indeed, if $f(x)$ is an \textbf{even} function, then $B(w)=0$ and if $f(x)$ is an \textbf{odd} function, then $A(w)=0$  and the \textbf{Fourier cosine integral and the Fourier sine integral} are:
+\begin{equation}
+  \label{fourier_cosine}
+f(x) = \int_0^{\infty} \; A(w)\, cos\,wx dw, \hspace{6mm} f(x) = \int_0^{\infty} \; B(w)\, sin\,wx dw
+\end{equation}
+where
+\begin{equation*}
+    A(w) = \frac{2}{\pi} \int_0^{\infty} \; f(v)\,cos\,wv\,dv
+  \end{equation*}
+  Now, if we set $A(w) = \sqrt{2/pi}\, \hat{f}_c(w)$, where $c$ suggests "cosine."
+  \begin{equation}
+    \label{cosine}
+    \hat{f}_c(w) = \sqrt{\frac{2}{\pi}} \, \int_0^{\infty} \; f(x)\,cos\,wx\,dx
+  \end{equation}
+  Then,
+  \begin{equation}
+    \label{inverse_cosine}
+    f(x)=\sqrt{\frac{2}{\pi}} \, \int_0^{\infty} \; \hat{f}_c(w) \,cos\,wx\,dw
+  \end{equation}
+  The process of obtaining the transform $\hat{f}_c(w)$ from a given $f$ is called \textbf{Fourier cosine transform} and the inverse process using the formula~\ref{inverse_cosine} called \textbf{Inverse Fourier cosine transform}. Similarly following gives the \textbf{Fourier sine transform} and its inverse transform.
+    \begin{equation}
+    \label{sine}
+    \hat{f}_s(w) = \sqrt{\frac{2}{\pi}} \, \int_0^{\infty} \; f(x)\,sin\,wx\,dx
+  \end{equation}
+  Then,
+  \begin{equation}
+    \label{inverse_sine}
+    f(x)=\sqrt{\frac{2}{\pi}} \, \int_0^{\infty} \; \hat{f}_s(w) \,sin\,wx\,dw
+  \end{equation}
+  \subsection{Properties}
+  \begin{enumerate}
+  \item The Fourier cosine and sine transforms are \textbf{linear operations:}
+  \begin{itemize}
+  \item $\mathcal{F}_c (af+bg)=a\mathcal{F}_c(f) + b \mathcal{F}_c(g)$
+   \item $\mathcal{F}_S (af+bg)=a\mathcal{F}_S(f) + b \mathcal{F}_S(g)$
+   \end{itemize}
+
+ \item The transform of the derivative of a function $f$.
+   \begin{itemize}
+   \item $\displaystyle \mathcal{F}_c(f'(x))=w\mathcal{F}_c(f(x)) -\sqrt{\frac{2}{\pi}} f(0)$
+     \vspace{2mm}
+   \item $\displaystyle \mathcal{F}_S(f'(x)) = -\mathcal{F}_c(f(x))$
+   \end{itemize}
+ \end{enumerate}
+
+ \section{Fourier Transform}
+ The \textbf{complex Fourier integral}, is
+ \begin{equation}
+   \label{complex_fourier_integral}
+   f(x)=\frac{1}{2\pi} \, \int_{-\infty}^{\infty}\;\int_{-\infty}^{\infty} \; f(v) e^{iw(x-v)}\,dv\,dw
+ \end{equation}
+ This can be written as,
+ \begin{equation*}
+   \label{complex_fourier_integral1}
+   f(x)=\frac{1}{\sqrt{2\pi}} \, \int_{-\infty}^{\infty}\;\frac{1}{\sqrt{2\pi}} \; \left [\int_{-\infty}^{\infty} \; f(v) e^{-iwv}\,dv \right ] \,e^{iwx} \,dw
+ \end{equation*}
+ Now the function $\hat{f}$ with the following is called the \textbf{Fourier transform} of $f$.
+ \begin{equation}
+   \label{eq:1}
+   \hat{f} = \frac{1}{\sqrt{2\pi}} \; \int_{-\infty}^{\infty} \; f(x) e^{-iwx}\,dx
+ \end{equation}
+ Then the following is called the \textbf{inverse Fourier transform} of $\hat{f}$
+ \begin{equation}
+   \label{complete_fourier}
+   f(x) =\frac{1}{\sqrt{2\pi}}\; \int_{-\infty}^{\infty} \; \hat{f(w)} e^{iwx}\,dw
+ \end{equation}
+ Another notation for the Fourier transform is $\hat{f}=\mathcal{F}(f)$ so $f=\mathcal{F}^{-1}(\hat{f})$.
+ \begin{theorem}[\textbf{Existence of the Fourier Transform}]
+   If $f(x)$ is absolutely integrable on the $x$-axis and piecewise continuous on every finite interval, then the Fourier transform $\hat{f}(w)$ of $f(x)$ given by~\ref{complete_fourier} exists.
+ \end{theorem}
+
+ \subsection{Physical Interpretation}
+ The nature of the representation~\ref{complete_fourier} of $f(x)$ becomes clear if we think of it as a superpositon of sinusoidal oscillations of all possible frequences, called a \textbf{spectral representation}. Like light is such a superpositon of seven different colors of light. $\hat{f}$ measures the intensity of $f(x)$ in the frequency interval between $w$ and $w+\Delta w$.
+
+ \subsection{Properties}
+ \begin{enumerate}
+ \item \textbf{Linearity} \\[1mm]
+   The Fourier transforms are linear operations:
+  \begin{itemize}
+  \item $\mathcal{F} (af+bg)=a\mathcal{F}(f) + b \mathcal{F}(g)$
+   \end{itemize}
+
+ \item \textbf{Shift Formula} \\[1mm]
+   If $g=f(x+b)$ and $h=f(ax)$ then,
+   \begin{itemize}
+   \item $\mathcal{F}(g)(w)= e^{iwb} \, \mathcal{F}(f)(w)$
+   \item $\mathcal{F}(h)(w)= (1/|a|) \, \mathcal{F}(f)(w/a)$
+    \item $\mathcal{F}(e^{ibx}f(x))(w)=  \mathcal{F}(f)(w-b)$
+   \end{itemize}
+
+ \item \textbf{Derivative Formula} \\[1mm]
+   The transform of the derivative of a function $f$.
+   \begin{itemize}
+   \item $\displaystyle \mathcal{F}(f')(w)=iw\mathcal{F}_c(f)(w)$
+    \item $\displaystyle \mathcal{F}(f^{(n)})(w)=(iw)^n\mathcal{F}_c(f)(w)$
+   \end{itemize}
+ \end{enumerate}
+
+ \subsection{Convolution}
+ The convolution $f * g$ of functions $f$ and $g$ is defined by
+ \begin{equation}
+   \label{conv}
+   (f*g)(x) = \int_{-\infty}^{\infty} \; f(p)g(x-p)\,dp = \int_{-\infty}^{\infty} \; f(x-p)g(p)\,dp
+ \end{equation}
+ \begin{theorem}
+   Suppose that the Fourier transform of $f(x)$ and $g(x)$ exist. Then
+   \begin{equation}
+     \label{conv_theorem}
+     \mathcal{F}(f*g)=\sqrt{2 \pi}\; \mathcal{F}(f)\,\mathcal{F}(g)
+   \end{equation}
+ \end{theorem}
+ \subsection{Exercise}
+ Determine the Fourier Transform
+   \begin{multicols}{2}
+     a). $f(x)=e^{-a|x|}, \;\; a>0$
+     \columnbreak
+
+     b). $f(x) = 4xe^{-x^2}$
+   \end{multicols}
+   \begin{remark}
+     Different books define the Fourier transform in different ways. Why all these variants? These differences are purely technical. The only important point is that $e^{-iwx}$ appears in one and $e^{iwx}$ appears in the other. And the product of the constants before the transform and its inverse must equal to $1/2\pi$.
+   \end{remark}
+
+ \subsection{Fourier Transform Table}
+ \begin{table}[h]
+   \centering
+   \begin{tabular}{|c|c|c|}
+     \hline
+     S.N&f(x)&$\hat{f}=\mathcal{f}$ \\
+     \hline
+     1& $
+        \begin{cases}
+          1 \hspace{7mm} -b < x <b \\
+          0 \hspace{7mm} \text{otherwise}
+        \end{cases}
+        $ & $\displaystyle \sqrt{\frac{2}{\pi}} \; \frac{sinbw}{w}$ \\[11mm]
+     2& $
+        \begin{cases}
+          1 \hspace{7mm} b < x <c \\
+          0 \hspace{7mm} \text{otherwise}
+        \end{cases}
+        $ & $\displaystyle \sqrt{\frac{e^{-ibw}-e^{-icw}}{iw\sqrt{2 \pi}}}$ \\[11mm]
+     3& $\displaystyle \frac{1}{x^2 + b^2, \;\;\; (a>0)} $ & $\displaystyle \sqrt{\frac{\pi}{2}} \; \frac{e^{-a|w|}}{a}$ \\[11mm]
+     4& $
+        \begin{cases}
+          x \hspace{7mm} 0 < x <b \\
+          2x-b \hspace{7mm} if b <x<2b
+          0 \hspace{7mm} \text{otherwise}
+        \end{cases}
+        $ & $\displaystyle \frac{-1 + 2e^{ibw} - e^{-2ibw}}{\sqrt{2\pi}\;w^2}$ \\[11mm]
+            5& $
+        \begin{cases}
+          e^{ax} \hspace{7mm}  x >0, \hspace{4mm} (a > 0)\\
+          0 \hspace{7mm} \text{otherwise}
+        \end{cases}
+               $ & $\displaystyle \frac{1 }{\sqrt{2\pi}\;(a+iw)}$\\[11mm]
+     6 & $e^{-ax^{2}}, \;\;\; (a>0)$& $\displaystyle \frac{1}{\sqrt{2a}} \; e^{-w^2/4a}$ \\[11mm]
+     7 & $\displaystyle \frac{sin\,ax}{x}, \;\;\; (a>0)$ & $\displaystyle \frac{\pi}{2}$ if $|w|<a; 0$ if $|w|>a$ \\[5mm]
+     \hline
+   \end{tabular}
+
+   \caption{Fourier transform table for elementray functions}
+ \end{table}
+
+ \subsection{Plancherel Identity}
+ If $\displaystyle \int_{\infty}^{\infty} \; |f(x)|^2\, dx < \infty$, then $\displaystyle \int_{\infty}^{\infty} \; |\hat{f}(x)|^2\, dx < \infty$ and
+ $$\frac{1}{\sqrt{2\pi}} \; \int_{-\infty}^{\infty} \; |f(x)|^2 = \frac{1}{\sqrt{2\pi}} \; \int_{-\infty}^{\infty} \; |\hat{f}(w)|^2$$
+ This formula is sometimes called the formula for the \textbf{conservation of energy}. The left-had side represents the energy of a signal in the time domain, while the right-hand side represents its energy in the frequency.
+ \subsection{Exercise}
+ Determine the Fourier transform of:
+ \begin{multicols}{2}
+   a). $\displaystyle \frac{cos\,ax}{a^2+b^2}$
+   \columnbreak
+
+   b). $\displaystyle \frac{sin\,ax}{a^2+b^2}$
+ \end{multicols}
+
+ \subsection{Applications of Residue}
+ \begin{theorem}
+   If $f$ is analytic on all of $\mathbb{C}$ except at the points $z_1, z_2, ..., z_m$, in the \textbf{upper half plane} and the points $z_{m+1}, z_{m+2}, ..., z_n$, in the \textbf{lower half plane} and that $f$ is absolutely integrable on $\mathbb{R}$, and $\displaystyle \lim_{R
+     to \infty} \; |f(z)|=0$, then the Fourier transform of $f$ is given by,
+   \begin{equation}
+     \label{residue_fourier}
+     \hat{f}(w)=
+     \begin{cases}
+       -i \; \sum_{j=m+1}^n\; Res\{f(z)\, e^{-iwz};\,z_j\}, \hspace{7mm} w \geq 0 \\[5mm]
+       i \; \sum_{j=1}^m\; Res\{f(z)\, e^{-iwz};\,z_j\}, \hspace{7mm} w \leq 0
+     \end{cases}
+   \end{equation}
+ \end{theorem}
+ \begin{example}
+   Let $f(x)= 1 / (x^2 +1)$. The analytic extension of $f$ to all of $\mathcal{C}$ is $f(z) = 1 / (z^2 +1)$. $f$ has simple poles at $-i,\, i$, and it is easily verified that $f$ satisfies the other conditions of Theorem~\ref{residue_fourier}. Thus the Fourier transform of $f$ is given by
+   $$\hat{f}(w) = -i \; Res\{\frac{e^{-iwz}}{(z^2 +1)} ; -i\}= -i \frac{1}{-2i}e^{-iwi} = \frac{e^{-w}}{2}, \hspace{5mm} w\geq 0$$
+
+   $$\hat{f}(w) = i \; Res\{\frac{e^{-iwz}}{(z^2 +1)} ; i\}= i \frac{1}{2i}e^{-iwi} = \frac{e^{w}}{2}, \hspace{5mm} w\leq 0$$
+   That is $\hat{f}(w) = e^{-|w|} /2$
+ \end{example}
+
+ \subsection{Application to Partial Differential Equations}
+ \subsubsection{The Heat Equation}
+ The one dimensional homogeneous heat equation on the real line is given by the equation:
+ \begin{equation}
+   \label{heat}
+   u_t =ku_{xx}, \hspace{7mm} -\infty < x < \infty, \hspace{3mm} 0 <t < \infty
+ \end{equation}
+ Here $u$ is the temperature function of length and time. We assume the real line is a model of a rod of infinite length that is made of some material of uniform density. And the rod is insulated. $k$ is a positive constant which has a physical meaning that depends upon the material of the rod. This is a simple mathematical model for the distribution of heat, along a rod, over time. \\[2mm]
+ In order to determine a particular solution it requires some conditions. We assume an initial condition of the form:
+ $$u(x,0) = f(x), \hspace{3mm}  0 <t < \infty $$ for some $f$ that has Fourier transform.
+
+ \subsubsection{Procedure}
+ \begin{enumerate}
+ \item Take Fourier transform with respect to the variable $x$ on the both sides of the PDE~\ref{heat}.
+   Let, $\displaystyle U(w,t) = \frac{1}{\sqrt{2\pi}} \; \int_{-\infty}^{\infty} \; u(x,t)\, e^{-iwx}\,dx$. Then, \\[3mm]
+   $\displaystyle U_t(w,t) = \frac{1}{\sqrt{2\pi}} \; \int_{-\infty}^{\infty} \; u_t(x,t)\, e^{-iwx}\,dx = \frac{1}{\sqrt{2\pi}} \; \int_{-\infty}^{\infty} \;k\, u_{xx}(x,t)\, e^{-iwx}\,dx$. \\[2mm]
+   Now from the derivative of Fourier transform, $\mathcal{F}(f^{''})(w)=(iw)^2\mathcal{F}_c(f)(w)=-w^2\mathcal{F}_c(f)(w)$, we have, so,
+   \begin{equation}
+     \label{eq:2}
+     \begin{aligned}
+       U_t(w,t) &= k \mathcal{F}(u_{xx})(w,t) = -kw^2U(w,t) \\[2mm]
+       U_t(w,t) + kw^2U(w,t) =0
+     \end{aligned}
+   \end{equation}
+
+ \end{enumerate}
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:
+
+\message{ !name(ch3_aima331.tex) !offset(-255) }

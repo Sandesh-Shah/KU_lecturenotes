@@ -1,0 +1,175 @@
+\documentclass[aima331_lecturenotes_ku.tex]{subfiles}
+
+\begin{document}
+\chapter{Fourier Series}
+
+\section{Introduction}
+Like Taylor series, Fourier series are infinite series capable of representing functions. Fourier series are very good at representing general periodic functions in terms of simple ones.
+
+\subsection{Periodic Function}
+A function $f(x)$ is called a periodic function if there is some positive number $p$ such that $f(x+p)=f(x)$. \\
+The number $p$ is called a period of $f(x)$.
+\begin{example}
+  The sine function is periodic. For $p=2\pi$, $sin(x+p) = sin(x)$. A period of $sinx$ is $2 \pi$.
+\end{example}
+\begin{enumerate}
+\item Find the period of the function $sin(3x)$.
+\item Give another example of period function.
+\item Show that if a function has a period $p$, then it also has the period $2P$.
+\item Show that if $f(x)$ and $g(x)$ has a period $p$, then $af(x)+bg(x)$ with any constants $a$ and $b$ has a period $p$.
+\item Give some examples of non-period function.
+\end{enumerate}
+Each term of the series
+\begin{equation}
+  \label{fourier}
+  a_0/2 + a_1cosx+b_1sinx + a_2cos2x+b_2sin2x + ... = a_0/2 + \sum_{n=1}^{\infty} \; ( a_n\, cos\,nx + b_n \, sin\,nx  )
+\end{equation}
+has a period $2\pi$. Hence this series may be used to represent a function $f(x)$ of period $2\pi$. In this case the series~\ref{fourier} is called the fourier series of $f$. Then the constants in~\ref{fourier}, which are also called the Fourier coefficients of $f(x)$ is given by following:
+\begin{itemize}
+\item $\displaystyle a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} \; f(x) dx$
+
+\item $\displaystyle a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} \; f(x)cos\,nx \, dx$
+
+\item $\displaystyle b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} \; f(x)sin\,nx \, dx$
+\end{itemize}
+
+\section{Function of any period p=2L}
+The fourier series of a function $f(x)$ which is defined on $[-L,L]$, whose period is $2L$ is
+\begin{equation}
+  \label{fourier_general}
+  f(x)=\frac{a_0}{2} + \sum_{n=1}^{\infty} \; \left ( a_n\, cos\,\frac{n\pi}{L}x + b_n \, sin\,\frac{n\pi}{L}x  \right )
+\end{equation}
+whose Fourier coefficients are given by the following:
+\begin{itemize}
+\item $\displaystyle a_0 = \frac{1}{L} \int_{-L}^{L} \; f(x) dx$
+
+\item $\displaystyle a_n = \frac{1}{L} \int_{-L}^{L} \; f(x)cos\,\frac{n\pi}{L}x \, dx$
+
+\item $\displaystyle b_n = \frac{1}{L} \int_{-L}^{L} \; f(x)sin\,\frac{n\pi}{L}x \, dx$
+\end{itemize}
+
+\begin{example}
+  \begin{equation*}
+    f(x) =
+    \begin{cases}
+      -k \hspace{5mm} -\pi < x < 0 \\
+      k \hspace{7mm} 0 < x < \pi
+    \end{cases} \hspace{7mm}, f(x+2\pi)=f(x)
+  \end{equation*}
+  The value of a function at a single point does not affect the integral: hence we can leave $f(x)$ undefined $x=0$ and $x = \pm \pi$.
+
+ $$ a_0 = \frac{1}{\pi} \int_{-\pi}^{\pi} \; f(x) dx = 0$$
+ \begin{align*}
+      a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} \; f(x)cos\,nx \, dx &= \frac{1}{\pi} \left [ \int_{-\pi}^0 \; (-k)cos\,nx \, dx +  \int_{0}^{\pi} \; k \,cos\,nx \, dx \right ] \\[2mm]
+      &= \frac{1}{\pi} \left [  -k \frac{sin\,nx}{n} \Bigg|_{-\pi}^0 +   \; k \,\frac{sin\,nx}{n} \Bigg|_0^{\pi}  \right ] =0
+ \end{align*}
+ \begin{align*}
+      b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} \; f(x)sin\,nx \, dx &= \frac{1}{\pi} \left [ \int_{-\pi}^0 \; (-k)sin\,nx \, dx +  \int_{0}^{\pi} \; k \,sin\,nx \, dx \right ] \\[2mm]
+                                                                 &= \frac{1}{\pi} \left [  k \frac{cos\,nx}{n} \Bigg|_{-\pi}^0 +   \; (-k) \,\frac{cos\,nx}{n} \Bigg|_0^{\pi}  \right ] \\[2mm]
+   &=\frac{k}{n\pi} \left [cos\,0 - cos\,(-\pi n) - \; cos\,n \pi +cos0   \right ] = \frac{2k}{n\pi}(1-cos\,n\pi)
+ \end{align*}
+$cos\, n\pi =
+\begin{cases}
+  -1 \hspace{5mm} \text{for odd n}  \\
+      1 \hspace{7mm} \text{for even n}
+\end{cases}
+$ thus we have, \hspace{4mm} $b_n  =
+\begin{cases}
+  2 \hspace{5mm} \text{for odd n}  \\
+      0 \hspace{7mm} \text{for even n}
+\end{cases}
+$ \\[1mm]
+Thus the Fourier series is $\displaystyle \frac{4k}{\pi} \left ( sin\, x + \frac{1}{3} sin\, 3x + \frac{1}{5} sin\, 5x + ...  \right )$
+\end{example}
+
+\subsection{Even and Odd functions}
+\begin{itemize}
+\item  If $f(-x)=f(x)$, so that its graph is symmetric with respect to the $y$-axis, then $f$ is \textbf{even}.
+\item  If $f(-x)=-f(x)$, so that its graph is symmetric with respect to the origin, then $f$ is \textbf{odd}.
+
+\item The \textit{cosines} terms in the Fourier series~\ref{fourier_general} are even and the \textit{sine} terms are odd. So, it should not be a surprise that an even function is given by a series of cosines terms and an odd function by a series of sine terms.
+\end{itemize}
+\begin{mdframed}
+  The Fourier series of an \textbf{even} function of period $2L$ is a \textbf{Fourier cosine series}
+  \begin{equation}
+    \label{fourier_cosine}
+    f(x)= \frac{a_0}{2} + \sum_{n=1}^{\infty} \; \left ( a_n\, cos\,\frac{n\pi}{L}x _n  \right )
+  \end{equation}
+x    The Fourier series of an \textbf{odd} function of period $2L$ is a \textbf{Fourier sine series}
+  \begin{equation}
+    \label{fourier_sine}
+    f(x)= \sum_{n=1}^{\infty} \; \left ( a_n\, sin\,\frac{n\pi}{L}x _n  \right )
+  \end{equation}
+\end{mdframed}
+with the Fourier coefficients as:
+\begin{itemize}
+\item $\displaystyle a_0 = \frac{2}{L} \int_0^{L} \; f(x) dx$
+
+\item $\displaystyle a_n = \frac{2}{L} \int_0^{L} \; f(x)cos\,\frac{n\pi}{L}x \, dx$
+
+\item $\displaystyle b_n = \frac{2}{L} \int_0^{L} \; f(x)sin\,\frac{n\pi}{L}x \, dx$
+\end{itemize}
+
+\section{Half-Range Expansions}
+Given a function $f(x)$ defined on $0 \leq x \leq L$, it i useful to extend it as a periodic function. We could extend $f(x)$ as a function of period $L$ and develop the extended function into a Fourier series. But there is a better way! That is to extend it only either as an even function using the cosine series or as an odd function using the sine series. These series are simpler series. These extensions as an even function or odd functions have period $2L$. This motivates the name half-range expansions: $f$ is given only on half the range, half the interval of length $2L$.
+\subsection{Exercise}
+Find the Half-range extensions of the functions:
+\begin{multicols}{2}
+  a). $f(x) = 1, \;\;\; 0 < x <2$ \\[1mm]
+  c). $\displaystyle f(x) =
+  \begin{cases}
+    0 \hspace{7mm} 0 < x < 2 \\
+    1 \hspace{7mm} 2 < x < 4
+  \end{cases}
+  $
+  \columnbreak
+
+  b). $f(x) = x, \;\;\; 0 < x < 1/2$ \\[1mm]
+  d). $\displaystyle f(x) =
+  \begin{cases}
+    x \hspace{7mm} 0 < x < \pi/2 \\
+    \pi /2 \hspace{7mm} \pi /2 < x < \pi
+  \end{cases}
+  $
+\end{multicols}
+\section{Complex Fourier Series}
+\begin{itemize}
+\item We have, $e^{it}=cos\,t + i\, sin\, t \hspace{10mm} e^{-it}=cos\,t - i\, sin\, t$ so that,
+  \vspace{4mm}
+\item $\displaystyle cos\, t = \frac{1}{2}(e^{it} + e^{-it}), \hspace{10mm} sin\,t = \frac{1}{2i}(e^{it} - e^{-it})$
+\vspace{4mm}
+\item $\displaystyle a_n\, cos\,nx + b_n \, sin\,nx = \frac{1}{2}(a_n - ib_n)e^{inx} + \frac{1}{2}(a_n + ib_n)e^{-inx}$
+\vspace{4mm}
+\item Writing $a_0 = c_0, \frac{1}{2}(a_n - ib_n) = c_n,  \frac{1}{2}(a_n + ib_n) = k_n$ we get, $\displaystyle c_0 + \sum_{n=1}^{\infty}\; (c_ne^{inx} + k_ne^{-inx})$.
+\vspace{4mm}
+\item $\displaystyle c_n = \frac{1}{2}(a_n - ib_n) = \frac{1}{2\pi} \int_{-\pi}^{\pi} \; f(x)e^{-inx} \, dx$, \hspace{5mm} $\displaystyle k_n = \frac{1}{2}(a_n + ib_n) = \frac{1}{2\pi} \int_{-\pi}^{\pi} \; f(x)e^{inx} \, dx$
+\end{itemize}
+Now, writing $k_n = c_{-n}$, we get
+\begin{equation}
+  \label{complex_fourier}
+  f(x) = \sum_{n= -\infty}^{\infty}\; (c_ne^{inx}, \hspace{10mm}  c_n = \frac{1}{2\pi} \int_{-\pi}^{\pi} \; f(x)e^{-inx} \, dx, \;\;\;\; n = 0, \pm 1, \pm 2, ...
+\end{equation}
+This series~\ref{complex_fourier} is called the
+\textbf{Complex Fourier Series} of a function $f(x)$ with period $2\pi$. The general Complex Fourier Series of a function $f(x)$ with period $2L$ is
+\begin{equation}
+  \label{complex_fourier_general}
+  f(x) = \sum_{n= -\infty}^{\infty}\; (c_ne^{inx/L}, \hspace{10mm}  c_n = \frac{1}{2L} \int_{-\pi}^{\pi} \; f(x)e^{-inx/L} \, dx, \;\;\;\; n = 0, \pm 1, \pm 2, ...
+\end{equation}
+\subsection{Exercise}
+\begin{enumerate}
+\item Find the complex Fourier series of: $f(x) =
+  \begin{cases}
+    -1, \;\;\; -\pi < x < 0 \\
+    1, \;\;\; 0 < x < \pi \\
+  \end{cases}
+ $
+\end{enumerate}
+
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:

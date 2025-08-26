@@ -209,7 +209,7 @@ Hence $(\alpha, \beta)$ is the root of the system~\ref{system}.
 \end{figure}
 
 \subsection{Newton-Raphson Method}
-Let $(x_0,y_0$ be an initial approximation to the root of the system of equations in two variables~\ref{system}. If $(x_0+h, y_0+k$ is the root of the system, then we must have
+Let $(x_0,y_0)$ be an initial approximation to the root of the system of equations in two variables~\ref{system}. If $(x_0+h, y_0+k)$ is the root of the system, then we must have
 \begin{equation*}
   f(x_0+h,y_0+k) = 0 \hspace{1cm} g(x_0+h,y_0+k) = 0
 \end{equation*}
@@ -226,7 +226,7 @@ Neglating the second and higher-order derivatives terms, we get,
   \label{taylor}
   \begin{gathered}[b]
     h\frac{\partial f}{\partial x_0} + k\frac{\partial f}{\partial y_0}... = -f_0 \\
-     h\frac{\partial g}{\partial x_0} + k\frac{\partial g}{\partial y_0}... = g_0
+     h\frac{\partial g}{\partial x_0} + k\frac{\partial g}{\partial y_0}... = -g_0
   \end{gathered}
 \end{equation}
 The system of equations~\ref{taylor} possesses a unique solution if
@@ -242,8 +242,8 @@ By Cramer's rule
   -f_0  & \frac{\partial f}{\partial y_0} \\[2mm]
   -g_0  & \frac{\partial g}{\partial y_0}
 \end{matrix} \right \vert \hspace{5mm} and \hspace{5mm} k= \frac{1}{D}\, \left \vert \begin{matrix}
-  \frac{\partial f}{\partial y_0} & -f_0  \\[2mm]
- \frac{\partial g}{\partial y_0} &  -g_0
+  \frac{\partial f}{\partial x_0} & -f_0  \\[2mm]
+ \frac{\partial g}{\partial x_0} &  -g_0
 \end{matrix} \right \vert
 \end{equation}
 The new approximations are, therefore

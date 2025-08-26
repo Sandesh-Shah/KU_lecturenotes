@@ -1,0 +1,109 @@
+\documentclass[12pt]{exam}
+\usepackage{preamble_question_small}
+\usepackage[normalem]{ulem}
+\renewcommand\ULthickness{2pt}
+\setlength\ULdepth{1.3ex}
+
+\begin{document}
+
+\begin{center}
+ {\bfseries  { Kathmandu University}} \\[-1mm]
+ Second In-Semester Exam-2025\\[-2mm]
+ {\small \textbf{Department of Artificial Intelligence}}
+\end{center}
+\begin{minipage}{0.70\linewidth}
+  \small
+  \begin{flushleft}
+    Level: B.Tech Artificial Intelligence \\
+    Year: II \\
+    Time: 60 minutes
+  \end{flushleft}
+\end{minipage} \hfill
+\begin{minipage}{0.25\linewidth}
+  \begin{flushleft}
+    Course: AIMA 203 \\
+    Semester: II \\
+    F.M. : 20
+  \end{flushleft}
+\end{minipage}
+\vskip 1mm
+\rule{\textwidth}{1pt}
+ \begin{center}
+    \textbf{Writing}: Do any two. ($5 marks \times 2$)
+  \end{center}
+\begin{questions}
+
+  \question Find an estimate of $y(2.5)$ using the natural cubic splines from the data points: $(0,1), \; (1,2), \; (2,33), (3,244)$.
+
+  \question Fit a function of the form $y=ax^b$ to the data points: \\ $(61,350), \, (26,400), \, (7,500), (2.6,600)$
+
+
+  \question Find by Taylor's series method the value of $y(0.1)$ given that $\displaystyle \frac{dy}{dx} = 1 + xy, \;\;\; y(0)=1$ correct up to four decimal places.
+
+
+ \question The distance traversed by a particle at different times are given below. Find the acceleration of the particle at $t=0.1$ seconds.
+  \begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      t& 0.0& 0.1& 0.2& 0.3\\
+      x & 3.01 & 3.16& 3.29& 3.36\\
+      \hline
+    \end{tabular}
+  \end{table}
+\end{questions}
+
+ \begin{center}
+    \textbf{Lab}: \underline{Attempt questions that add up to 5 marks.}
+  \end{center}
+\begin{questions}
+   \question Using Trapezoidal rule evaluate the double integral $$\int_{_2}^2 \, \int_0^4 \; ytanx \; dx\, dy.$$ taking $n=4$. [5]
+
+   \question Use Modified Euler's method to find $y(1)$ using $n=5$ for $\displaystyle y'=\frac{y^2-x^2}{y^2 + x^2}, \hspace{3mm} y(0)=1$. [3]
+
+   \question Using Bisection method, $x^3-x-1=0$. [2]
+
+ \question Using Newton-Rapshon method, $x^2 + 4sinx=0$. [2]
+
+ \question Solve the using Newton-Rapshon's method. $3yx^2-10x+7=0$ and $y^2-5y+4=0$ starting (0,0) doing $4$ iterations. [4]
+
+ \question Use Modified Euler's method to find $y(1.4)$ using $n=5$ for $\displaystyle y'=\frac{3x+y}{x+2y}, \hspace{3mm} y(1)=1$. [4]
+\end{questions}
+\newpage
+
+\begin{center}
+  \rule{\textwidth}{1pt}
+  Name: \hspace{5cm}  Roll No: \hspace{3cm} Marks-Scored:
+  \vskip -3mm
+\rule{\textwidth}{1pt}
+\end{center}
+\begin{center}
+   [10 Q \(\times\) 1 = 10 marks] (\textit{Do any five}).
+\end{center}
+Fill in the blanks by writing the most appropriate word(s) or symbol(s).
+\begin{questions}
+  \question Write the condition for the natural quadratic spline. \rule{7cm}{0.15mm}.
+\vspace{2mm}
+\question What is the difference between python list and numpy array? \\[1mm]
+  \rule{13cm}{0.15mm}.
+\vspace{2mm}
+  \question Write a major drawback of linear splines. \rule{7cm}{0.15mm}.
+\vspace{2mm}
+  \question Why is cubic spline the most popular one? \rule{7cm}{0.15mm} \\[1mm]
+  \rule{9cm}{0.15mm}.
+\vspace{2mm}
+  \question What are $m_i$'s and $M_i$'s in the quadratic and cubic splines? \rule{5cm}{0.15mm}.
+\vspace{2mm}
+  \question Write the formula for Romberg's Integration using Trapezoidal rule. \rule{4cm}{0.15mm}.
+\vspace{2mm}
+\question From where the $u_i$'s are obtained in Gaussian quadrature. \rule{5cm}{0.15mm}.
+\vspace{2mm}
+\question Write an second-degree IVP. \rule{9cm}{0.15mm}.
+\end{questions}
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:

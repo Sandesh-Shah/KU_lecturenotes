@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.16)  22 MAR 2025 11:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.3.16)  29 JUL 2025 12:01
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **aima203_lecturenotes_ku.tex
@@ -1009,7 +1009,10 @@ File: tikzlibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
 Library (tcolorbox): 'tcbposter.code.tex' version '6.2.0'
-)) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
 
 (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
@@ -1112,7 +1115,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip132
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 44.
+Package hyperref Info: Option `colorlinks' set `true' on input line 53.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fncychap/fncychap.sty
 Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
@@ -1152,6 +1155,18 @@ Package: import 2020/04/01  v 6.2
 (./aima203_lecturenotes_ku.aux
 
 LaTeX Warning: Label `taylor' multiply defined.
+
+
+LaTeX Warning: Label `eq:9' multiply defined.
+
+
+LaTeX Warning: Label `eq:9' multiply defined.
+
+
+LaTeX Warning: Label `eq:9' multiply defined.
+
+
+LaTeX Warning: Label `simul' multiply defined.
 
 )
 \openout1 = `aima203_lecturenotes_ku.aux'.
@@ -1253,7 +1268,7 @@ Package hyperref Info: Link coloring ON on input line 11.
 
 
 (./title_aima203.tex
-<images/Kulogo.png, id=83, 1027.84pt x 1027.84pt>
+<images/Kulogo.png, id=240, 1027.84pt x 1027.84pt>
 File: images/Kulogo.png Graphic file (type png)
 <use images/Kulogo.png>
 Package pdftex.def Info: images/Kulogo.png  used on input line 11.
@@ -1271,88 +1286,371 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+) [2
+
+
+])
 \tf@toc=\write5
 \openout5 = `aima203_lecturenotes_ku.toc'.
 
- (./ch1_aima203.tex
-[2
 
-
-] [3
-
-]
+(./ch1_aima203.tex [3]
 Chapter 1.
-LaTeX Font Info:    Trying to load font information for OT1+pzc on input line 1
-6.
+LaTeX Font Info:    Trying to load font information for OT1+pzc on input line 4
+.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pzc.fd
 File: ot1pzc.fd 2020/03/25 font definitions for OT1/pzc.
 )
 LaTeX Font Info:    Font shape `OT1/pzc/m/n' in size <76> not available
-(Font)              Font shape `OT1/pzc/m/it' tried instead on input line 16.
+(Font)              Font shape `OT1/pzc/m/it' tried instead on input line 4.
 
-Overfull \hbox (10.0pt too wide) in paragraph at lines 16--16
+Overfull \hbox (10.0pt too wide) in paragraph at lines 4--4
 [][][][][][][][][]  
  []
 
 [4
 
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}] [5] [6])
-(./ch2_aima203.tex [7]
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
+[]\OT1/cmr/m/n/12 c).
+ []
+
+[5] [6] [7]) (./ch2_aima203.tex [8]
 Chapter 2.
 
 Overfull \hbox (10.0pt too wide) in paragraph at lines 6--6
 [][][][][][][][][]  
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 28.
+[9
+
+]
+Package mdframed Info: mdframed works in twoside mode on input line 60.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 28.
-[8
+(mdframed)              on input line 60.
+ [10] [11] [12] [13]
+<images/secant_example.png, id=479, 1277.77374pt x 919.435pt>
+File: images/secant_example.png Graphic file (type png)
+<use images/secant_example.png>
+Package pdftex.def Info: images/secant_example.png  used on input line 208.
+(pdftex.def)             Requested size: 369.88199pt x 312.98256pt.
+ [14 <./images/secant_example.png>]
+<images/newton_example.png, id=491, 1305.87875pt x 533.995pt>
+File: images/newton_example.png Graphic file (type png)
+<use images/newton_example.png>
+Package pdftex.def Info: images/newton_example.png  used on input line 255.
+(pdftex.def)             Requested size: 426.77676pt x 199.17207pt.
+ [15 <./images/newton_example.png>]
+Overfull \hbox (40.5347pt too wide) in paragraph at lines 299--301
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
 
-] [9] [10] [11]) [12] (./aima203_lecturenotes_ku.aux)
+ []
+
+[16{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 3
+13.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 313.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 3
+46.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 346.
+) (./ch3_aima203.tex
+[17]
+Chapter 3.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 7--7
+[][][][][][][][][]  
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18
+
+]
+[19] [20] [21]
+Package mdframed Info: mdframed works in twoside mode on input line 227.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 227.
+Package mdframed Info: mdframed works in twoside mode on input line 238.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 238.
+Package mdframed Info: Not enough space on this page on input line 244.
+ [22]
+Package mdframed Info: Not enough space on this page on input line 244.
+) (./ch4_aima203.tex [23]
+Chapter 4.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 5--5
+[][][][][][][][][]  
+ []
+
+[24
+
+] [25] [26]
+<images/newt_forward.png, id=677, 1144.275pt x 871.255pt>
+File: images/newt_forward.png Graphic file (type png)
+<use images/newt_forward.png>
+Package pdftex.def Info: images/newt_forward.png  used on input line 147.
+(pdftex.def)             Requested size: 369.87704pt x 312.97356pt.
+
+Overfull \hbox (6.94974pt too wide) in paragraph at lines 159--161
+\OT1/cmr/m/n/12 The for-mula $[][]  \OML/cmm/m/it/12 l[]\OT1/cmr/m/n/12 (\OML/c
+mm/m/it/12 x\OT1/cmr/m/n/12 ) \OML/cmm/m/it/12 y[]$\OT1/cmr/m/n/12 , where $\OM
+L/cmm/m/it/12 l[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = []$ 
+ []
+
+[27 <./images/newt_forward.png>]
+<images/lagra_ex.png, id=689, 1144.275pt x 829.0975pt>
+File: images/lagra_ex.png Graphic file (type png)
+<use images/lagra_ex.png>
+Package pdftex.def Info: images/lagra_ex.png  used on input line 164.
+(pdftex.def)             Requested size: 369.87704pt x 341.425pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28 <./images/lagra_ex.png>]
+<images/divided_for.png, id=698, 1139.25626pt x 368.37625pt>
+File: images/divided_for.png Graphic file (type png)
+<use images/divided_for.png>
+Package pdftex.def Info: images/divided_for.png  used on input line 187.
+(pdftex.def)             Requested size: 369.87146pt x 142.26091pt.
+ [29 <./images/divided_for.png>]
+<images/divided.png, id=708, 1139.25626pt x 805.0075pt>
+File: images/divided.png Graphic file (type png)
+<use images/divided.png>
+Package pdftex.def Info: images/divided.png  used on input line 211.
+(pdftex.def)             Requested size: 369.87146pt x 312.98128pt.
+) (./ch4_2_aima203.tex
+[30 <./images/divided.png>]
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/bx/n' instead on input line 5.
+
+[31
+
+]
+Package mdframed Info: mdframed works in twoside mode on input line 64.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 64.
+Package mdframed Info: Not enough space on this page on input line 68.
+ [32]
+Package mdframed Info: Not enough space on this page on input line 68.
+
+Overfull \hbox (14.01955pt too wide) detected at line 98
+[]
+ []
+
+[33]) (./ch5_aima203.tex [34]
+Chapter 5.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 5--5
+[][][][][][][][][]  
+ []
+
+
+Overfull \hbox (64.6304pt too wide) in paragraph at lines 37--38
+\OT1/cmr/m/n/12 Let $\OML/cmm/m/it/12 z \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 a[] 
+\OT1/cmr/m/n/12 + \OML/cmm/m/it/12 a[]x \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 a[]y
+$ \OT1/cmr/m/n/12 be a lin-ear equa-tion to be fit-ted to the given data $(\OML
+/cmm/m/it/12 x[]; y[]; z[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 (
+\OML/cmm/m/it/12 x[]; y[]; z[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; :::; \OT1/cmr
+/m/n/12 (\OML/cmm/m/it/12 x[]; y[]z[]\OT1/cmr/m/n/12 )$
+ []
+
+[35
+
+]
+Underfull \vbox (badness 1226) has occurred while \output is active []
+
+ [36]
+Overfull \hbox (19.18346pt too wide) in paragraph at lines 105--107
+[]\OT1/cmr/m/n/12 Fit a func-tion of the form $\OML/cmm/m/it/12 y \OT1/cmr/m/n/
+12 = \OML/cmm/m/it/12 ax[]$ \OT1/cmr/m/n/12 to the data points: $(61\OML/cmm/m/
+it/12 ; \OT1/cmr/m/n/12 350)\OML/cmm/m/it/12 ;  \OT1/cmr/m/n/12 (26\OML/cmm/m/i
+t/12 ; \OT1/cmr/m/n/12 400)\OML/cmm/m/it/12 ;  \OT1/cmr/m/n/12 (7\OML/cmm/m/it/
+12 ; \OT1/cmr/m/n/12 500)\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 (2\OML/cmm/m/it/12 
+:\OT1/cmr/m/n/12 6\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 600)$ 
+ []
+
+) (./ch6_aima203.tex [37]
+Chapter 6.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 5--5
+[][][][][][][][][]  
+ []
+
+[38
+
+] [39] [40]
+Overfull \hbox (57.47859pt too wide) detected at line 151
+[][][][][]
+ []
+
+[41]
+<images/gaussian.png, id=851, 745.78625pt x 541.02126pt>
+File: images/gaussian.png Graphic file (type png)
+<use images/gaussian.png>
+Package pdftex.def Info: images/gaussian.png  used on input line 214.
+(pdftex.def)             Requested size: 341.42715pt x 256.07968pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (15.11504pt too wide) in paragraph at lines 218--219
+[]\OT1/cmr/m/n/12 Compute the val-ues of $\OML/cmm/m/it/12 I \OT1/cmr/m/n/12 = 
+[][]  []$ us-ing the trape-zoidal rule with $\OML/cmm/m/it/12 h \OT1/cmr/m/n/12
+ = 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 5\OML/cmm/m/it/12 ;  \OT1/cmr/m/n/12 0\OM
+L/cmm/m/it/12 :\OT1/cmr/m/n/12 25\OML/cmm/m/it/12 ;  \OT1/cmr/m/n/12 0\OML/cmm/
+m/it/12 :\OT1/cmr/m/n/12 125$.
+ []
+
+[42] [43 <./images/gaussian.png>]
+<images/doubleint.png, id=877, 1303.87125pt x 980.66376pt>
+File: images/doubleint.png Graphic file (type png)
+<use images/doubleint.png>
+Package pdftex.def Info: images/doubleint.png  used on input line 258.
+(pdftex.def)             Requested size: 426.79713pt x 312.98085pt.
+ [44 <./images/doubleint.png>]
+<images/trapezoidexample.png, id=887, 804.00375pt x 544.0325pt>
+File: images/trapezoidexample.png Graphic file (type png)
+<use images/trapezoidexample.png>
+Package pdftex.def Info: images/trapezoidexample.png  used on input line 266.
+(pdftex.def)             Requested size: 426.78244pt x 256.08546pt.
+<images/simpsonexample.png, id=888, 815.045pt x 588.1975pt>
+File: images/simpsonexample.png Graphic file (type png)
+<use images/simpsonexample.png>
+Package pdftex.def Info: images/simpsonexample.png  used on input line 271.
+(pdftex.def)             Requested size: 426.78574pt x 284.5305pt.
+)
+(./ch7_aima203.tex [45 <./images/trapezoidexample.png> <./images/simpsonexample
+.png>]
+Chapter 7.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 5--5
+[][][][][][][][][]  
+ []
+
+<images/taylor_method_example.png, id=902, 819.06pt x 618.31pt>
+File: images/taylor_method_example.png Graphic file (type png)
+<use images/taylor_method_example.png>
+Package pdftex.def Info: images/taylor_method_example.png  used on input line 3
+8.
+(pdftex.def)             Requested size: 369.88586pt x 284.53926pt.
+[46
+
+]
+<images/picard_method_example.png, id=917, 819.06pt x 583.17876pt>
+File: images/picard_method_example.png Graphic file (type png)
+<use images/picard_method_example.png>
+Package pdftex.def Info: images/picard_method_example.png  used on input line 6
+7.
+(pdftex.def)             Requested size: 369.88586pt x 284.53209pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[47 <./images/taylor_method_example.png>] [48 <./images/picard_method_example.p
+ng>]
+<images/euler.png, id=942, 807.015pt x 583.17876pt>
+File: images/euler.png Graphic file (type png)
+<use images/euler.png>
+Package pdftex.def Info: images/euler.png  used on input line 102.
+(pdftex.def)             Requested size: 369.88918pt x 284.53209pt.
+<images/modified.png, id=943, 807.015pt x 554.07pt>
+File: images/modified.png Graphic file (type png)
+<use images/modified.png>
+Package pdftex.def Info: images/modified.png  used on input line 128.
+(pdftex.def)             Requested size: 398.33461pt x 284.52493pt.
+<images/rungee.png, id=944, 807.015pt x 585.18625pt>
+File: images/rungee.png Graphic file (type png)
+<use images/rungee.png>
+Package pdftex.def Info: images/rungee.png  used on input line 130.
+(pdftex.def)             Requested size: 398.33461pt x 284.53825pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[49 <./images/euler.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [50 <./images/modified.png> <./images/rungee.png>] [51] [52]
+Package mdframed Info: mdframed works in twoside mode on input line 234.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 234.
+
+Overfull \hbox (2.8512pt too wide) in paragraph at lines 234--235
+\OT1/cmr/m/n/12 but for eas-ier com-pu-ta-tion dur-ing pro-gram ex-e-cu-tion th
+e above for-mula has been adopted. 
+ []
+
+[53]) [54] (./aima203_lecturenotes_ku.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 
 
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `aima203_lecturenotes_ku.out' has not changed
 .
-(rerunfilecheck)             Checksum: F3F2A184BB8672C79020A0DC7C272312;1392.
+(rerunfilecheck)             Checksum: 53D17C3D3A55824281859CF9E7095F17;8156.
  ) 
 Here is how much of TeX's memory you used:
- 41609 strings out of 474222
- 972964 string characters out of 5748733
- 1941975 words of memory out of 5000000
- 63076 multiletter control sequences out of 15000+600000
- 569810 words of font info for 77 fonts, out of 8000000 for 9000
+ 42821 strings out of 474222
+ 989200 string characters out of 5748733
+ 1979975 words of memory out of 5000000
+ 63844 multiletter control sequences out of 15000+600000
+ 571462 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,12n,110p,744b,666s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,13n,110p,1009b,2264s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on aima203_lecturenotes_ku.pdf (12 pages, 385501 bytes).
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm
+1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
+Output written on aima203_lecturenotes_ku.pdf (54 pages, 2348706 bytes).
 PDF statistics:
- 365 PDF objects out of 1000 (max. 8388607)
- 286 compressed objects within 3 object streams
- 110 named destinations out of 1000 (max. 500000)
- 242 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1226 PDF objects out of 1440 (max. 8388607)
+ 1055 compressed objects within 11 object streams
+ 504 named destinations out of 1000 (max. 500000)
+ 629 words of extra memory for PDF output out of 10000 (max. 10000000)
 
