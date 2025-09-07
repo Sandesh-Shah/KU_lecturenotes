@@ -2,7 +2,14 @@
 
 \begin{document}
 \chapter*{Vector Calculus Continued...}
+
 The vector integral calculus extends integrals as known from calculus to integrals over curves (``line integrals''), surfaces(``surface integrals''), and solids. The known integral from calculus is the theory of integration over coordinate lines and planes which is extended in vector calculus to general curves and surfaces in space. We shall see that these integrals have basic engineering applications in solid mechanics, in fluid flow, and in heat problems.
+
+\section{Integral of Vector Function}
+The indefinite integral of $\vec{r}$ with respect to $t$ is given by:
+$$\int \, \vec{r}(t)\,dt = \vec{R}(t) + C$$
+If the components of $\vec{r}=f(t)\hat{i} + g(t)\hat{j}+h(t)\hat{k}$ are integrable over $[a,b]$, then so is $\vec{r}$, and the definite integral of $\vec{r}$ from $a$ to $b$ is
+$$\int_{a}^{b} \; \vec{r}(t)\,dt = \int_{a}^{b}\,f(t)\,dt\,\hat{i} + \int_{a}^{b}\,g(t)\,dt\,\hat{j} + \int_{a}^{b}\,h(t)\,dt\,\hat{k}$$
 
 \section{Line Integrals}
 To calculate the total mass of a wire lying along a curve in space, or to find the work done by a variable force acting along such a curve, we need more general notion of integral. We need to integrate over a curve $C$ rather than over an interval $[a,b]$.
@@ -44,6 +51,29 @@ If the path $C$ is a closed curve, then the symbol for line integral is $\displa
 The work $W$ done by a constant force $F$ in the displacement along a straight segment $r$ is $\mathbf{W=F.r}$. For a variable force $F$ on a curve $C:r(t)$, we find a small work done, on small segment $dr$ by $F$ where, $F$ acts as constant on this segment $dr$. The small work done is $dW=F.dr$. The total work done is then $\mathbf{W=\int_C\, dW= \int_C \, F.dr}$. \\
 So, the line integral in this case gives the total work done by the variable force $F$ acting on the path $C$. This practical motivation for the line integral.
 
+\subsection{Exercise}
+\begin{enumerate}
+\item Calculate work done by the given force along the given path.
+  \begin{enumerate}
+  \item $F=(y^3, x^3)$,  $C$ is the parabola $:y=5x^2$ from $A=(0,0)$ to $B=(2,20)$.
+  \item $F=(e^x, e^y)$, $C$ is circle with center $(0,0)$ from $(1,0)$ to $(0,-1)$, clockwise.
+  \item $F=(e^x, e^y, e^z)$, $C:r=(t, t^2, t^2)$ from $(0,0,0)$ to $(2,4,4)$.
+   \item Find the work done by the force field $\vec{F} = (y-x^2)\hat{i} + (z-y^2)\hat{j} + (x-z^2)\hat{k}$ along the curve $\vec{r}(t) = t\hat{i} + t^2\hat{j} + t^3\hat{k}$, from $(0,0,0)$ to $(1,1,1)$.
+  \end{enumerate}
+\end{enumerate}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=16cm, height=8cm]{circulation.png}
+\end{figure}
+
+\subsection{Flow Integrals and Circulation}
+Suppose that $\vec{F}$ represents the velocity field of a fluid flowing through a region in space. Under these circumstances, the line integral along a curve in the region gives the fluid's flow along, or circulation around, the curve. In this case the line integral is called a flow integral. And if the curve end and start at the same point then it is called a circulation.
+
+\subsection{Flux Across a Simple Closed Plane Curve}
+A curve in the $xy$-plane is simple if it does not cross itself. If $C$ is a smooth simple closed curve in the domain of a continuous vector field $\vec{F}$ in the plane, and if $n$ is the outward unit normal vector on $C$, the flux of $\vec{F}$ across $C$ is $\displaystyle \int_C\; \vec{F}.\vec{n}\;ds$
+
+
 \subsection{Path Dependence}
 \begin{theorem}
   The line integral generally depends not only on $F$ and on the endpoints $A$ and $B$ of the path path, but also on the path itself along with the integral is taken.
@@ -51,16 +81,6 @@ So, the line integral in this case gives the total work done by the variable for
 \begin{proof}
   Let us take two different curve $C_1: r_1(t)=(t,t,0)$ (straight line)  and $C_2:r_2(t)=(t,t^2,0)$ (parabola) on $[0,1]$. For $F=(0,xy,0)$, $F.dr_1 = t^2$ and $F.dr_2 = 2t^4$, so that integration becomes $1/3$and $2/5$, respectively.
 \end{proof}
-
-\subsection{Exercise}
-\begin{enumerate}
-\item Calculate work done by the given force along the given path.
-  \begin{enumerate}
-  \item $F=(y^3, x^3)$,  $C$ is the parabola $:y=5y^2$ from $A=(0,0)$ to $B=(2,20)$.
-  \item $F=(e^x, e^y)$, $C$ is circle with center $(0,0)$ from $(1,0)$ to $(0,-1)$, clockwise.
- \item $F=(e^x, e^y, e^z)$, $C:r=(t, t^2, t^2)$ from $(0,0,0)$ to $(2,4,4)$.
-  \end{enumerate}
-\end{enumerate}
 
 \subsection{Path Independence of Line Integrals}
 In this sections we discuss the conditions for path independence of a line integral.
@@ -115,7 +135,9 @@ Here we integrate along the entire boundary $C$ of $R$ in such a sense that $R$ 
 \end{enumerate}
 
 \section{Surface Integrals}
-Like line integrals, surface integrals arise in two forms. One form occurs when we integrate a scalar function over a surface, the second form is for surface integrals of vector fields.
+Like line integrals, surface integrals arise in two forms. One form occurs when we integrate a scalar function over a surface, the second form is for surface integrals of vector fields. \\
+To compute the mass of a surface, the flow of a liquid across a curved membrane, or the total electrical charge on a surface, we need to integrate a function over a curved surface in space. An example of this form occurs when we want to measure the net flow of a fluid across a surface submerged in the fluid.
+
 \subsection{Surface Integrals of a vector field}
 Let $F$ be a vector field in three-dimensional space with continuous components defined over a smooth surface $S$ having a chosen field of normal unit vectors $n$ orienting $S$. Then the surface integral of $F$ over $S$ is:
 \begin{equation}
@@ -160,11 +182,21 @@ The partial derivatives, $r_u$ and $r_v$ at $P$ to the surface~\ref{par_surface}
   \subsubsection{Surface Integral a Non-parametrized surface}
   \begin{enumerate}
   \item For a scalar function: \\[1mm]
-    $\displaystyle \int\int_S\, F\frac{|N|}{|N.k|}\,dx\,dy$
-\vspace{1cm}
+    $\displaystyle \int\int_S\, F\frac{|\vec{N}|}{|\vec{N}.\hat{k}|}\,dx\,dy$
+
       \item For a vector function: \\[1mm]
-    $\displaystyle \int\int_S\, F.\hat{n}\;\frac{|N|}{|N.k|}\,dx\,dy$
+    $\displaystyle \int\int_S\, F.\hat{n}\;\frac{dx\,dy}{|\hat{n}.\hat{k}|} = \int\int_S\, F.\vec{N}\;\frac{dx\,dy}{|\vec{N}.\hat{k}|}$
   \end{enumerate}
+
+  \begin{figure}[h]
+  \centering
+  \includegraphics[width=16cm, height=8cm]{parasurface.png}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=16cm, height=9cm]{nonparasurface.png}
+\end{figure}
 
   \section{Volume Integral}
   Volume Integrals are triple integrals. They can be transformed into surface integrals over the boundary surface of a region in a space and conversely. Such a transformation is of practical interest because one of the two kinds of integral is often simpler than the other.
